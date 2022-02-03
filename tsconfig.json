@@ -1,0 +1,37 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "baseUrl": "src",
+    "paths": {
+      "@components/*": ["src/components/*"],
+      "@components": ["src/components"],
+      "@public/*": ["public/*"],
+      "@public": ["public"],
+      "@definitions/*": ["src/definitions/*"],
+      "@definitions": ["src/definitions"],
+      "@interfaces/*": ["src/interfaces/*"],
+      "@interfaces": ["src/interfaces"],
+      "@styles/*": ["src/styles/*"],
+      "@styles": ["src/styles"],
+      "@components/icons/*": ["src/components/icons/*"],
+      "@components/icons": ["src/components/icons"],
+      "@recoil/*": ["src/recoil/*"],
+      "@recoil": ["src/recoil"]
+    },
+    "incremental": true
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
+}

@@ -1,0 +1,46 @@
+{
+  "name": "jeremy_yoon-client",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
+    "svgr": "npx @svgr/cli -d src/components/icons --ignore-existing --icon --typescript public/icons"
+  },
+  "dependencies": {
+    "@ant-design/icons": "^4.4.0",
+    "antd": "^4.10.2",
+    "axios": "^0.21.1",
+    "framer-motion": "^6.2.3",
+    "next": "12.0.7",
+    "next-compose-plugins": "^2.2.1",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-loading-skeleton": "^3.0.2",
+    "react-use": "^15.3.8",
+    "recoil": "^0.1.2",
+    "styled-components": "^5.2.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@storybook/addon-actions": "^6.1.14",
+    "@storybook/addon-essentials": "^6.1.14",
+    "@storybook/addon-knobs": "^6.1.14",
+    "@storybook/addon-links": "^6.1.14",
+    "@storybook/preset-scss": "^1.0.3",
+    "@storybook/react": "^6.1.14",
+    "@svgr/cli": "^5.5.0",
+    "@types/node": "^14.14.13",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "@types/recoil": "0.0.1",
+    "babel-loader": "^8.2.2",
+    "babel-plugin-styled-components": "^1.12.0",
+    "storybook-addon-styled-component-theme": "^1.3.0",
+    "style-loader": "^2.0.0",
+    "typescript": "^4.1.3"
+  }
+}

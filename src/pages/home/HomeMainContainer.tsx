@@ -11,6 +11,7 @@ import { colors } from "styles/colors";
 import { NavButton, TitleText } from "./components";
 import bg1 from "images/main-bg1.jpg";
 import bg2 from "images/main-bg2.jpg";
+import ReactPageScroller from "react-page-scroller";
 
 export default function HomeMainContainer() {
   return (
@@ -18,6 +19,7 @@ export default function HomeMainContainer() {
       <S.Logo>Jeremy.yoon</S.Logo>
       <S.SideText>Created by Me ©2022</S.SideText>
       <S.BGContainer>
+        <Image src={bg2} layout="fill" objectFit="cover" />
         <Image src={bg2} layout="fill" objectFit="cover" />
       </S.BGContainer>
       <S.MainContainer>

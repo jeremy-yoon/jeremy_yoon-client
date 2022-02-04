@@ -8,6 +8,9 @@ import { useRouter } from "next/router";
 import styled, { css } from "styled-components";
 import { Layout, Menu, Breadcrumb, Row, Col } from "antd";
 import { RecoilRoot } from "recoil";
+import { AnimatePresence, domAnimation, LazyMotion, m } from "framer-motion";
+import { animations } from "animations/animations";
+import react, { useState } from "react";
 
 const { Header, Content, Footer } = Layout;
 
@@ -17,14 +20,31 @@ interface MyAppProps {
 }
 
 const MyApp: React.FC<MyAppProps> = ({ Component, pageProps }) => {
+  const startIndex = 0;
   const router = useRouter();
+  const [animation, setAnimation] = useState(animations[startIndex]);
+
   return (
     <RecoilRoot>
       <Layout>
         {router.pathname !== "/" && <MainHeader />}
 
         <S.Content>
-          <Component {...pageProps} />
+          <LazyMotion features={domAnimation}>
+            <AnimatePresence exitBeforeEnter>
+              <m.div
+                key={router.route.concat(animation.name)}
+                initial="initial"
+                animate="animate"
+                exit="exit"
+                variants={animation.variants}
+                transition={animation.transition}
+                style={{ width: "100vw" }}
+              >
+                <Component {...pageProps} />
+              </m.div>
+            </AnimatePresence>
+          </LazyMotion>
         </S.Content>
       </Layout>
     </RecoilRoot>
@@ -35,6 +55,7 @@ const S: any = {};
 
 S.Content = styled(Sv)`
   min-height: 100vh;
+  min-width: 100vw;
   display: flex;
   justify-content: center;
   /* padding-top: 64px; */

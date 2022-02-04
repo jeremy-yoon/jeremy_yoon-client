@@ -17,7 +17,7 @@ export const MainHeader: React.FC<MainProps> = ({}) => {
       <S.Wrapper>
         <Link href="/">
           <Sv pointer>
-            <St h3>Jeremy.Yoon</St>
+            <S.Logo>Jeremy.yoon</S.Logo>
           </Sv>
         </Link>
         <Sv row act gx={8}>
@@ -35,6 +35,13 @@ export const MainHeader: React.FC<MainProps> = ({}) => {
 };
 
 const S: any = {};
+
+S.Logo = styled(St)`
+  font-family: "Gilroy";
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 28px;
+`;
 
 S.Header = styled.header`
   position: fixed;

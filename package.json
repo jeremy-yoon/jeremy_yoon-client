@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@ant-design/icons": "^4.4.0",
+    "@types/styled-components": "^5.1.22",
     "antd": "^4.10.2",
     "axios": "^0.21.1",
     "framer-motion": "^6.2.3",
@@ -23,7 +24,7 @@
     "react-page-scroller": "^2.2.1",
     "react-use": "^15.3.8",
     "recoil": "^0.1.2",
-    "styled-components": "^5.2.1"
+    "styled-components": "^5.3.3"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",

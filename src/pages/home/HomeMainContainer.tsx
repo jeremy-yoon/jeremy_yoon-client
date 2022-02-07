@@ -20,7 +20,6 @@ export default function HomeMainContainer() {
       <S.SideText>Created by Me ©2022</S.SideText>
       <S.BGContainer>
         <Image src={bg2} layout="fill" objectFit="cover" />
-        <Image src={bg2} layout="fill" objectFit="cover" />
       </S.BGContainer>
       <S.MainContainer>
         <Sv ml={40} mt={40}>

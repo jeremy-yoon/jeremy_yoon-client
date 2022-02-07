@@ -19,16 +19,7 @@ export const ButtonL: React.FC<ButtonLProps> = ({
 }) => {
   return (
     <Link href={href}>
-      <Sv
-        onClick={onClick}
-        act
-        jct
-        py={8}
-        px={20}
-        br={4}
-        pointer
-        bg={colors.black}
-      >
+      <Sv onClick={onClick} act jct py={8} px={20} pointer bg={colors.black}>
         <St white>{title}</St>
       </Sv>
     </Link>

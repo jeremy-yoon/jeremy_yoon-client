@@ -47,11 +47,12 @@ S.Header = styled.header`
   position: fixed;
   z-index: 1;
   width: 100%;
-  height: 64px;
+  height: 80px;
   background-color: white;
   display: flex;
   justify-content: center;
   align-items: center;
+  border-bottom: 1px solid ${colors.g4};
 `;
 
 S.Wrapper = styled(Sv)`

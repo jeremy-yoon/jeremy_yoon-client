@@ -6,6 +6,7 @@ import { Row, Col } from "antd";
 import styled from "styled-components";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import { getPostList } from "apis/service";
+import { colors } from "styles/colors";
 
 interface BlogScreen {}
 
@@ -20,6 +21,12 @@ export default function BlogScreen() {
   return (
     <S.Body>
       <S.Container>
+        <Sv pt={140} pb={40} pl={24}>
+          <St h1>About</St>
+          <St h1 ml={16}>
+            everything
+          </St>
+        </Sv>
         <Sv mb={40}>
           <PostCardL
             href="/post/1/"
@@ -64,5 +71,7 @@ S.Body = styled(Sv)`
 `;
 
 S.Container = styled(Sv)`
-  max-width: 1024px;
+  width: 1024px;
+  border-left: 1px solid ${colors.g4};
+  border-right: 1px solid ${colors.g4};
 `;

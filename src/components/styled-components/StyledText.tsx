@@ -170,25 +170,25 @@ const h3 = css`
 const s1 = css`
   font-family: "Pretendard-Bold";
   font-weight: bold;
-  font-size: 18px;
+  font-size: 22px;
   line-height: 1.4;
 `;
 const s2 = css`
   font-family: "Pretendard-Bold";
   font-weight: bold;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.4;
 `;
 const s3 = css`
   font-family: "Pretendard-Bold";
   font-weight: bold;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.4;
 `;
 const s4 = css`
   font-family: "Pretendard-Bold";
   font-weight: bold;
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.4;
 `;
 const s5 = css`

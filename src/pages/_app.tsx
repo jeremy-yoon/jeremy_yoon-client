@@ -27,7 +27,7 @@ const MyApp: React.FC<MyAppProps> = ({ Component, pageProps }) => {
   return (
     <RecoilRoot>
       <Layout>
-        {router.pathname !== "/" && <MainHeader />}
+        {/* {router.pathname !== "/" && <MainHeader />} */}
 
         <S.Content>
           <LazyMotion features={domAnimation}>

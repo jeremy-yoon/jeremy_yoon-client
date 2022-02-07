@@ -11,6 +11,7 @@ interface PostListProps {
   href: any;
   imgSrc: StaticImageData;
   date: string;
+  category: string;
   title: string;
   body: string;
 }
@@ -18,6 +19,7 @@ export const PostList: React.FC<PostListProps> = ({
   href = "/",
   imgSrc = dummy,
   date = "date",
+  category = "category",
   title = "title",
   body = "body",
 }) => {
@@ -26,10 +28,13 @@ export const PostList: React.FC<PostListProps> = ({
       <Sv pt={32}>
         <Sv row jsb pointer w="100%">
           <Sv>
-            <St b1 g0 text={date} />
+            <Sv row>
+              <St b1 g0 text={category} />
+              <St b1 g2 text={` · ${date}`} />
+            </Sv>
             <Sv col>
               <St s1 g0 mt={4} text={title} />
-              <St b1 g3 mt={8} text={body} />
+              <S.BodyText b1 g3 mt={8} text={body} />
             </Sv>
           </Sv>
           <S.Image src={imgSrc} width={112} height={112} objectFit="cover" />
@@ -40,76 +45,15 @@ export const PostList: React.FC<PostListProps> = ({
   );
 };
 
-interface PostCardMProps {
-  href: any;
-  imgSrc: StaticImageData;
-  title: string;
-  body: string;
-}
-export const PostCardM: React.FC<PostCardMProps> = ({
-  href = "/",
-  imgSrc = dummy,
-  title = "title",
-  body = "body",
-}) => {
-  return (
-    <Link href={href}>
-      <Sv>
-        <S.Image
-          src={imgSrc}
-          layout="responsive"
-          width="504px"
-          height="280px"
-          objectFit="cover"
-        />
-        <Sv col mt={16}>
-          <St s1 g0>
-            {title}
-          </St>
-          <St b1 g3>
-            {body}
-          </St>
-        </Sv>
-      </Sv>
-    </Link>
-  );
-};
-
-interface PostCardSProps {
-  href: any;
-  imgSrc: StaticImageData;
-  title: string;
-  body: string;
-}
-export const PostCardS: React.FC<PostCardSProps> = ({
-  href = "/",
-  imgSrc = dummy,
-  title = "title",
-  body = "body",
-}) => {
-  return (
-    <Link href={href}>
-      <Sv>
-        <S.Image
-          src={imgSrc}
-          layout="responsive"
-          width="400px"
-          height="260px"
-          objectFit="cover"
-        />
-        <Sv col mt={16}>
-          <St s1 g0>
-            {title}
-          </St>
-          <St b1 g3>
-            {body}
-          </St>
-        </Sv>
-      </Sv>
-    </Link>
-  );
-};
-
 const S: any = {};
 
 S.Image = styled(Image)``;
+
+S.BodyText = styled(St)`
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  max-width: 608px;
+`;

@@ -34,11 +34,11 @@ const MyApp: React.FC<MyAppProps> = ({ Component, pageProps }) => {
             <AnimatePresence exitBeforeEnter>
               <m.div
                 key={router.route.concat(animation.name)}
-                initial="initial"
-                animate="animate"
-                exit="exit"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.4 }}
                 variants={animation.variants}
-                transition={animation.transition}
                 style={{ width: "100vw" }}
               >
                 <Component {...pageProps} />

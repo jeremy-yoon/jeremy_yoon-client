@@ -39,6 +39,5 @@ S.SelectedH1 = styled(St)<{ reverse: boolean; duration: number }>`
 
   transition: all 0.25s linear;
   animation-duration: ${(props) => props.duration}s !important;
-  ${textShadow}
-  ${slidUpSet};
+  ${textShadow}/* ${slidUpSet}; */
 `;

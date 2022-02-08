@@ -14,6 +14,8 @@ interface PostListProps {
   category: string;
   title: string;
   body: string;
+  likeCount: number;
+  viewCount: number;
 }
 export const PostList: React.FC<PostListProps> = ({
   href = "/",
@@ -22,6 +24,8 @@ export const PostList: React.FC<PostListProps> = ({
   category = "category",
   title = "title",
   body = "body",
+  likeCount = "likeCount",
+  viewCount = "viewCount",
 }) => {
   return (
     <Link href={href}>
@@ -38,6 +42,9 @@ export const PostList: React.FC<PostListProps> = ({
             </Sv>
           </Sv>
           <S.Image src={imgSrc} width={112} height={112} objectFit="cover" />
+        </Sv>
+        <Sv mt={8}>
+          <St c1 g2 text={`${likeCount} · ${viewCount}`} />
         </Sv>
         <Sv h={1} bg={colors.g4} mt={32} />
       </Sv>

@@ -37,7 +37,7 @@ const PostScreen: React.FC = () => {
       </Sv>
       <Sv mt={40}>
         <St b2 g0>
-          {/* {parse(`${post?.body}`)} */}
+          {parse(`${post?.body}`)}
         </St>
       </Sv>
       <Sv row gx={20}>

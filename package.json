@@ -12,6 +12,8 @@
   },
   "dependencies": {
     "@ant-design/icons": "^4.4.0",
+    "@svgr/webpack": "^6.2.1",
+    "@types/react-pdf": "^5.0.9",
     "@types/styled-components": "^5.1.22",
     "antd": "^4.10.2",
     "axios": "^0.21.1",
@@ -23,6 +25,7 @@
     "react-dom": "17.0.2",
     "react-loading-skeleton": "^3.0.2",
     "react-page-scroller": "^2.2.1",
+    "react-pdf": "^5.7.0",
     "react-use": "^15.3.8",
     "recoil": "^0.1.2",
     "styled-components": "^5.3.3"

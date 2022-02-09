@@ -9,18 +9,14 @@ import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import BlogScreen from "pages/blog";
 import { colors } from "styles/colors";
 import { NavButton, TitleText } from "./components";
-import bg1 from "images/main-bg1.jpg";
-import bg2 from "images/main-bg2.jpg";
-import ReactPageScroller from "react-page-scroller";
+import Background from "./Background";
 
 export default function HomeMainContainer() {
   return (
     <S.Body>
       <S.Logo>Jeremy.yoon</S.Logo>
       <S.SideText>Created by Me ©2022</S.SideText>
-      <S.BGContainer>
-        <Image src={bg2} layout="fill" objectFit="cover" />
-      </S.BGContainer>
+      <Background />
       <S.MainContainer>
         <Sv ml={40} mt={40}>
           <Sv col>

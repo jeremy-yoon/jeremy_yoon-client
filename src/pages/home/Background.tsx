@@ -135,7 +135,7 @@ export default function Background() {
           </div>
         </div>
       </motion.div> */}
-      {/* <Image src={bg} layout="fill" objectFit="cover" />
+      <Image src={bg} layout="fill" objectFit="cover" />
 
       <S.Shape1_2 style={{ rotateX: rotateX, rotateY: rotateY }}>
         <Image src={shape01_2} width={1000} objectFit="scale-down" />
@@ -170,7 +170,7 @@ export default function Background() {
       </S.Shape3_2>
       <S.Shape3 style={{ rotateX: rotateX, rotateY: rotateY }}>
         <Image src={shape03} width={800} objectFit="scale-down" />
-      </S.Shape3> */}
+      </S.Shape3>
     </S.BGContainer>
   );
 }

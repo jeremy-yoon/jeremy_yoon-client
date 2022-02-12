@@ -42,7 +42,7 @@ const PostScreen: React.FC = () => {
             {parse(`${post?.body}`)}
           </St>
         </Sv>
-        <Sv row gx={20}>
+        <Sv mt={40} row gx={20}>
           <Sv pointer onClick={() => setCommentModalOpen(true)}>
             <St h3>🥚 (23)</St>
           </Sv>

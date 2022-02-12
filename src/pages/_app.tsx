@@ -124,7 +124,7 @@ const MyApp: React.FC<MyAppProps> = ({ Component, pageProps }) => {
         <S.Content>
           <LazyMotion features={domAnimation}>
             <AnimatePresence exitBeforeEnter>
-              <m.div
+              {/* <m.div
                 ref={ref}
                 key={router.route.concat(animation.name)}
                 initial={{ opacity: 0 }}
@@ -133,9 +133,9 @@ const MyApp: React.FC<MyAppProps> = ({ Component, pageProps }) => {
                 transition={{ duration: 0.4 }}
                 variants={animation.variants}
                 style={{ width: "100vw" }}
-              >
-                <Component {...pageProps} />
-              </m.div>
+              > */}
+              <Component {...pageProps} />
+              {/* </m.div>
               <motion.div
                 variants={variants}
                 className="circle"
@@ -152,7 +152,7 @@ const MyApp: React.FC<MyAppProps> = ({ Component, pageProps }) => {
                     Want to Chat?
                   </div>
                 </div>
-              </motion.div>
+              </motion.div> */}
             </AnimatePresence>
           </LazyMotion>
         </S.Content>

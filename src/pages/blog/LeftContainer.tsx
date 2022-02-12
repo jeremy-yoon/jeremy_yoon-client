@@ -5,63 +5,75 @@ import { Sv, St, ButtonL, PostList } from "components";
 import { Row, Col } from "antd";
 import styled from "styled-components";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
-import { getPostList } from "apis/service";
+import { getCategoryList, getPostList } from "apis/service";
 import { colors } from "styles/colors";
+import moment from "moment";
 
 interface LeftContainer {}
 
 export default function LeftContainer() {
   const [postList, setPostList] = useState([]);
-  const [isLoading, setLoading] = useState(true);
+  const [categoryList, setCategoryList] = useState([]);
+  const [isLoading, setLoading] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState("All");
 
   useEffect(() => {
+    getCategoryList(setCategoryList);
     getPostList(setPostList);
   }, []);
 
+  // render category list
+  const renderCategoryList = () =>
+    categoryList.map((item, index) => (
+      <Sv py={8} pointer onClick={() => setSelectedCategory(item.title)}>
+        <St
+          b1
+          color={selectedCategory == item.title ? colors.g0 : colors.g3}
+          text={item.title}
+        />
+      </Sv>
+    ));
+
+  // render post list
+  const renderPostList = () =>
+    postList.map((item, index) => (
+      <PostList
+        key={index}
+        category={categoryList[item.category]?.title}
+        title={item.title}
+        date={moment(item.create_date).format("YYYY-MM-DD")}
+        body={item.body}
+        imgSrc={item.represent_image}
+        href={`/post/${item.id}`}
+      />
+    ));
+
+  // render Skeleton
+  const renderSkeleton = () => {
+    if (isLoading) {
+      return (
+        <SkeletonTheme color={colors.gray}>
+          <Skeleton count={10} />
+        </SkeletonTheme>
+      );
+    }
+  };
+
   return (
     <S.Container>
-      <Sv pt={120} pb={32}>
+      <Sv pt={120} pb={24}>
         <St h1>About</St>
         <St h1 ml={16}>
           everything
         </St>
       </Sv>
+      <Sv row gx={20}>
+        {renderCategoryList()}
+      </Sv>
+      <Sv h={1} bg={colors.g4}></Sv>
       <Sv mb={40}>
-        <PostList
-          href="/post/1/"
-          title={postList[0]?.title}
-          body={postList[0]?.body}
-        />
-        <PostList
-          href="/post/1/"
-          date="5 days ago"
-          title="What You Need to Know About Cardano’s Potential in 2022"
-          body="Addressing the Cardano drama — Is Cardano (ADA) a total failure? No. But it has been involved in a lot of drama lately. SundaeSwap, which is being"
-        />
-        <PostList
-          href="/post/1/"
-          date="5 days ago"
-          title="What You Need to Know About Cardano’s Potential in 2022"
-          body="Addressing the Cardano drama — Is Cardano (ADA) a total failure? No. But it has been involved in a lot of drama lately. SundaeSwap, which is being"
-        />
-        <PostList
-          href="/post/1/"
-          date="5 days ago"
-          title="What You Need to Know About Cardano’s Potential in 2022"
-          body="Addressing the Cardano drama — Is Cardano (ADA) a total failure? No. But it has been involved in a lot of drama lately. SundaeSwap, which is being"
-        />
-        <PostList
-          href="/post/1/"
-          date="5 days ago"
-          title="What You Need to Know About Cardano’s Potential in 2022"
-          body="Addressing the Cardano drama — Is Cardano (ADA) a total failure? No. But it has been involved in a lot of drama lately. SundaeSwap, which is being"
-        />
-        <PostList
-          href="/post/1/"
-          date="5 days ago"
-          title="What You Need to Know About Cardano’s Potential in 2022"
-          body="Addressing the Cardano drama — Is Cardano (ADA) a total failure? No. But it has been involved in a lot of drama lately. SundaeSwap, which is being"
-        />
+        {renderSkeleton()}
+        {renderPostList()}
       </Sv>
     </S.Container>
   );

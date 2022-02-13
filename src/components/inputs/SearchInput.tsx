@@ -11,7 +11,7 @@ interface SearchInputProps {
   imgSrc: StaticImageData;
   title: string;
   body: string;
-  onClickRegister: Function;
+  onClickSearch: Function;
   value: string;
   onChange: Function;
 }
@@ -21,7 +21,7 @@ export const SearchInput: React.FC<SearchInputProps> = ({
   imgSrc = dummy,
   title = "title",
   body = "body",
-  onClickRegister,
+  onClickSearch,
   value,
   onChange,
 }) => {

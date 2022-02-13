@@ -11,13 +11,6 @@ import { colors } from "styles/colors";
 interface RightContainer {}
 
 export default function RightContainer() {
-  const [postList, setPostList] = useState([]);
-  const [isLoading, setLoading] = useState(true);
-
-  useEffect(() => {
-    getPostList(setPostList);
-  }, []);
-
   return (
     <S.Container>
       <Sv mt={120} col>

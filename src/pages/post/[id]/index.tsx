@@ -30,7 +30,7 @@ const PostScreen: React.FC = () => {
     <S.Body>
       <S.Container>
         <Sv mt={100} col>
-          <St h2 g0>
+          <St h2 g0 title>
             {post?.title}
           </St>
           <St b2 g3 mt={8}>

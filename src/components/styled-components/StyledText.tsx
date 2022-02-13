@@ -57,6 +57,7 @@ interface StProps {
   right: any;
   z: any;
   en: any;
+  title: any;
 }
 
 export const StyledText: any = styled.span<StProps>`
@@ -150,6 +151,8 @@ export const StyledText: any = styled.span<StProps>`
   ${(props) => props.z && z}
 
   ${(props) => props.en && en}
+
+  ${(props) => props.title && title}
 `;
 
 const h1 = css`
@@ -348,5 +351,9 @@ const z = css<{ z: any }>`
 //------------------------------------------------------------------
 //영문일 떄 폰트를 따로 지정합니다.
 const en = css<{ en: any }>`
-  font-family: "Gilroy";
+  font-family: "Gilroy" !important;
+`;
+//제목일 떄 폰트를 따로 지정합니다.
+const title = css<{ title: any }>`
+  font-family: "NanumMyeongjo" !important;
 `;

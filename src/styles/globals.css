@@ -84,6 +84,22 @@ a {
   src: url("../fonts/Gilroy-Bold.otf");
 }
 
+@font-face {
+  font-family: "NanumMyeongjo";
+  font-weight: 400;
+  src: url("../fonts/NanumMyeongjo.ttf");
+}
+@font-face {
+  font-family: "NanumMyeongjo";
+  font-weight: 700;
+  src: url("../fonts/NanumMyeongjoBold.ttf");
+}
+@font-face {
+  font-family: "NanumMyeongjo";
+  font-weight: 900;
+  src: url("../fonts/NanumMyeongjoExtraBold.ttf");
+}
+
 .example-container div {
   background: pink;
   border-radius: 30px;

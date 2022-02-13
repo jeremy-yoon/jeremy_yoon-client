@@ -16,6 +16,7 @@ export { ButtonL } from "components/buttons/ButtonL";
 
 //inputs
 export { CommentInput } from "components/inputs/CommentInput";
+export { SearchInput } from "components/inputs/SearchInput";
 
 //headers
 export { MainHeader } from "components/headers/MainHeader";

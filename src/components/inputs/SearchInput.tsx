@@ -8,7 +8,6 @@ import { colors } from "styles/colors";
 
 interface SearchInputProps {
   href: string;
-  imgSrc: StaticImageData;
   title: string;
   body: string;
   onClickSearch: Function;
@@ -18,7 +17,6 @@ interface SearchInputProps {
 
 export const SearchInput: React.FC<SearchInputProps> = ({
   href = "/",
-  imgSrc = dummy,
   title = "title",
   body = "body",
   onClickSearch,

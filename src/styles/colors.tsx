@@ -1,14 +1,22 @@
+const getMode = () => {
+  // const darkMode = getRecoil(darkModeAtom);
+  // const darkMode = useRecoilValue(darkModeAtom);
+  const darkMode = true;
+  return darkMode;
+};
+
 export const colors = {
   primary: "#1890ff",
   secondary: "#00B881",
   white: "#fff",
-  g0: "#000",
-  g1: "#3A3A3A",
-  g2: "#606060",
-  g3: "#9E9E9E",
-  g4: "#d9d9d9",
-  g5: "#E6E6E6",
-  g6: "#F1F1F1",
-  g7: "#FAFAFA",
+  g0: getMode() ? "#fff" : "#000",
+  g1: getMode() ? "#FAFAFA" : "#3A3A3A",
+  g2: getMode() ? "#F1F1F1" : "#606060",
+  g3: getMode() ? "#E6E6E6" : "#9E9E9E",
+  g4: getMode() ? "#d9d9d9" : "#d9d9d9",
+  g5: getMode() ? "#9E9E9E" : "#E6E6E6",
+  g6: getMode() ? "#606060" : "#F1F1F1",
+  g7: getMode() ? "#3A3A3A" : "#FAFAFA",
+  g10: getMode() ? "#000" : "#fff",
   black: "#000",
 };

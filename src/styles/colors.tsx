@@ -1,7 +1,7 @@
 const getMode = () => {
   // const darkMode = getRecoil(darkModeAtom);
   // const darkMode = useRecoilValue(darkModeAtom);
-  const darkMode = true;
+  const darkMode = false;
   return darkMode;
 };
 

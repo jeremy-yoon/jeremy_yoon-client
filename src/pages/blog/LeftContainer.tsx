@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Sv, St, ButtonL, PostList } from "components";
-import { CategoryList } from "./components/CategoryList";
+import { CategoryList, TitleText, NavButton } from "./components";
 import { Row, Col } from "antd";
 import styled from "styled-components";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
@@ -27,7 +27,10 @@ export default function LeftContainer() {
   const renderCategoryList = () =>
     categoryList.map((item, index) => (
       <Sv py={8} pointer onClick={() => setSelectedCategory(item.title)}>
-        <CategoryList title={item.title} />
+        <CategoryList
+          title={item.title}
+          selectedCategory={selectedCategory == item.title}
+        />
       </Sv>
     ));
 
@@ -58,6 +61,10 @@ export default function LeftContainer() {
 
   return (
     <S.Container>
+      <Sv row mt={60}>
+        <NavButton title="Do it for " />
+        <TitleText title="fun" />
+      </Sv>
       <Sv pb={24}></Sv>
       <Sv row gx={20}>
         {renderCategoryList()}

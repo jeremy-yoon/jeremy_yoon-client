@@ -20,8 +20,8 @@ export const CategoryList: React.FC<CategoryListProps> = ({
   selectedCategory,
 }) => {
   return (
-    <Sv col pt={40}>
-      <St s1 g0 color={selectedCategory ? colors.g0 : colors.g0} text={title} />
+    <Sv col p={16}>
+      <St b1 g0 color={selectedCategory ? colors.g0 : colors.g3} text={title} />
     </Sv>
   );
 };

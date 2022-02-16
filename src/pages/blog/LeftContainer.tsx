@@ -75,9 +75,10 @@ const S: any = {};
 
 S.Container = styled(Sv)`
   width: 1024px;
-  border-left: 1px solid ${colors.g4};
-  border-right: 1px solid ${colors.g4};
+  border-left: 1px solid rgba(0, 0, 0, 0.05);
+  border-right: 1px solid rgba(0, 0, 0, 0.05);
   padding-left: 120px;
   padding-right: 120px;
   z-index: 1;
+  background-color: rgba(255, 255, 255, 0.5);
 `;

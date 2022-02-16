@@ -26,5 +26,8 @@ const S: any = {};
 S.Container = styled(Sv)`
   width: 512px;
   padding-left: 40px;
+  padding-right: 40px;
   z-index: 1;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-right: 1px solid rgba(0, 0, 0, 0.05);
 `;

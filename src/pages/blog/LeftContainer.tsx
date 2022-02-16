@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Sv, St, ButtonL, PostList } from "components";
+import { Sv, St, ButtonL, PostList, PostListSkeleton } from "components";
 import { CategoryList, TitleText, NavButton } from "./components";
 import { Row, Col } from "antd";
 import styled from "styled-components";
@@ -15,12 +15,12 @@ interface LeftContainer {}
 export default function LeftContainer() {
   const [postList, setPostList] = useState([]);
   const [categoryList, setCategoryList] = useState([]);
-  const [isLoading, setLoading] = useState(false);
+  const [isLoading, setLoading] = useState(true);
   const [selectedCategory, setSelectedCategory] = useState("All");
 
   useEffect(() => {
     getCategoryList(setCategoryList);
-    getPostList(setPostList);
+    getPostList(setPostList, setLoading);
   }, []);
 
   // render category list
@@ -52,9 +52,12 @@ export default function LeftContainer() {
   const renderSkeleton = () => {
     if (isLoading) {
       return (
-        <SkeletonTheme color={colors.gray}>
-          <Skeleton count={10} />
-        </SkeletonTheme>
+        <Sv>
+          <PostListSkeleton />
+          <PostListSkeleton />
+          <PostListSkeleton />
+          <PostListSkeleton />
+        </Sv>
       );
     }
   };

@@ -6,6 +6,7 @@ import { Sv, St, Profile } from "components";
 import { SvTest } from "components/styled-components/StyledComponentTest";
 import dummy from "images/dummy.png";
 import { colors } from "styles/colors";
+import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 
 interface PostListProps {
   href: any;
@@ -64,3 +65,23 @@ S.BodyText = styled(St)`
   -webkit-box-orient: vertical;
   max-width: 608px;
 `;
+
+export const PostListSkeleton = () => (
+  <SkeletonTheme baseColor={colors.g7}>
+    <Sv row act jsb py={16}>
+      {/* <Skeleton circle height={40} width={40} /> */}
+      <Sv col>
+        <Skeleton count={1} width={40} height={16} />
+        <Sv h={8} />
+        <Skeleton count={1} width={300} height={24} />
+        <Sv h={16} />
+        <Skeleton count={2} width={500} height={16} />
+        <Sv h={24} />
+        <Skeleton count={1} width={80} height={16} />
+      </Sv>
+      <Sv>
+        <Skeleton height={112} width={112} />
+      </Sv>
+    </Sv>
+  </SkeletonTheme>
+);

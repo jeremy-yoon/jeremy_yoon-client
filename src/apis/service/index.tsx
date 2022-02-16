@@ -19,18 +19,21 @@ export const getCategoryList = (setCategoryList) =>
   );
 
 // 포스트 리스트 불러오기
-const getPostListRequest = async (setPostList) => {
+const getPostListRequest = async (setPostList, setLoading) => {
+  setLoading(true);
   const result = await getRequest("/post/");
   setPostList(result);
   console.log("getPostList", result);
+  setLoading(false);
 };
-const getPostListException = async (e) => {
+const getPostListException = async (setLoading, e) => {
   console.log("getPostList 에러", e);
+  setLoading(false);
 };
-export const getPostList = (setPostList) =>
+export const getPostList = (setPostList, setLoading) =>
   commonExceptionForm(
-    () => getPostListRequest(setPostList),
-    getPostListException
+    () => getPostListRequest(setPostList, setLoading),
+    getPostListException(setLoading)
   );
 
 // 포스트 상세 불러오기

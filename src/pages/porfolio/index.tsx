@@ -11,16 +11,6 @@ export default function PortFolioMainScreen() {
   const [postList, setPostList] = useState([]);
   const [isLoading, setLoading] = useState(true);
 
-  const getPostList = async () => {
-    try {
-      const result = await getRequest("/post/");
-      setPostList(result);
-      console.log("getPostList", result);
-    } catch (e) {
-      console.log("getPost 에러", e);
-    }
-  };
-
   useEffect(() => {
     getPostList();
   }, []);

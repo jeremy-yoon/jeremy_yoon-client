@@ -16,7 +16,11 @@ export const TitleText: React.FC<TitleTextProps> = ({
   title = "title",
   duration = 1.0,
 }) => {
-  return <S.SelectedH1 duration={duration}>{title}</S.SelectedH1>;
+  return (
+    <S.SelectedH1 en duration={duration}>
+      {title}
+    </S.SelectedH1>
+  );
 };
 
 const S: any = {};
@@ -30,7 +34,6 @@ S.SelectedH1 = styled(St)<{ reverse: boolean; duration: number }>`
   font-size: 100px;
   font-weight: 800;
   color: white;
-  letter-spacing: 0.05em;
   line-height: 144px;
   ${preventDrag}
 

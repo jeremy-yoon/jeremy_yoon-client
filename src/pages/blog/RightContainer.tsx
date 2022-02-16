@@ -24,7 +24,8 @@ export default function RightContainer() {
 const S: any = {};
 
 S.Container = styled(Sv)`
-  width: 512px;
+  overflow: hidden;
+  width: 414px;
   padding-left: 40px;
   padding-right: 40px;
   z-index: 1;

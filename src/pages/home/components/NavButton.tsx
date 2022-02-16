@@ -24,7 +24,7 @@ export const NavButton: React.FC<NavButtonProps> = ({
   return (
     <Sv row>
       <Link href={href}>
-        <S.SelectedH1 duration={duration} reverse={reverse}>
+        <S.SelectedH1 en duration={duration} reverse={reverse}>
           {title}
         </S.SelectedH1>
       </Link>

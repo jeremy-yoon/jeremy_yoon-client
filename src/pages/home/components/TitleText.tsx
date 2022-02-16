@@ -17,7 +17,11 @@ export const TitleText: React.FC<TitleTextProps> = ({
   title = "title",
   duration = 1.0,
 }) => {
-  return <S.SelectedH1 duration={duration}>{title}</S.SelectedH1>;
+  return (
+    <S.SelectedH1 en duration={duration}>
+      {title}
+    </S.SelectedH1>
+  );
 };
 
 const S: any = {};

@@ -32,29 +32,28 @@ export default function BlogScreen() {
 const S: any = {};
 
 S.Body = styled(Sv)`
-  flex: 1;
-  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;
+  overflow: hidden;
 `;
 
 S.bg = styled(Sv)`
-  position: absolute;
+  position: fixed;
   opacity: 0.6;
   top: 10%;
   right: -15%;
 `;
 
 S.bg2 = styled(Sv)`
-  position: absolute;
+  position: fixed;
   opacity: 0.2;
   top: 10%;
   right: 30%;
 `;
 
 S.bg3 = styled(Sv)`
-  position: absolute;
+  position: fixed;
   opacity: 0.2;
   bottom: 10%;
   left: 2%;

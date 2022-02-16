@@ -22,7 +22,7 @@ export const NavButton: React.FC<NavButtonProps> = ({
   return (
     <Sv row>
       <Link href={href}>
-        <S.SelectedH1 duration={duration} reverse={reverse}>
+        <S.SelectedH1 en duration={duration} reverse={reverse}>
           {title}
         </S.SelectedH1>
       </Link>
@@ -36,7 +36,6 @@ S.SelectedH1 = styled(St)<{ duration: number }>`
   font-size: 100px;
   font-weight: 800;
   color: black;
-  letter-spacing: 0.05em;
   line-height: 144px;
   cursor: pointer;
 

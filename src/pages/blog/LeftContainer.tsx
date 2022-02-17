@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Sv, St, ButtonL, PostList, PostListSkeleton } from "components";
 import { CategoryList, TitleText, NavButton } from "./components";
 import { Row, Col } from "antd";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import { getCategoryList, getPostList } from "apis/service";
 import { colors } from "styles/colors";
@@ -89,16 +89,22 @@ export default function LeftContainer() {
 
 const S: any = {};
 
+const blur = css`
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(4px);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+`;
+
 S.Container = styled(Sv)`
   width: 1024px;
   max-height: 100vh;
-  border-left: 1px solid rgba(0, 0, 0, 0.05);
-  border-right: 1px solid rgba(0, 0, 0, 0.05);
   padding-left: 120px;
   padding-right: 120px;
   z-index: 1;
-  background-color: rgba(255, 255, 255, 0.5);
   overflow-y: scroll;
+  ${blur}
   ::-webkit-scrollbar {
     width: 0px;
     display: none;

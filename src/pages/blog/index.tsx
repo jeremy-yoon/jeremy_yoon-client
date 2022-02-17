@@ -35,26 +35,25 @@ S.Body = styled(Sv)`
   display: flex;
   flex-direction: row;
   justify-content: center;
-  overflow: hidden;
 `;
 
 S.bg = styled(Sv)`
   position: fixed;
-  opacity: 0.6;
+  opacity: 0.8;
   top: 10%;
   right: -15%;
 `;
 
 S.bg2 = styled(Sv)`
   position: fixed;
-  opacity: 0.2;
+  opacity: 0.3;
   top: 10%;
   right: 30%;
 `;
 
 S.bg3 = styled(Sv)`
   position: fixed;
-  opacity: 0.2;
+  opacity: 0.3;
   bottom: 10%;
   left: 2%;
 `;

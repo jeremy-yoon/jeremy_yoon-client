@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Sv, St, ButtonL, SearchInput, Profile } from "components";
 import { Row, Col } from "antd";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import { getPostList } from "apis/service";
 import { colors } from "styles/colors";
@@ -23,12 +23,19 @@ export default function RightContainer() {
 
 const S: any = {};
 
+const blur = css`
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+`;
+
 S.Container = styled(Sv)`
   overflow: hidden;
   width: 414px;
   padding-left: 40px;
   padding-right: 40px;
   z-index: 1;
-  background-color: rgba(255, 255, 255, 0.5);
-  border-right: 1px solid rgba(0, 0, 0, 0.05);
+  ${blur}
 `;

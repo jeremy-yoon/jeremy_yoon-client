@@ -48,6 +48,7 @@ S.SelectedH1 = styled(St)<{ duration: number }>`
   transition: all 0.25s;
   /* animation-duration: ${(props) => props.duration}s !important; */
   /* ${slidUpSet}; */
+  z-index: 1;
 
   :hover {
     transform: scale(1.05);

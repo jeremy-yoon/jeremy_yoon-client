@@ -83,6 +83,16 @@ a {
   font-weight: 700;
   src: url("../fonts/Gilroy-Bold.otf");
 }
+@font-face {
+  font-family: "Gilroy";
+  font-weight: 800;
+  src: url("../fonts/Gilroy-ExtraBold.ttf");
+}
+@font-face {
+  font-family: "Gilroy";
+  font-weight: 900;
+  src: url("../fonts/Gilroy-Black.woff2");
+}
 
 @font-face {
   font-family: "NanumMyeongjo";

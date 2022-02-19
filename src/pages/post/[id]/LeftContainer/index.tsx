@@ -10,6 +10,7 @@ import { colors } from "styles/colors";
 import parse from "html-react-parser";
 import CommentModal from "./CommentModal";
 import RecommendPost from "./RecommendPost";
+import BottomNav from "./BottomNav";
 import { getPost } from "apis/service";
 import dummy from "images/dummy.png";
 
@@ -69,6 +70,7 @@ const LeftContainer: React.FC = () => {
           </Sv>
         </Sv>
         <RecommendPost />
+        <BottomNav />
       </S.Container>
       {renderCommentModal()}
     </>
@@ -88,6 +90,7 @@ const blur = css`
 `;
 
 S.Container = styled(Sv)`
+  position: relative;
   width: 1024px;
   max-height: 100vh;
   padding-top: 120px;

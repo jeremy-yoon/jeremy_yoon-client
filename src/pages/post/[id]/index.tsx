@@ -12,7 +12,6 @@ import CommentModal from "./CommentModal";
 import { getPost } from "apis/service";
 import LeftContainer from "./LeftContainer";
 import RightContainer from "./RightContainer";
-import BottomNav from "./BottomNav";
 
 const PostScreen: React.FC = () => {
   const router = useRouter();
@@ -32,7 +31,6 @@ const PostScreen: React.FC = () => {
     <S.Body>
       <LeftContainer />
       <RightContainer />
-      <BottomNav />
     </S.Body>
   );
 };

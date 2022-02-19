@@ -20,7 +20,7 @@ export default function BottomNav() {
 const S: any = {};
 
 const blur = css`
-  background: ${colors.g7};
+  background: ${colors.g2};
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
@@ -28,16 +28,14 @@ const blur = css`
 `;
 
 S.Container = styled(Sv)`
-  position: fixed;
+  position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  height: 120px;
-  z-index: 2;
+  height: 80px;
+  z-index: 3;
   overflow: hidden;
-  width: 414px;
   padding-left: 40px;
   padding-right: 40px;
-  z-index: 1;
   ${blur}
 `;

@@ -9,7 +9,9 @@ import moment from "moment";
 import { colors } from "styles/colors";
 import parse from "html-react-parser";
 import CommentModal from "./CommentModal";
+import RecommendPost from "./RecommendPost";
 import { getPost } from "apis/service";
+import dummy from "images/dummy.png";
 
 const LeftContainer: React.FC = () => {
   const router = useRouter();
@@ -25,38 +27,50 @@ const LeftContainer: React.FC = () => {
     }
   }, [id]);
 
+  const renderCommentModal = () => {
+    if (isCommentModalOpen) {
+      return (
+        <CommentModal
+          postId={id}
+          isCommentModalOpen={isCommentModalOpen}
+          setCommentModalOpen={setCommentModalOpen}
+        />
+      );
+    }
+  };
+
   return (
     <>
       <S.Container>
-        <Sv mt={100} col>
-          <St h2 g0 title>
-            {post?.title}
-          </St>
-          <St b2 g3 mt={8}>
-            {moment(post?.create_date).format("YYYY년 M월 D일")}
-          </St>
-        </Sv>
-        <Sv mt={40}>
-          <St b2 g0>
-            {parse(`${post?.body}`)}
-          </St>
-        </Sv>
-        <Sv mt={40} row gx={20}>
-          <Sv pointer onClick={() => setCommentModalOpen(true)}>
-            <St h3>🥚 (23)</St>
+        <Sv px={120}>
+          <Sv col>
+            <St h2 g0 title>
+              {post?.title}
+            </St>
+            <St b2 g3 mt={8}>
+              {moment(post?.create_date).format("YYYY년 M월 D일")}
+            </St>
           </Sv>
-          <Sv pointer onClick={() => setCommentModalOpen(true)}>
-            <St h3>💬 (3)</St>
+          <Sv mt={40}>
+            <S.RepresentImage src={dummy} />
+          </Sv>
+          <Sv mt={40}>
+            <St b2 g0>
+              {parse(`${post?.body}`)}
+            </St>
+          </Sv>
+          <Sv mt={40} row gx={20}>
+            <Sv pointer onClick={() => setCommentModalOpen(true)}>
+              <St h3>🥚 (23)</St>
+            </Sv>
+            <Sv pointer onClick={() => setCommentModalOpen(true)}>
+              <St h3>💬 (3)</St>
+            </Sv>
           </Sv>
         </Sv>
-        {isCommentModalOpen && (
-          <CommentModal
-            postId={id}
-            isCommentModalOpen={isCommentModalOpen}
-            setCommentModalOpen={setCommentModalOpen}
-          />
-        )}
+        <RecommendPost />
       </S.Container>
+      {renderCommentModal()}
     </>
   );
 };
@@ -66,7 +80,7 @@ export default LeftContainer;
 const S: any = {};
 
 const blur = css`
-  background: rgba(255, 255, 255, 0.25);
+  background: ${colors.g8};
   backdrop-filter: blur(4px);
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
   -webkit-backdrop-filter: blur(4px);
@@ -76,8 +90,8 @@ const blur = css`
 S.Container = styled(Sv)`
   width: 1024px;
   max-height: 100vh;
-  padding-left: 120px;
-  padding-right: 120px;
+  padding-top: 120px;
+  padding-bottom: 120px;
   z-index: 1;
   overflow-y: scroll;
   ${blur}
@@ -86,3 +100,5 @@ S.Container = styled(Sv)`
     display: none;
   }
 `;
+
+S.RepresentImage = styled(Image)``;

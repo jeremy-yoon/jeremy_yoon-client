@@ -17,6 +17,7 @@ export const colors = {
   g5: getMode() ? "#9E9E9E" : "#E6E6E6",
   g6: getMode() ? "#606060" : "#F1F1F1",
   g7: getMode() ? "#3A3A3A" : "#FAFAFA",
+  g8: getMode() ? "#3A3A3A" : "#fcfcfc",
   g10: getMode() ? "#000" : "#fff",
   black: "#000",
 };

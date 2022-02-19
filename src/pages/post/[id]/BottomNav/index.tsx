@@ -8,14 +8,12 @@ import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import { getPostList } from "apis/service";
 import { colors } from "styles/colors";
 
-interface RightContainer {}
+interface BottomNav {}
 
-export default function RightContainer() {
+export default function BottomNav() {
   return (
     <S.Container>
-      <Sv mt={120} col>
-        <Profile />
-      </Sv>
+      <Sv mt={120} col></Sv>
     </S.Container>
   );
 }
@@ -30,6 +28,12 @@ const blur = css`
 `;
 
 S.Container = styled(Sv)`
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  z-index: 2;
   overflow: hidden;
   width: 414px;
   padding-left: 40px;

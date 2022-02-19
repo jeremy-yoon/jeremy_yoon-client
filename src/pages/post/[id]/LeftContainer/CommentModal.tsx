@@ -114,7 +114,7 @@ S.Body = styled(Sv)`
   display: flex;
   align-items: center;
   max-width: 512px;
-  z-index: 1;
+  z-index: 2;
 
   animation-duration: 0.25s;
   animation-timing-function: ease-in-out;

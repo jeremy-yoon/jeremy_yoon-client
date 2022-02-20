@@ -10,17 +10,25 @@ import { colors } from "styles/colors";
 
 interface BottomNav {}
 
-export default function BottomNav() {
+export default function BottomNav({ setCommentModalOpen }) {
   return (
-    <S.Container>
-      <Sv mt={120} col></Sv>
+    <S.Container jct>
+      <S.Wrapper w={1024} h={64} row p={24} gx={20}>
+        <Sv pointer onClick={() => setCommentModalOpen(true)}>
+          <St b1>🥚 (23)</St>
+        </Sv>
+        <Sv pointer onClick={() => setCommentModalOpen(true)}>
+          <St b1>💬 (3)</St>
+        </Sv>
+      </S.Wrapper>
+      <Sv w={414} />
     </S.Container>
   );
 }
 const S: any = {};
 
 const blur = css`
-  background: ${colors.g2};
+  background: ${colors.white};
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
@@ -28,14 +36,16 @@ const blur = css`
 `;
 
 S.Container = styled(Sv)`
-  position: absolute;
+  position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
-  height: 80px;
   z-index: 3;
   overflow: hidden;
   padding-left: 40px;
   padding-right: 40px;
+`;
+
+S.Wrapper = styled(Sv)`
   ${blur}
 `;

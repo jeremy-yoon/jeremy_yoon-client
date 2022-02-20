@@ -62,16 +62,16 @@ const LeftContainer: React.FC = () => {
           </Sv>
           <Sv mt={40} row gx={20}>
             <Sv pointer onClick={() => setCommentModalOpen(true)}>
-              <St h3>🥚 (23)</St>
+              <St b1>🥚 (23)</St>
             </Sv>
             <Sv pointer onClick={() => setCommentModalOpen(true)}>
-              <St h3>💬 (3)</St>
+              <St b1>💬 (3)</St>
             </Sv>
           </Sv>
         </Sv>
         <RecommendPost />
-        <BottomNav />
       </S.Container>
+      <BottomNav />
       {renderCommentModal()}
     </>
   );
@@ -105,3 +105,8 @@ S.Container = styled(Sv)`
 `;
 
 S.RepresentImage = styled(Image)``;
+
+S.BottomNavContainer = styled.div`
+  position: fixed;
+  bottom: 0;
+`;

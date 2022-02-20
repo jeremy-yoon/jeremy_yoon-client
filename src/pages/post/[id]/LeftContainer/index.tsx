@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import { Sv, St, Profile, Comment, CommentInput } from "components";
@@ -17,16 +17,29 @@ import dummy from "images/dummy.png";
 const LeftContainer: React.FC = () => {
   const router = useRouter();
   const { id } = router.query;
-
+  const bottomNavRef = useRef<HTMLDivElement>(null);
   const [post, setPost] = useState();
-
   const [isCommentModalOpen, setCommentModalOpen] = useState(undefined);
+  const [scrollY, setScrollY] = useState(0);
+  const [bottomNavY, setBottomNavY] = useState(0);
 
-  useEffect(() => {
-    if (id) {
-      getPost(setPost, id);
+  //get y position of bottomNav
+  const getBottomNavY = () => {
+    if (bottomNavRef.current) {
+      console.log(
+        "bottomNavRef.current",
+        bottomNavRef.current.getBoundingClientRect().top
+      );
+      setBottomNavY(bottomNavRef.current.getBoundingClientRect().top);
     }
-  }, [id]);
+    return 0;
+  };
+
+  const renderBottomNav = () => {
+    if (scrollY < bottomNavY) {
+      return <BottomNav />;
+    }
+  };
 
   const renderCommentModal = () => {
     if (isCommentModalOpen) {
@@ -39,6 +52,20 @@ const LeftContainer: React.FC = () => {
       );
     }
   };
+
+  useEffect(() => {
+    if (id) {
+      getPost(setPost, id);
+    }
+  }, [id]);
+
+  useEffect(() => {
+    getBottomNavY();
+  }, []);
+
+  useEffect(() => {
+    console.log("fdadfs");
+  }, [scrollY]);
 
   return (
     <>
@@ -60,7 +87,7 @@ const LeftContainer: React.FC = () => {
               {parse(`${post?.body}`)}
             </St>
           </Sv>
-          <Sv mt={40} row gx={20}>
+          <Sv mt={40} row gx={20} ref={bottomNavRef}>
             <Sv pointer onClick={() => setCommentModalOpen(true)}>
               <St b1>🥚 (23)</St>
             </Sv>
@@ -71,7 +98,7 @@ const LeftContainer: React.FC = () => {
         </Sv>
         <RecommendPost />
       </S.Container>
-      <BottomNav />
+      {renderBottomNav()}
       {renderCommentModal()}
     </>
   );
@@ -94,7 +121,7 @@ S.Container = styled(Sv)`
   width: 1024px;
   max-height: 100vh;
   padding-top: 120px;
-  padding-bottom: 120px;
+  padding-bottom: 64px;
   z-index: 1;
   overflow-y: scroll;
   ${blur}

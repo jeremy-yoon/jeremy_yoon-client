@@ -13,12 +13,17 @@ interface BottomNav {}
 export default function BottomNav({ setCommentModalOpen }) {
   return (
     <S.Container jct>
-      <S.Wrapper w={1024} h={64} row p={24} gx={20}>
-        <Sv pointer onClick={() => setCommentModalOpen(true)}>
-          <St b1>🥚 (23)</St>
+      <S.Wrapper w={1024} h={64} act jsb px={120}>
+        <Sv row gx={20}>
+          <Sv pointer onClick={() => setCommentModalOpen(true)}>
+            <St b1>🥚 (23)</St>
+          </Sv>
+          <Sv pointer onClick={() => setCommentModalOpen(true)}>
+            <St b1>💬 (3)</St>
+          </Sv>
         </Sv>
-        <Sv pointer onClick={() => setCommentModalOpen(true)}>
-          <St b1>💬 (3)</St>
+        <Sv>
+          <St b1>💌 공유하기</St>
         </Sv>
       </S.Wrapper>
       <Sv w={414} />

@@ -17,6 +17,11 @@ a {
   font-family: "Pretendard";
 }
 
+p {
+  margin-left: 0 !important;
+  width: auto !important;
+}
+
 @font-face {
   font-family: "Pretendard";
   font-weight: 900;

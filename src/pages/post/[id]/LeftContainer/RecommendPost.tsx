@@ -11,8 +11,8 @@ const RecommendPost: React.FC = () => {
 
   return (
     <>
-      <Sv h={12} bg={colors.g6} mt={80} />
-      <Sv bg={colors.g7} py={80} px={120}>
+      {/* <Sv h={12} bg={colors.g5} mt={80} /> */}
+      <Sv bg={colors.g6} py={80} px={120} mt={80}>
         <Sv col>
           <St s1 g0 text="이 글을 다 읽었다면" />
           <St s1 g0 text="당신에게 더 추천할 만한 글들" />

@@ -28,4 +28,4 @@ export { PostEditor } from "components/editor/PostEditor";
 //guest-book
 export { PostIt } from "components/guest-book/post-it/PostIt";
 
-export { DraggableSquare } from "components/toys/DraggableSquare";
+export { ProfileContainer } from "components/profile/ProfileContainer";

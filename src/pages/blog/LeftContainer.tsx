@@ -65,8 +65,8 @@ export default function LeftContainer() {
   return (
     <S.Container>
       <Sv row mt={60}>
-        <NavButton title="Do it for " />
-        <TitleText title="fun" />
+        <NavButton title="Jeremy's " />
+        <TitleText title="blog" />
       </Sv>
       <Sv pb={24}></Sv>
       <Sv row gx={20}>
@@ -91,7 +91,7 @@ const S: any = {};
 
 const blur = css`
   background: rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(30px);
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
   -webkit-backdrop-filter: blur(4px);
   border: 1px solid rgba(255, 255, 255, 0.18);

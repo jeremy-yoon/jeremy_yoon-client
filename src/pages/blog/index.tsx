@@ -1,10 +1,9 @@
 import React from "react";
 import Image from "next/image";
-import { Sv, St, ButtonL, PostList } from "components";
+import { Sv, St, ButtonL, ProfileContainer } from "components";
 import styled from "styled-components";
 import { colors } from "styles/colors";
 import LeftContainer from "./LeftContainer";
-import RightContainer from "./RightContainer";
 import blog_bg from "images/blog-bg.jpg";
 import blog_bg2 from "images/blog-bg2.jpg";
 import blog_bg3 from "images/blog-bg3.jpg";
@@ -24,7 +23,7 @@ export default function BlogScreen() {
         <Image src={blog_bg3} width={400} height={400} />
       </S.bg3>
       <LeftContainer />
-      <RightContainer />
+      <ProfileContainer />
     </S.Body>
   );
 }

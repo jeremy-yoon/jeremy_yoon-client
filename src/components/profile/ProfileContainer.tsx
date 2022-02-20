@@ -8,11 +8,13 @@ import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import { getPostList } from "apis/service";
 import { colors } from "styles/colors";
 
-interface RightContainer {}
+interface ProfileContainer {
+  bg: any;
+}
 
-export default function RightContainer() {
+export function ProfileContainer({ bg = "rgba(255, 255, 255, 0.25)" }) {
   return (
-    <S.Container>
+    <S.Container bg={bg}>
       <Sv mt={120} col>
         <SearchInput />
         <Profile />
@@ -24,14 +26,14 @@ export default function RightContainer() {
 const S: any = {};
 
 const blur = css`
-  background: rgba(255, 255, 255, 0.25);
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(30px);
   -webkit-backdrop-filter: blur(4px);
   border: 1px solid rgba(255, 255, 255, 0.18);
 `;
 
 S.Container = styled(Sv)`
+  background: ${(props) => props.bg};
   overflow: hidden;
   width: 414px;
   padding-left: 40px;

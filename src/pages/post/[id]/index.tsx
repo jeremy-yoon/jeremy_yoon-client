@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import Image from "next/image";
-import { Sv, St, Profile, Comment, CommentInput } from "components";
+import { Sv, St, ProfileContainer } from "components";
 import { Row, Col } from "antd";
 import styled from "styled-components";
 import { getRequest, postRequest } from "apis/common";
@@ -11,7 +11,6 @@ import parse from "html-react-parser";
 import CommentModal from "./CommentModal";
 import { getPost } from "apis/service";
 import LeftContainer from "./LeftContainer";
-import RightContainer from "./RightContainer";
 
 const PostScreen: React.FC = () => {
   const router = useRouter();
@@ -30,7 +29,7 @@ const PostScreen: React.FC = () => {
   return (
     <S.Body>
       <LeftContainer />
-      <RightContainer />
+      <ProfileContainer bg={colors.g8} />
     </S.Body>
   );
 };

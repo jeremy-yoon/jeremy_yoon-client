@@ -5,7 +5,6 @@ import { Sv, St, ButtonL, SearchInput, Profile } from "components";
 import { Row, Col } from "antd";
 import styled, { css } from "styled-components";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
-import { getPostList } from "apis/service";
 import { colors } from "styles/colors";
 
 interface ProfileContainer {

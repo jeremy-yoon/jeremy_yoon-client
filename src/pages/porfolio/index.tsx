@@ -11,10 +11,6 @@ export default function PortFolioMainScreen() {
   const [postList, setPostList] = useState([]);
   const [isLoading, setLoading] = useState(true);
 
-  useEffect(() => {
-    getPostList();
-  }, []);
-
   return (
     <S.Body>
       <S.Container>

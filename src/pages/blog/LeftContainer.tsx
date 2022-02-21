@@ -43,7 +43,7 @@ export default function LeftContainer() {
         title={item.title}
         date={moment(item.create_date).format("YYYY-MM-DD")}
         body={item.body}
-        imgSrc={item.represent_image}
+        // imgSrc={item.represent_image}
         href={`/post/${item.id}`}
       />
     ));

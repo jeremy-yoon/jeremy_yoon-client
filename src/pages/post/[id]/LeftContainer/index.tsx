@@ -22,6 +22,7 @@ const LeftContainer: React.FC = () => {
   const [isCommentModalOpen, setCommentModalOpen] = useState(undefined);
   const [scrollY, setScrollY] = useState(0);
   const [bottomNavY, setBottomNavY] = useState(0);
+  const [hitCount, setHitCount] = useState(0);
 
   //get y position of bottomNav
   const getBottomNavY = () => {
@@ -89,7 +90,7 @@ const LeftContainer: React.FC = () => {
           </Sv>
           <Sv mt={40} row gx={20} ref={bottomNavRef}>
             <Sv pointer onClick={() => setCommentModalOpen(true)}>
-              <St b1>🥚 (23)</St>
+              <St b1>🥚 ({hitCount})</St>
             </Sv>
             <Sv pointer onClick={() => setCommentModalOpen(true)}>
               <St b1>💬 (3)</St>

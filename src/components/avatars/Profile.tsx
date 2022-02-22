@@ -26,7 +26,7 @@ export const Profile: React.FC<ProfileProps> = ({
       <St s1 g0 text="Jeremy Yoon" />
       <St b1 g0 text="내 소개" />
       <Sv h={40} />
-      <ButtonL title="연락하기" />
+      <ButtonL title="연락하기" href="/contact" />
     </Sv>
   );
 };

@@ -5,6 +5,7 @@ import styled from "styled-components";
 import { Sv, St, Profile } from "components";
 import { SvTest } from "components/styled-components/StyledComponentTest";
 import dummy from "images/dummy.png";
+import main_bg1 from "images/main-bg1.jpg";
 import { colors } from "styles/colors";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 
@@ -20,7 +21,7 @@ interface PostListProps {
 }
 export const PostList: React.FC<PostListProps> = ({
   href = "/",
-  imgSrc = dummy,
+  imgSrc = main_bg1,
   date = "date",
   category = "category",
   title = "title",
@@ -29,10 +30,10 @@ export const PostList: React.FC<PostListProps> = ({
   viewCount = "viewCount",
 }) => {
   return (
-    <Link href={href}>
-      <Sv pt={32}>
-        <Sv row jsb pointer w="100%">
-          <Sv>
+    <>
+      <Link href={href}>
+        <Sv pt={32} jsb>
+          <Sv pointer w="100%">
             <Sv row>
               <St b1 g0 text={category} />
               <St b1 g2 text={` · ${date}`} />
@@ -41,21 +42,24 @@ export const PostList: React.FC<PostListProps> = ({
               <St s1 g0 mt={4} text={title} />
               <S.BodyText b1 g3 mt={8} text={body} />
             </Sv>
+            <Sv mt={8}>
+              <St c1 g2 text={`${likeCount} · ${viewCount}`} />
+            </Sv>
           </Sv>
-          <S.Image src={imgSrc} width={112} height={112} objectFit="cover" />
+          <S.Image src={imgSrc} width={140} height={140} objectFit="cover" />
         </Sv>
-        <Sv mt={8}>
-          <St c1 g2 text={`${likeCount} · ${viewCount}`} />
-        </Sv>
-        <Sv h={1} bg={colors.g4} mt={32} />
-      </Sv>
-    </Link>
+      </Link>
+      <Sv h={1} bg={colors.g5} mt={32} />
+    </>
   );
 };
 
 const S: any = {};
 
-S.Image = styled(Image)``;
+S.Image = styled(Image)`
+  max-width: 140px;
+  max-height: 140px;
+`;
 
 S.BodyText = styled(St)`
   overflow: hidden;

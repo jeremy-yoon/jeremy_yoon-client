@@ -171,68 +171,57 @@ const h3 = css`
   line-height: 1.4;
 `;
 const s1 = css`
-  font-family: "Pretendard-Bold";
-  font-weight: bold;
+  font-weight: 500;
   font-size: 22px;
   line-height: 1.4;
 `;
 const s2 = css`
-  font-family: "Pretendard-Bold";
-  font-weight: bold;
+  font-weight: 500;
   font-size: 18px;
   line-height: 1.4;
 `;
 const s3 = css`
-  font-family: "Pretendard-Bold";
-  font-weight: bold;
+  font-weight: 500;
   font-size: 16px;
   line-height: 1.4;
 `;
 const s4 = css`
-  font-family: "Pretendard-Bold";
-  font-weight: bold;
+  font-weight: 500;
   font-size: 14px;
   line-height: 1.4;
 `;
 const s5 = css`
-  font-family: "Pretendard-Bold";
-  font-weight: bold;
+  font-weight: 500;
   font-size: 11px;
   line-height: 1.4;
 `;
 const b1 = css`
-  font-family: "Pretendard-Regular";
-  font-style: normal;
-  font-weight: normal;
+  font-weight: 100;
   font-size: 16px;
   line-height: 1.4;
 `;
 const b2 = css`
-  font-family: "Pretendard-Regular";
-  font-style: normal;
-  font-weight: normal;
+  font-weight: 100;
   font-size: 14px;
   line-height: 1.4;
 `;
 const b3 = css`
-  font-family: "Pretendard-Regular";
-  font-style: normal;
-  font-weight: normal;
+  font-weight: 100;
   font-size: 12px;
   line-height: 1.4;
 `;
 const c1 = css`
-  font-family: "Pretendard-Medium";
+  font-weight: 200;
   font-size: 13px;
   line-height: 1.4;
 `;
 const c2 = css`
-  font-family: "Pretendard-Medium";
+  font-weight: 200;
   font-size: 12px;
   line-height: 1.4;
 `;
 const c3 = css`
-  font-family: "Pretendard-Medium";
+  font-weight: 200;
   font-size: 10px;
   line-height: 1.4;
 `;

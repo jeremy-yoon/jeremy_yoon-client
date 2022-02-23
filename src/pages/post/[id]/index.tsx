@@ -27,7 +27,7 @@ const PostScreen: React.FC = () => {
   }, [id]);
 
   return (
-    <S.Body>
+    <S.Body gx={16}>
       <LeftContainer />
       <ProfileContainer bg={colors.g8} />
     </S.Body>

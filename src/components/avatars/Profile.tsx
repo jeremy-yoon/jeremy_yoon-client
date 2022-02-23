@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import styled from "styled-components";
 import { Sv, St, ButtonL } from "components";
-import dummy from "images/dummy.png";
+import profile_me from "images/profile_me.png";
 
 interface ProfileProps {
   href: string;
@@ -14,7 +14,7 @@ interface ProfileProps {
 
 export const Profile: React.FC<ProfileProps> = ({
   href = "/",
-  imgSrc = dummy,
+  imgSrc = profile_me,
   name = "제레미",
   body = "body",
 }) => {
@@ -24,7 +24,8 @@ export const Profile: React.FC<ProfileProps> = ({
         <S.Image src={imgSrc} width={88} height={88} objectFit="cover" />
       </Sv>
       <St s1 g0 text="Jeremy Yoon" />
-      <St b1 g0 text="내 소개" />
+      <Sv h={4} />
+      <St b2 g0 text={`세상에 강한 임팩트를 주고자 하는 개발자 입니다.`} />
       <Sv h={40} />
       <ButtonL title="연락하기" href="/contact" />
     </Sv>

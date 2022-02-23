@@ -25,7 +25,7 @@ export default function BottomNav({ setCommentModalOpen }) {
           <St b1>💌 공유하기</St>
         </Sv>
       </S.Wrapper>
-      <Sv w={414} />
+      <Sv w={430} />
     </S.Container>
   );
 }

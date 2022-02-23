@@ -12,7 +12,7 @@ interface BlogScreen {}
 
 export default function BlogScreen() {
   return (
-    <S.Body>
+    <S.Body gx={16}>
       <S.bg>
         <Image src={blog_bg} width={800} height={800} />
       </S.bg>

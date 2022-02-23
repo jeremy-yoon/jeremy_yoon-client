@@ -76,12 +76,6 @@ export default function LeftContainer() {
       <Sv mb={40}>
         {renderSkeleton()}
         {renderPostList()}
-        <PostList />
-        <PostList />
-        <PostList />
-        <PostList />
-        <PostList />
-        <PostList />
       </Sv>
     </S.Container>
   );

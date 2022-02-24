@@ -31,13 +31,14 @@ const textShadow = css`
 `;
 
 S.SelectedH1 = styled(St)<{ reverse: boolean; duration: number }>`
-  font-size: 100px;
-  font-weight: 800;
-  color: white;
+  font-size: 80px;
+  font-weight: 200;
+  font-style: italic;
+  color: black;
   line-height: 144px;
   ${preventDrag}
 
   transition: all 0.25s linear;
   animation-duration: ${(props) => props.duration}s !important;
-  ${textShadow}
+  /* ${textShadow} */
 `;

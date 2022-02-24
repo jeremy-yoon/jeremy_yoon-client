@@ -20,8 +20,13 @@ export const CategoryList: React.FC<CategoryListProps> = ({
   selectedCategory,
 }) => {
   return (
-    <Sv col p={16}>
-      <St b1 g0 color={selectedCategory ? colors.g0 : colors.g3} text={title} />
+    <Sv col p={12}>
+      <S.BodyText
+        en
+        bold={selectedCategory}
+        color={selectedCategory ? colors.g0 : colors.g4}
+        text={title}
+      />
     </Sv>
   );
 };
@@ -32,4 +37,9 @@ S.Image = styled(Image)`
   max-width: 40px;
   max-height: 40px;
   border-radius: 100px;
+`;
+
+S.BodyText = styled(St)`
+  font-size: 16px;
+  font-weight: ${(props: any) => (props.bold ? "bold" : "normal")};
 `;

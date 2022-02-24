@@ -65,14 +65,14 @@ export default function LeftContainer() {
   return (
     <S.Container>
       <Sv row mt={60}>
-        <NavButton title="Jeremy's " />
+        <NavButton title="JEREMY'S " />
         <TitleText title="blog" />
       </Sv>
-      <Sv pb={24}></Sv>
+      <Sv pb={12}></Sv>
       <Sv row gx={20}>
         {renderCategoryList()}
       </Sv>
-      <Sv h={1} bg={colors.g4}></Sv>
+      <Sv h={1} bg={colors.g5}></Sv>
       <Sv mb={40}>
         {renderSkeleton()}
         {renderPostList()}

@@ -33,8 +33,8 @@ export const NavButton: React.FC<NavButtonProps> = ({
 const S: any = {};
 
 S.SelectedH1 = styled(St)<{ duration: number }>`
-  font-size: 100px;
-  font-weight: 800;
+  font-size: 80px;
+  font-weight: 1000;
   color: black;
   line-height: 144px;
   cursor: pointer;

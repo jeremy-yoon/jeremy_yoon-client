@@ -8,6 +8,7 @@ import dummy from "images/dummy.png";
 import main_bg1 from "images/main-bg1.jpg";
 import { colors } from "styles/colors";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
+import moment from "moment";
 
 interface PostListProps {
   href: any;
@@ -26,24 +27,26 @@ export const PostList: React.FC<PostListProps> = ({
   category = "category",
   title = "title",
   body = "body",
-  likeCount = "likeCount",
-  viewCount = "viewCount",
+  likeCount = "0",
+  viewCount = "0",
 }) => {
   return (
     <>
       <Link href={href}>
         <Sv pt={32} jsb>
           <Sv pointer w="100%">
-            <Sv row>
-              <St b1 g0 text={category} />
-              <St b1 g2 text={` · ${date}`} />
+            <Sv row act>
+              <St c1 g3 text={`Likes ${likeCount} · Views ${viewCount}`} />
             </Sv>
             <Sv col>
-              <St s1 g0 mt={4} text={title} />
-              <S.BodyText b1 g3 mt={8} text={body} />
+              <St s2 g0 mt={4} text={title} />
+              <S.BodyText b2 g2 mt={8} text={body} />
             </Sv>
-            <Sv mt={8}>
-              <St c1 g2 text={`${likeCount} · ${viewCount}`} />
+            <Sv mt={16} row act gx={12}>
+              <Sv bg={colors.g6} br={99} px={12} py={4} ml={-4}>
+                <St b3 g0 text={category} />
+              </Sv>
+              <St b3 g3 text={moment(date).format("YYYY년 MM월 DD일")} />
             </Sv>
           </Sv>
           <S.Image src={imgSrc} width={140} height={140} objectFit="cover" />

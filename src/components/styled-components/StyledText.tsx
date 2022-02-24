@@ -177,7 +177,7 @@ const s1 = css`
 `;
 const s2 = css`
   font-weight: 500;
-  font-size: 18px;
+  font-size: 19px;
   line-height: 1.4;
 `;
 const s3 = css`

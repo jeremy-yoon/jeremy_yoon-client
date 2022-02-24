@@ -20,7 +20,15 @@ export const CategoryList: React.FC<CategoryListProps> = ({
   selectedCategory,
 }) => {
   return (
-    <Sv col p={12}>
+    <Sv
+      col
+      p={12}
+      b={selectedCategory && `1px solid ${colors.g0}`}
+      br={100}
+      act
+      jct
+      style={{ minWidth: 80 }}
+    >
       <S.BodyText
         en
         bold={selectedCategory}

@@ -41,7 +41,7 @@ export default function LeftContainer() {
         key={index}
         category={categoryList[item.category]?.title}
         title={item.title}
-        date={moment(item.create_date).format("YYYY-MM-DD")}
+        date={item.create_date}
         body={item.body}
         // imgSrc={item.represent_image}
         href={`/post/${item.id}`}

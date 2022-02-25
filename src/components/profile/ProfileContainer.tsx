@@ -14,10 +14,17 @@ interface ProfileContainer {
 export function ProfileContainer({ bg = "rgba(255, 255, 255, 0.25)" }) {
   return (
     <S.Container bg={bg}>
-      <Sv mt={120} col>
+      <Sv mt={72} col>
         <SearchInput />
         <Profile />
       </Sv>
+      <S.Footer>
+        <St s1 g3 text="Powered by" />
+        <St b3 g3 text="Next.js" />
+        <St b3 g3 text="Typescript" />
+        <St b3 g3 text="Django" />
+        <St b3 g3 text="Framer-motion" />
+      </S.Footer>
     </S.Container>
   );
 }
@@ -39,4 +46,13 @@ S.Container = styled(Sv)`
   padding-right: 40px;
   z-index: 1;
   ${blur}
+`;
+
+S.Footer = styled(Sv)`
+  position: fixed;
+  bottom: 40px;
+  left: 40px;
+  right: 0;
+  display: flex;
+  flex-direction: column;
 `;

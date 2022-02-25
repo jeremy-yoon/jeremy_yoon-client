@@ -12,6 +12,7 @@ export { Comment } from "components/lists/Comment";
 
 //buttons
 export { ButtonL } from "components/buttons/ButtonL";
+export { NavigationButton } from "components/buttons/NavigationButton";
 export { MainLogo } from "components/buttons/MainLogo";
 
 //inputs

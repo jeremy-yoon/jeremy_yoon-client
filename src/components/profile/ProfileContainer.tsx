@@ -11,7 +11,7 @@ interface ProfileContainer {
   bg: any;
 }
 
-export function ProfileContainer({ bg = "rgba(255, 255, 255, 0.25)" }) {
+export function ProfileContainer({ bg = "rgba(255, 255, 255, 0.4)" }) {
   return (
     <S.Container bg={bg}>
       <Sv mt={72} col>
@@ -19,11 +19,13 @@ export function ProfileContainer({ bg = "rgba(255, 255, 255, 0.25)" }) {
         <Profile />
       </Sv>
       <S.Footer>
-        <St s1 g3 text="Powered by" />
-        <St b3 g3 text="Next.js" />
-        <St b3 g3 text="Typescript" />
-        <St b3 g3 text="Django" />
-        <St b3 g3 text="Framer-motion" />
+        <St s2 g3 weight={600} text="Powered by" />
+        <Sv mt={4} row gx={12} wrap>
+          <St b3 g4 text="Next.js" />
+          <St b3 g4 text="Typescript" />
+          <St b3 g4 text="Django" />
+          <St b3 g4 text="Framer-motion" />
+        </Sv>
       </S.Footer>
     </S.Container>
   );

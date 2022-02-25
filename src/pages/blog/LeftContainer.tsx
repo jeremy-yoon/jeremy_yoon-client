@@ -72,9 +72,10 @@ export default function LeftContainer() {
       <Sv row gx={20}>
         {renderCategoryList()}
       </Sv>
-      <Sv h={1} bg={colors.g5}></Sv>
+      {/* <Sv h={1} bg={colors.g5}></Sv> */}
       <Sv mb={40}>
         {renderSkeleton()}
+        {renderPostList()}
         {renderPostList()}
       </Sv>
     </S.Container>

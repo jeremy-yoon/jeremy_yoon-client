@@ -34,7 +34,7 @@ export const PostList: React.FC<PostListProps> = ({
     <>
       <Link href={href}>
         <Sv pt={32} jsb>
-          <Sv pointer w="100%">
+          <Sv pointer>
             <Sv row act>
               <St c1 g3 text={`Likes ${likeCount} · Views ${viewCount}`} />
             </Sv>
@@ -49,7 +49,9 @@ export const PostList: React.FC<PostListProps> = ({
               <St b3 g3 text={moment(date).format("YYYY년 MM월 DD일")} />
             </Sv>
           </Sv>
-          <S.Image src={imgSrc} width={140} height={140} objectFit="cover" />
+          <Sv w={140} h={140}>
+            <S.Image src={imgSrc} width={140} height={140} objectFit="cover" />
+          </Sv>
         </Sv>
       </Link>
       <Sv h={1} bg={colors.g5} mt={32} />

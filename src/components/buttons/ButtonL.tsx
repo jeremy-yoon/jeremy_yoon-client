@@ -10,18 +10,29 @@ interface ButtonLProps {
   onClick?: Function;
   href?: string;
   title: string;
+  line?: boolean;
 }
 
 export const ButtonL: React.FC<ButtonLProps> = ({
   onClick,
   href = "/",
   title = "title",
+  line,
 }) => {
   return (
     <Link href={href}>
-      <Sv onClick={onClick} act jct py={8} px={20} pointer bg={colors.black}>
-        <St white>{title}</St>
-      </Sv>
+      <S.Container
+        onClick={onClick}
+        act
+        jct
+        py={8}
+        px={20}
+        pointer
+        bg={colors.black}
+        line={line}
+      >
+        <St white={!line}>{title}</St>
+      </S.Container>
     </Link>
   );
 };
@@ -29,3 +40,10 @@ export const ButtonL: React.FC<ButtonLProps> = ({
 const S: any = {};
 
 S.Image = styled(Image)``;
+
+S.Container = styled(Sv)`
+  background-color: ${(props: any) =>
+    props.line ? "transparent" : colors.black};
+  border: ${(props: any) =>
+    props.line ? `1px solid ${colors.black}` : "none"};
+`;

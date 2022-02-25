@@ -36,13 +36,8 @@ S.SelectedH1 = styled(St)<{ duration: number }>`
   font-size: 80px;
   font-weight: 1000;
   color: black;
-  line-height: 144px;
   cursor: pointer;
 
   transition: all 0.25s;
   /* animation-duration: ${(props) => props.duration}s !important; */
-
-  :hover {
-    transform: scale(1.05);
-  }
 `;

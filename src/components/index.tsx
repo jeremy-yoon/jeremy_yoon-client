@@ -12,7 +12,7 @@ export { Comment } from "components/lists/Comment";
 
 //buttons
 export { ButtonL } from "components/buttons/ButtonL";
-// export { RateStar } from "components/buttons/RateStar";
+export { MainLogo } from "components/buttons/MainLogo";
 
 //inputs
 export { CommentInput } from "components/inputs/CommentInput";

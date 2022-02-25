@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Sv, St, ButtonL, PostList, PostListSkeleton } from "components";
+import { Sv, St, MainLogo, PostList, PostListSkeleton } from "components";
 import { CategoryList, TitleText, NavButton } from "./components";
 import { Row, Col } from "antd";
 import styled, { css } from "styled-components";
@@ -64,9 +64,12 @@ export default function LeftContainer() {
 
   return (
     <S.Container>
-      <Sv row mt={60}>
-        <NavButton title="JEREMY'S " />
-        <TitleText title="blog" />
+      <Sv mt={60}>
+        <MainLogo />
+        <Sv row>
+          <NavButton title="JEREMY'S " />
+          <TitleText title="blog" />
+        </Sv>
       </Sv>
       <Sv pb={12}></Sv>
       <Sv row gx={20}>

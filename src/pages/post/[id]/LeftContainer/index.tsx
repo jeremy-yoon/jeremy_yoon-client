@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/router";
 import Image from "next/image";
-import { Sv, St, Profile, Comment, CommentInput } from "components";
+import { Sv, St, MainLogo, Comment, CommentInput } from "components";
 import { Row, Col } from "antd";
 import styled, { css } from "styled-components";
 import { getRequest, postRequest } from "apis/common";
@@ -72,6 +72,7 @@ const LeftContainer: React.FC = () => {
     <>
       <S.Container>
         <Sv px={120}>
+          <MainLogo />
           <Sv col>
             <St h2 g0 title>
               {post?.title}
@@ -121,7 +122,7 @@ S.Container = styled(Sv)`
   position: relative;
   width: 1024px;
   max-height: 100vh;
-  padding-top: 120px;
+  padding-top: 72px;
   padding-bottom: 64px;
   z-index: 1;
   overflow-y: scroll;

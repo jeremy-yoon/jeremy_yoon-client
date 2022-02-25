@@ -55,6 +55,8 @@ interface StProps {
   center: any;
   left: any;
   right: any;
+  size: number;
+  weight: number;
   z: any;
   en: any;
   title: any;
@@ -147,6 +149,9 @@ export const StyledText: any = styled.span<StProps>`
   ${(props) => props.center && center}
   ${(props) => props.left && left}
   ${(props) => props.right && right}
+
+  ${(props) => props.size && size}
+  ${(props) => props.weight && weight}
 
   ${(props) => props.z && z}
 
@@ -335,6 +340,16 @@ const my = css<{ my: any }>`
 
 const z = css<{ z: any }>`
   z-index: ${(props) => props.z};
+`;
+
+//------------------------------------------------------------------
+
+const size = css<{ size: any }>`
+  font-size: ${(props) => props.size}px !important;
+`;
+
+const weight = css<{ weight: any }>`
+  font-weight: ${(props) => props.weight};
 `;
 
 //------------------------------------------------------------------

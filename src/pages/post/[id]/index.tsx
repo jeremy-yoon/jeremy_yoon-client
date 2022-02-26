@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import Image from "next/image";
-import { Sv, St, ProfileContainer } from "components";
+import { Sv, St, ProfileContainer, Navigation } from "components";
 import { Row, Col } from "antd";
 import styled from "styled-components";
 import { getRequest, postRequest } from "apis/common";
@@ -28,6 +28,7 @@ const PostScreen: React.FC = () => {
 
   return (
     <S.Body gx={16}>
+      <Navigation />
       <LeftContainer />
       <ProfileContainer bg={colors.g8} />
     </S.Body>

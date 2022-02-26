@@ -11,7 +11,7 @@ interface BottomNav {}
 
 export default function BottomNav({ setCommentModalOpen }) {
   return (
-    <S.Container jct>
+    <S.Container jct pt={20}>
       <S.Wrapper w={1024} h={64} act jsb px={120}>
         <Sv row gx={20}>
           <Sv pointer onClick={() => setCommentModalOpen(true)}>
@@ -25,7 +25,7 @@ export default function BottomNav({ setCommentModalOpen }) {
           <St b1>💌 공유하기</St>
         </Sv>
       </S.Wrapper>
-      <Sv w={430} />
+      <Sv w={358} />
     </S.Container>
   );
 }
@@ -33,7 +33,7 @@ const S: any = {};
 
 const blur = css`
   background: ${colors.white};
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   border: 1px solid rgba(255, 255, 255, 0.18);

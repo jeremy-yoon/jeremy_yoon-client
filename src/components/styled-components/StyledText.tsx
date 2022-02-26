@@ -201,17 +201,17 @@ const s5 = css`
   line-height: 1.4;
 `;
 const b1 = css`
-  font-weight: 100;
+  font-weight: 200;
   font-size: 16px;
   line-height: 1.4;
 `;
 const b2 = css`
-  font-weight: 100;
+  font-weight: 200;
   font-size: 14px;
   line-height: 1.4;
 `;
 const b3 = css`
-  font-weight: 100;
+  font-weight: 200;
   font-size: 12px;
   line-height: 1.4;
 `;

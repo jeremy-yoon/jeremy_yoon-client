@@ -37,7 +37,7 @@ const S: any = {};
 S.SelectedH1 = styled(St)<{ duration: number }>`
   font-size: 170px;
   font-weight: 800;
-  color: black;
+  color: ${colors.g0};
   filter: invert(100%);
   mix-blend-mode: difference;
   letter-spacing: 0.05em;

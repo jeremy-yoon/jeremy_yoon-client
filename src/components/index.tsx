@@ -29,4 +29,6 @@ export { PostEditor } from "components/editor/PostEditor";
 //guest-book
 export { PostIt } from "components/guest-book/post-it/PostIt";
 
+export { Navigation } from "components/navigations/Navigation";
+
 export { ProfileContainer } from "components/profile/ProfileContainer";

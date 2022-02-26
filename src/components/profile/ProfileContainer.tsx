@@ -29,7 +29,7 @@ export function ProfileContainer({ bg = "rgba(255, 255, 255, 0.4)" }) {
         <St
           mt={16}
           b2
-          g3
+          g4
           text="Copyrightⓒ 2022 All rights reserved by Jeremy Yoon"
         />
       </S.Footer>

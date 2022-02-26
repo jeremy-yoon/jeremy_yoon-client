@@ -59,7 +59,7 @@ const slidUpSet = css`
 S.Body = styled(Sv)`
   flex: 1;
   overflow: hidden;
-  background-color: #e5e5e5;
+  background-color: ${colors.g7};
 `;
 
 S.MainContainer = styled(Sv)`

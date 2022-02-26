@@ -28,7 +28,7 @@ export const ButtonL: React.FC<ButtonLProps> = ({
         py={8}
         px={20}
         pointer
-        bg={colors.black}
+        bg={colors.g0}
         line={line}
       >
         <St white={!line}>{title}</St>
@@ -42,8 +42,7 @@ const S: any = {};
 S.Image = styled(Image)``;
 
 S.Container = styled(Sv)`
-  background-color: ${(props: any) =>
-    props.line ? "transparent" : colors.black};
-  border: ${(props: any) =>
-    props.line ? `1px solid ${colors.black}` : "none"};
+  border-radius: 2px;
+  background-color: ${(props: any) => (props.line ? "transparent" : colors.g0)};
+  border: ${(props: any) => (props.line ? `1px solid ${colors.g4}` : "none")};
 `;

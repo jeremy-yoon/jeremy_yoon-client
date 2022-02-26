@@ -19,10 +19,10 @@ export const MainLogo: React.FC<MainLogoProps> = ({
   return (
     <Link href={href}>
       <Sv py={16} pointer>
-        <St s1 weight={900} size={size} en>
+        <St s1 weight={900} size={size} en g0>
           Jeremy
         </St>
-        <St s1 weight={200} size={size} en>
+        <St s1 weight={200} size={size} en g0>
           yoon!
         </St>
       </Sv>

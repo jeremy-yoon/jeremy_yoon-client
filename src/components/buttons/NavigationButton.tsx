@@ -10,17 +10,24 @@ interface NavigationButtonProps {
   onClick?: Function;
   href?: string;
   selected?: boolean;
+  icon?: any;
 }
 
 export const NavigationButton: React.FC<NavigationButtonProps> = ({
   onClick,
   href = "/blog",
   selected,
+  icon = ic_home,
 }) => {
   return (
     <Link href={href}>
       <S.Container py={16} pointer selected={selected}>
-        <Sv as={ic_home} width={16} stroke="blue" />
+        <Sv
+          as={icon}
+          width={20}
+          fill={selected ? colors.g0 : "none"}
+          stroke={selected ? "none" : colors.g4}
+        />
       </S.Container>
     </Link>
   );

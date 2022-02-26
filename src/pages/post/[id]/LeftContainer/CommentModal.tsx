@@ -20,7 +20,7 @@ const CommentModal: React.FC<CommentModalProps> = ({
   isCommentModalOpen,
   setCommentModalOpen,
 }) => {
-  const [commentList, setCommentList] = useState();
+  const [commentList, setCommentList] = useState([]);
   const [commentContent, setCommentContent] = useState("");
 
   const getCommentList = async () => {
@@ -34,7 +34,6 @@ const CommentModal: React.FC<CommentModalProps> = ({
   };
 
   const postComment = async () => {
-    console.log("Dfddf");
     try {
       const result = await postRequest(`/${postId}/comments/`, {
         content: commentContent,
@@ -42,7 +41,21 @@ const CommentModal: React.FC<CommentModalProps> = ({
       console.log("postComment", result);
       getCommentList();
     } catch (e) {
-      console.log(e.response);
+      console.log(e);
+    }
+  };
+
+  const renderCommentList = () => {
+    if (commentList.length > 0) {
+      return commentList.map((v: any) => (
+        <Comment body={v.content} date={v.create_date} />
+      ));
+    } else {
+      return (
+        <Sv act jct f={1}>
+          <St g4 b1 text="첫 번째로 댓글을 달아보세요!" />
+        </Sv>
+      );
     }
   };
 
@@ -64,16 +77,16 @@ const CommentModal: React.FC<CommentModalProps> = ({
             💬
           </St>
         </S.OpenButton>
-        <S.ModalContainer p={24} bg={colors.white} aed>
-          <Sv w="100%">
+        <S.ModalContainer p={24} bg={colors.white} aed f={1}>
+          <Sv col f={1} h="100%">
             <Sv h={1} bg={colors.g6} />
-            {commentList?.map((v, i) => (
-              <Comment body={v.content} date={v.create_date} />
-            ))}
+            <Sv f={1} col jed mb={24}>
+              {renderCommentList()}
+            </Sv>
             <CommentInput
               value={commentContent}
               onChange={(e) => setCommentContent(e.target.value)}
-              onClickRegister={() => postComment()}
+              onClickRegister={postComment}
             />
           </Sv>
         </S.ModalContainer>
@@ -110,11 +123,11 @@ S.Body = styled(Sv)`
   top: 0;
   right: -378px;
   bottom: 0;
-  width: 428px;
+  width: 528px;
   display: flex;
   align-items: center;
   max-width: 512px;
-  z-index: 2;
+  z-index: 3;
 
   animation-duration: 0.25s;
   animation-timing-function: ease-in-out;
@@ -139,7 +152,7 @@ S.Overlay = styled(Sv)`
   right: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.1);
-  z-index: 1;
+  z-index: 3;
   transition: 1s;
   opacity: ${(props) => (props.isCommentModalOpen ? 1 : 0)};
   display: ${(props) => (props.isCommentModalOpen ? "inline" : "none")};

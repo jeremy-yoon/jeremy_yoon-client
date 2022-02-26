@@ -27,14 +27,14 @@ export const CommentInput: React.FC<CommentInputProps> = ({
 }) => {
   return (
     <>
-      <Sv h={1} bg={colors.g6} />
-      <Sv py={16}>
+      <S.Container p={16}>
         <Sv row act>
           <St c1 g2>
             이름 :
           </St>
           <S.Input placeholder="작성자로 표시될 이름을 알려주세요." />
         </Sv>
+        <Sv h={1} bg={colors.g6} />
         <Sv mt={8}>
           <S.Textarea
             placeholder="댓글을 입력하세요."
@@ -43,9 +43,9 @@ export const CommentInput: React.FC<CommentInputProps> = ({
           />
         </Sv>
         <Sv mt={4}>
-          <ButtonL title="등록하기" onClick={onClickRegister} href="/" />
+          <ButtonL title="등록하기" onClick={onClickRegister} />
         </Sv>
-      </Sv>
+      </S.Container>
       <Sv h={1} bg={colors.g6} />
     </>
   );
@@ -55,21 +55,36 @@ const S: any = {};
 
 S.Image = styled(Image)``;
 
+S.Container = styled(Sv)`
+  background-color: ${colors.white};
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+`;
+
 S.Input = styled.input`
   width: 280px;
-  border-radius: 20px;
+  border-radius: 2px;
   padding: 8px;
   border: none;
+  font-size: 13px;
+  &:focus {
+    outline: none;
+  }
   ::placeholder {
-    color: ${colors.g3};
+    color: ${colors.g4};
   }
 `;
 
 S.Textarea = styled.textarea`
   width: 100%;
-  height: 80px;
-  border-radius: 20px;
-  background-color: ${colors.g6};
-  padding: 8px 16px;
+  height: 100px;
+  border-radius: 2px;
+  padding: 8px 0px;
   border: none;
+  &:focus {
+    outline: none;
+  }
+  ::placeholder {
+    color: ${colors.g4};
+  }
 `;

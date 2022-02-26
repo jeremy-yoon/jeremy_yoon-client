@@ -24,7 +24,9 @@ export const Comment: React.FC<CommentProps> = ({
     <>
       <Sv py={12}>
         <Sv>
-          <St s3>작성자</St>
+          <St c2 weight={500}>
+            작성자
+          </St>
           <St c2 g2 ml={8}>
             {moment(date).format("YYYY년 M월 D일")}
           </St>

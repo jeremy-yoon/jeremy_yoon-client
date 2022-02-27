@@ -57,6 +57,7 @@ interface StProps {
   right: any;
   size: number;
   weight: number;
+  style: string;
   z: any;
   en: any;
   title: any;
@@ -66,6 +67,7 @@ export const StyledText: any = styled.span<StProps>`
   word-break: break-word;
   font-family: "Pretendard";
   white-space: pre-wrap;
+  line-height: 1.4;
 
   ${(props) => props.h1 && h1}
   ${(props) => props.h2 && h2}
@@ -152,6 +154,7 @@ export const StyledText: any = styled.span<StProps>`
 
   ${(props) => props.size && size}
   ${(props) => props.weight && weight}
+  ${(props) => props.style && style}
 
   ${(props) => props.z && z}
 
@@ -350,6 +353,10 @@ const size = css<{ size: any }>`
 
 const weight = css<{ weight: any }>`
   font-weight: ${(props) => props.weight};
+`;
+
+const style = css<{ style: any }>`
+  font-style: ${(props) => props.style};
 `;
 
 //------------------------------------------------------------------

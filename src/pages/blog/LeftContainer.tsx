@@ -9,6 +9,7 @@ import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import { getCategoryList, getPostList } from "apis/service";
 import { colors } from "styles/colors";
 import moment from "moment";
+import main_bg1 from "images/blog-bg.jpg";
 
 interface LeftContainer {}
 
@@ -63,25 +64,36 @@ export default function LeftContainer() {
   };
 
   return (
-    <S.Container>
-      <Sv mt={60}>
-        <MainLogo />
-        <Sv row>
+    <>
+      <S.Container>
+        <S.Bg>
+          {/* <Image src={main_bg1} layout="fill" objectFit="cover" /> */}
+        </S.Bg>
+        <Sv mt={60}>
+          <MainLogo />
+          <Sv row mt={16}>
+            <NavButton title="WELCOME" />
+            <TitleText title=" to" />
+          </Sv>
+          <Sv mt={16}>
+            <NavButton title="JEREMY'S BLOG" />
+          </Sv>
+          {/* <Sv row>
           <NavButton title="JEREMY'S " />
           <TitleText title="blog" />
+        </Sv> */}
         </Sv>
-      </Sv>
-      <Sv pb={12}></Sv>
-      <Sv row gx={20}>
-        {renderCategoryList()}
-      </Sv>
-      {/* <Sv h={1} bg={colors.g5}></Sv> */}
-      <Sv mb={40}>
+        <Sv mt={30} row gx={20}>
+          {renderCategoryList()}
+        </Sv>
+        <Sv h={1} bg={colors.g5}></Sv>
+        <Sv h={24} />
         {renderSkeleton()}
         {renderPostList()}
         {renderPostList()}
-      </Sv>
-    </S.Container>
+        <Sv h={40} />
+      </S.Container>
+    </>
   );
 }
 
@@ -107,4 +119,13 @@ S.Container = styled(Sv)`
     width: 0px;
     display: none;
   }
+`;
+
+S.Bg = styled(Sv)`
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  right: 24px;
+  height: 250px;
+  z-index: -1;
 `;

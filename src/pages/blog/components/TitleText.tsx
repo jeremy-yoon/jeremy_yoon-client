@@ -34,6 +34,7 @@ S.SelectedH1 = styled(St)<{ reverse: boolean; duration: number }>`
   font-size: 80px;
   font-weight: 200;
   font-style: italic;
+  line-height: 1;
   color: black;
   ${preventDrag}
 

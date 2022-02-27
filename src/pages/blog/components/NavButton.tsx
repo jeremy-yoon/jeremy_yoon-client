@@ -34,7 +34,8 @@ const S: any = {};
 
 S.SelectedH1 = styled(St)<{ duration: number }>`
   font-size: 80px;
-  font-weight: 1000;
+  font-weight: 800;
+  line-height: 1;
   color: black;
   cursor: pointer;
 

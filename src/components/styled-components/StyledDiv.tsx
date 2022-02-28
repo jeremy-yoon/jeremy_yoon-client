@@ -2,11 +2,11 @@ import styled, { css } from "styled-components";
 import { colors } from "styles/colors";
 
 interface SvProps {
-  w: any;
-  h: any;
+  w: number | string;
+  h: number | string;
   f: number;
   b: string;
-  br: number;
+  br: number | string;
   row: boolean;
   col: boolean;
   ct: boolean;
@@ -17,34 +17,32 @@ interface SvProps {
   act: boolean;
   jct: boolean;
   jsb: boolean;
-  g: any;
-  gx: any;
-  gy: any;
-  white: any;
-  m: any;
-  mt: any;
-  mb: any;
-  ml: any;
-  mr: any;
-  mx: any;
-  my: any;
-  p: any;
-  pt: any;
-  pb: any;
-  pl: any;
-  pr: any;
-  px: any;
-  py: any;
-  position: any;
-  top: any;
-  bottom: any;
-  left: any;
-  right: any;
+  g: number | string;
+  gx: number | string;
+  gy: number | string;
+  m: number | string;
+  mt: number | string;
+  mb: number | string;
+  ml: number | string;
+  mr: number | string;
+  mx: number | string;
+  my: number | string;
+  p: number | string;
+  pt: number | string;
+  pb: number | string;
+  pl: number | string;
+  pr: number | string;
+  px: number | string;
+  py: number | string;
+  position: string;
+  top: number | string;
+  bottom: number | string;
+  left: number | string;
+  right: number | string;
   bg: any;
-  center: any;
-  pointer: any;
-  z: any;
-  wrap: any;
+  pointer: boolean;
+  z: number;
+  wrap: boolean;
 }
 
 export const Sv: any = styled.div<SvProps>`
@@ -79,7 +77,6 @@ ${(props) => props.br && br} //border-radius
   ${(props) => props.gx && gx}
   ${(props) => props.gy && gy}
 
-  ${(props) => props.white && white}
   /*마진 속성*/
   ${(props) => props.m && m}
   ${(props) => props.mt && mt}
@@ -217,10 +214,6 @@ const gx = css<{ gx: any }>`
 const gy = css<{ gy: any }>`
   display: flex;
   row-gap: ${(props) => props.gy}px;
-`;
-
-const white = css`
-  background-color: white;
 `;
 
 const disableSelect = css`

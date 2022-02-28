@@ -13,6 +13,7 @@ import RecommendPost from "./RecommendPost";
 import BottomNav from "./BottomNav";
 import { getPost } from "apis/service";
 import dummy from "images/dummy.png";
+import ic_comment from "images/svg/ic_comment.svg";
 
 const LeftContainer: React.FC = () => {
   const router = useRouter();
@@ -93,8 +94,15 @@ const LeftContainer: React.FC = () => {
             <Sv pointer onClick={() => setCommentModalOpen(true)}>
               <St b1>🥚 ({hitCount})</St>
             </Sv>
-            <Sv pointer onClick={() => setCommentModalOpen(true)}>
-              <St b1>💬 (3)</St>
+            <Sv
+              pointer
+              row
+              act
+              gx={8}
+              onClick={() => setCommentModalOpen(true)}
+            >
+              <Sv as={ic_comment} width={24} height={24} stroke={colors.g3} />
+              <St b2>3</St>
             </Sv>
           </Sv>
         </Sv>

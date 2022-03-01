@@ -69,19 +69,17 @@ export default function LeftContainer() {
         <S.Bg>
           {/* <Image src={main_bg1} layout="fill" objectFit="cover" /> */}
         </S.Bg>
-        <Sv mt={60}>
+        <Sv>
           <MainLogo />
           <Sv row mt={16}>
-            <NavButton title="WELCOME" />
-            <TitleText title=" to" />
+            <S.Title>
+              WELCOME
+              <S.Title text=" to" weight={200} italic />
+            </S.Title>
           </Sv>
-          <Sv mt={16}>
-            <NavButton title="JEREMY'S BLOG" />
+          <Sv>
+            <S.Title text="JEREMY'S BLOG" />
           </Sv>
-          {/* <Sv row>
-          <NavButton title="JEREMY'S " />
-          <TitleText title="blog" />
-        </Sv> */}
         </Sv>
         <Sv mt={30} row gx={20}>
           {renderCategoryList()}
@@ -112,12 +110,18 @@ S.Container = styled(Sv)`
   max-height: 100vh;
   padding-left: 120px;
   padding-right: 120px;
+  padding-top: 60px;
   z-index: 1;
   overflow-y: scroll;
   ${blur}
   ::-webkit-scrollbar {
     width: 0px;
     display: none;
+  }
+  @media only screen and (max-width: 768px) {
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-top: 24px;
   }
 `;
 
@@ -128,4 +132,15 @@ S.Bg = styled(Sv)`
   right: 24px;
   height: 250px;
   z-index: -1;
+`;
+
+S.Title = styled(St)`
+  font-size: 80px;
+  font-weight: ${(props) => props.weight || 800};
+  font-style: ${(props) => (props.italic ? "italic" : "normal")};
+  color: ${colors.g0};
+  font-family: "Gilroy";
+  @media only screen and (max-width: 414px) {
+    font-size: 16vw;
+  }
 `;

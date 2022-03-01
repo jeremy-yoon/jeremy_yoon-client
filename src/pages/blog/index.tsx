@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { Sv, St, ButtonL, ProfileContainer, Navigation } from "components";
 import styled from "styled-components";
@@ -7,10 +7,31 @@ import LeftContainer from "./LeftContainer";
 import blog_bg from "images/blog-bg.jpg";
 import blog_bg2 from "images/blog-bg2.jpg";
 import blog_bg3 from "images/blog-bg3.jpg";
+import { useWindowSize } from "@react-hook/window-size";
 
 interface BlogScreen {}
 
 export default function BlogScreen() {
+  const [width] = useWindowSize();
+  const [isTablet, setIsTablet] = useState(false);
+
+  useEffect(() => {
+    setIsTablet(width < 1024);
+    console.log(width, isTablet);
+  }, [width]);
+
+  const renderProfileContainer = () => {
+    if (!isTablet) {
+      return <ProfileContainer />;
+    }
+  };
+
+  const renderNavigation = () => {
+    if (!isTablet) {
+      return <Navigation />;
+    }
+  };
+
   return (
     <S.Body gx={16}>
       <S.bg>
@@ -22,9 +43,9 @@ export default function BlogScreen() {
       <S.bg3>
         <Image src={blog_bg3} width={400} height={400} />
       </S.bg3>
-      <Navigation />
+      {renderNavigation()}
       <LeftContainer />
-      <ProfileContainer />
+      {renderProfileContainer()}
     </S.Body>
   );
 }

@@ -31,39 +31,52 @@ export const PostList: React.FC<PostListProps> = ({
   viewCount = "0",
 }) => {
   return (
-    <>
-      <Link href={href}>
-        <Sv pt={32} jsb>
+    <Link href={href}>
+      <>
+        <S.Container jsb>
           <Sv pointer>
             <Sv row act>
-              <St c1 g3 text={`Likes ${likeCount} · Views ${viewCount}`} />
+              <St c2 g3 text={`Likes ${likeCount} · Views ${viewCount}`} />
             </Sv>
             <Sv col>
               <St s2 g0 mt={4} text={title} />
               <S.BodyText b2 g2 mt={8} text={body} />
             </Sv>
             <Sv mt={16} row act gx={12}>
-              <Sv bg={colors.g6} br={99} px={12} py={4} ml={-4}>
-                <St b3 g0 text={category} />
+              <Sv bg={colors.g6} br={99} px={8} py={2} ml={-4}>
+                <St c1 g0 text={category} />
               </Sv>
-              <St b3 g3 text={moment(date).format("YYYY년 MM월 DD일")} />
+              <St c1 g3 text={moment(date).format("YYYY년 MM월 DD일")} />
             </Sv>
           </Sv>
-          <Sv w={140} h={140}>
-            <S.Image src={imgSrc} width={140} height={140} objectFit="cover" />
-          </Sv>
-        </Sv>
-      </Link>
-      <Sv h={1} bg={colors.g5} mt={32} />
-    </>
+          <S.ImageWrapper>
+            <Image src={imgSrc} width={140} height={140} objectFit="cover" />
+          </S.ImageWrapper>
+        </S.Container>
+        <Sv h={1} bg={colors.g5} />
+      </>
+    </Link>
   );
 };
 
 const S: any = {};
 
-S.Image = styled(Image)`
+S.ImageWrapper = styled(Sv)`
   max-width: 140px;
   max-height: 140px;
+  @media only screen and (max-width: 768px) {
+    max-width: 64px;
+    max-height: 64px;
+  }
+`;
+
+S.Container = styled(Sv)`
+  padding-top: 32px;
+  padding-bottom: 32px;
+  @media only screen and (max-width: 768px) {
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
 `;
 
 S.BodyText = styled(St)`

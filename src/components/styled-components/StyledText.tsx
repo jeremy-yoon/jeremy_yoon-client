@@ -67,6 +67,7 @@ export const StyledText: any = styled.span<StProps>`
   word-break: break-word;
   font-family: "Pretendard";
   white-space: pre-wrap;
+  word-break: keep-all;
   line-height: 1.4;
 
   ${(props) => props.h1 && h1}

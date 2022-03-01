@@ -11,14 +11,31 @@ import parse from "html-react-parser";
 import CommentModal from "./CommentModal";
 import { getPost } from "apis/service";
 import LeftContainer from "./LeftContainer";
+import { useWindowSize } from "@react-hook/window-size";
 
 const PostScreen: React.FC = () => {
+  const [width] = useWindowSize();
   const router = useRouter();
   const { id } = router.query;
-
   const [post, setPost] = useState();
-
+  const [isTablet, setIsTablet] = useState(false);
   const [isCommentModalOpen, setCommentModalOpen] = useState(undefined);
+
+  const renderNavigation = () => {
+    if (!isTablet) {
+      return <Navigation />;
+    }
+  };
+
+  const renderProfileContainer = () => {
+    if (!isTablet) {
+      return <ProfileContainer bg={colors.g8} />;
+    }
+  };
+
+  useEffect(() => {
+    setIsTablet(width < 1024);
+  }, [width]);
 
   useEffect(() => {
     if (id) {
@@ -28,9 +45,9 @@ const PostScreen: React.FC = () => {
 
   return (
     <S.Body gx={16}>
-      <Navigation />
+      {renderNavigation()}
       <LeftContainer />
-      <ProfileContainer bg={colors.g8} />
+      {renderProfileContainer()}
     </S.Body>
   );
 };

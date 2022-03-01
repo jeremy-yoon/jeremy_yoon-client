@@ -15,11 +15,6 @@ export default function BlogScreen() {
   const [width] = useWindowSize();
   const [isTablet, setIsTablet] = useState(false);
 
-  useEffect(() => {
-    setIsTablet(width < 1024);
-    console.log(width, isTablet);
-  }, [width]);
-
   const renderProfileContainer = () => {
     if (!isTablet) {
       return <ProfileContainer />;
@@ -31,6 +26,10 @@ export default function BlogScreen() {
       return <Navigation />;
     }
   };
+
+  useEffect(() => {
+    setIsTablet(width < 1024);
+  }, [width]);
 
   return (
     <S.Body gx={16}>

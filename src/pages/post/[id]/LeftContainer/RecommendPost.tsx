@@ -12,7 +12,7 @@ const RecommendPost: React.FC = () => {
   return (
     <>
       <Sv h={16} bg={colors.g6} mt={80} />
-      <Sv bg={colors.g10} py={80} px={120} mt={80}>
+      <S.Wrapper bg={colors.g10} py={80}>
         <Sv col>
           <St s1 g0 text="이 글을 다 읽었다면" />
           <St s1 g0 text="당신에게 더 추천할 만한 글들" />
@@ -22,7 +22,7 @@ const RecommendPost: React.FC = () => {
           <PostList />
           <PostList />
         </Sv>
-      </Sv>
+      </S.Wrapper>
     </>
   );
 };
@@ -32,3 +32,14 @@ export default RecommendPost;
 const S: any = {};
 
 S.Container = styled(Sv)``;
+
+S.Wrapper = styled(Sv)`
+  padding-left: 120px;
+  padding-right: 120px;
+  padding-top: 80px;
+  @media only screen and (max-width: 768px) {
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-top: 24px;
+  }
+`;

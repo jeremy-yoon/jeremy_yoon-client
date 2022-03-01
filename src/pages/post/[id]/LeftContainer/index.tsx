@@ -73,7 +73,7 @@ const LeftContainer: React.FC = () => {
   return (
     <>
       <S.Container>
-        <Sv px={120}>
+        <S.Wrapper>
           <MainLogo />
           <Sv col>
             <St h2 g0 title>
@@ -84,7 +84,7 @@ const LeftContainer: React.FC = () => {
             </St>
           </Sv>
           <Sv mt={40}>
-            <S.RepresentImage src={dummy} />
+            <Image src={dummy} />
           </Sv>
           <Sv mt={40}>
             <St b2 g0>
@@ -113,7 +113,7 @@ const LeftContainer: React.FC = () => {
               <St b2>3</St>
             </Sv>
           </Sv>
-        </Sv>
+        </S.Wrapper>
         <RecommendPost />
       </S.Container>
       {renderBottomNav()}
@@ -147,9 +147,19 @@ S.Container = styled(Sv)`
     width: 0px;
     display: none;
   }
+  @media only screen and (max-width: 768px) {
+    padding-top: 24px;
+  }
 `;
 
-S.RepresentImage = styled(Image)``;
+S.Wrapper = styled(Sv)`
+  padding-left: 120px;
+  padding-right: 120px;
+  @media only screen and (max-width: 768px) {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+`;
 
 S.BottomNavContainer = styled.div`
   position: fixed;

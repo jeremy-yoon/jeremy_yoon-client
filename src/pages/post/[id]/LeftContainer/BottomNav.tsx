@@ -12,7 +12,7 @@ interface BottomNav {}
 export default function BottomNav({ setCommentModalOpen }) {
   return (
     <S.Container jct pt={20}>
-      <S.Wrapper w={1024} h={64} act jsb px={120}>
+      <S.Wrapper w={1024} h={64} act jsb>
         <Sv row gx={20}>
           <Sv pointer onClick={() => setCommentModalOpen(true)}>
             <St b1>🥚 (23)</St>
@@ -25,7 +25,7 @@ export default function BottomNav({ setCommentModalOpen }) {
           <St b1>💌 공유하기</St>
         </Sv>
       </S.Wrapper>
-      <Sv w={358} />
+      <S.Dummy w={358} />
     </S.Container>
   );
 }
@@ -48,8 +48,25 @@ S.Container = styled(Sv)`
   overflow: hidden;
   padding-left: 40px;
   padding-right: 40px;
+  @media only screen and (max-width: 768px) {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+`;
+
+S.Dummy = styled(Sv)`
+  width: 358px;
+  @media only screen and (max-width: 768px) {
+    width: 0px;
+  }
 `;
 
 S.Wrapper = styled(Sv)`
   ${blur}
+  padding-left: 120px;
+  padding-right: 120px;
+  @media only screen and (max-width: 768px) {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
 `;

@@ -32,7 +32,7 @@ export const PostList: React.FC<PostListProps> = ({
 }) => {
   return (
     <Link href={href}>
-      <>
+      <Sv>
         <S.Container jsb>
           <Sv pointer>
             <Sv row act>
@@ -54,7 +54,7 @@ export const PostList: React.FC<PostListProps> = ({
           </S.ImageWrapper>
         </S.Container>
         <Sv h={1} bg={colors.g5} />
-      </>
+      </Sv>
     </Link>
   );
 };

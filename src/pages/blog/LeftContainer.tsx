@@ -44,7 +44,7 @@ export default function LeftContainer() {
         title={item.title}
         date={item.create_date}
         body={item.body}
-        // imgSrc={item.represent_image}
+        imgSrc={`http://127.0.0.1:8000${item.represent_image}`}
         href={`/post/${item.id}`}
       />
     ));

@@ -15,8 +15,11 @@ import { getPost } from "apis/service";
 import dummy from "images/dummy.png";
 import ic_comment from "images/svg/ic_comment.svg";
 import ic_like from "images/svg/ic_like.svg";
+import { useTitle } from "react-use";
 
 const LeftContainer: React.FC = () => {
+  useTitle(post?.title || "Jeremy's Blog");
+
   const router = useRouter();
   const { id } = router.query;
   const bottomNavRef = useRef<HTMLDivElement>(null);
@@ -161,8 +164,8 @@ S.Container = styled(Sv)`
 `;
 
 S.Wrapper = styled(Sv)`
-  padding-left: 120px;
-  padding-right: 120px;
+  padding-left: 160px;
+  padding-right: 160px;
   @media only screen and (max-width: 768px) {
     padding-left: 24px;
     padding-right: 24px;

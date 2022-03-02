@@ -84,7 +84,15 @@ const LeftContainer: React.FC = () => {
             </St>
           </Sv>
           <Sv mt={40}>
-            <Image src={dummy} />
+            {post?.represent_image && (
+              <S.ImageWrapper>
+                <Image
+                  src={`http://127.0.0.1:8000${post?.represent_image}`}
+                  layout="fill"
+                  objectFit="cover"
+                />
+              </S.ImageWrapper>
+            )}
           </Sv>
           <Sv mt={40}>
             <St b2 g0>
@@ -164,4 +172,9 @@ S.Wrapper = styled(Sv)`
 S.BottomNavContainer = styled.div`
   position: fixed;
   bottom: 0;
+`;
+
+S.ImageWrapper = styled(Sv)`
+  position: relative;
+  height: 400px;
 `;

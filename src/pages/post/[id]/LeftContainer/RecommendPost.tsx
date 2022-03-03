@@ -34,8 +34,8 @@ const S: any = {};
 S.Container = styled(Sv)``;
 
 S.Wrapper = styled(Sv)`
-  padding-left: 120px;
-  padding-right: 120px;
+  padding-left: 160px;
+  padding-right: 160px;
   padding-top: 80px;
   @media only screen and (max-width: 768px) {
     padding-left: 24px;

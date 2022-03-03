@@ -6,6 +6,8 @@ import { Row, Col } from "antd";
 import styled, { css } from "styled-components";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import { colors } from "styles/colors";
+import ic_comment from "images/svg/ic_comment.svg";
+import ic_like from "images/svg/ic_like.svg";
 
 interface BottomNav {}
 
@@ -14,15 +16,17 @@ export default function BottomNav({ setCommentModalOpen }) {
     <S.Container jct pt={20}>
       <S.Wrapper w={1024} h={64} act jsb>
         <Sv row gx={20}>
-          <Sv pointer onClick={() => setCommentModalOpen(true)}>
-            <St b1>🥚 (23)</St>
+          <Sv pointer row act gx={8} onClick={() => setCommentModalOpen(true)}>
+            <Sv as={ic_like} width={24} height={24} stroke={colors.g3} />
+            <St b2>3</St>
           </Sv>
-          <Sv pointer onClick={() => setCommentModalOpen(true)}>
-            <St b1>💬 (3)</St>
+          <Sv pointer row act gx={8} onClick={() => setCommentModalOpen(true)}>
+            <Sv as={ic_comment} width={24} height={24} stroke={colors.g3} />
+            <St b2>3</St>
           </Sv>
         </Sv>
         <Sv>
-          <St b1>💌 공유하기</St>
+          <St b1> 공유하기</St>
         </Sv>
       </S.Wrapper>
       <S.Dummy w={358} />
@@ -63,8 +67,8 @@ S.Dummy = styled(Sv)`
 
 S.Wrapper = styled(Sv)`
   ${blur}
-  padding-left: 120px;
-  padding-right: 120px;
+  padding-left: 160px;
+  padding-right: 160px;
   @media only screen and (max-width: 768px) {
     padding-left: 24px;
     padding-right: 24px;

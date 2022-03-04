@@ -10,6 +10,8 @@ import { getCategoryList, getPostList } from "apis/service";
 import { colors } from "styles/colors";
 import moment from "moment";
 import main_bg1 from "images/blog-bg.jpg";
+import useMouse from "@react-hook/mouse-position";
+import { motion, useTransform } from "framer-motion";
 
 interface LeftContainer {}
 
@@ -63,9 +65,107 @@ export default function LeftContainer() {
     }
   };
 
+  const [cursorText, setCursorText] = useState("");
+  const [cursorVariant, setCursorVariant] = useState("default");
+
+  const ref = React.useRef(null);
+  const mouse = useMouse(ref, {
+    enterDelay: 100,
+    leaveDelay: 100,
+  });
+
+  let mouseXPosition = 0;
+  let mouseYPosition = 0;
+
+  if (mouse.x !== null) {
+    mouseXPosition = mouse.clientX;
+  }
+
+  if (mouse.y !== null) {
+    mouseYPosition = mouse.clientY;
+  }
+
+  const variants = {
+    default: {
+      opacity: 1,
+      height: 10,
+      width: 10,
+      fontSize: "16px",
+      backgroundColor: "#1e91d6",
+      x: mouseXPosition,
+      y: mouseYPosition,
+      transition: {
+        type: "spring",
+        mass: 0.6,
+      },
+    },
+    project: {
+      opacity: 1,
+      // backgroundColor: "rgba(255, 255, 255, 0.6)",
+      backgroundColor: "#fff",
+      color: "#000",
+      height: 80,
+      width: 80,
+      fontSize: "18px",
+      x: mouseXPosition - 32,
+      y: mouseYPosition - 32,
+    },
+    contact: {
+      opacity: 1,
+      backgroundColor: "#FFBCBC",
+      color: "#000",
+      height: 64,
+      width: 64,
+      fontSize: "32px",
+      x: mouseXPosition - 48,
+      y: mouseYPosition - 48,
+    },
+  };
+
+  const spring = {
+    type: "spring",
+    stiffness: 500,
+    damping: 28,
+  };
+
+  function projectEnter(event) {
+    setCursorText("View");
+    setCursorVariant("project");
+  }
+
+  function projectLeave(event) {
+    setCursorText("");
+    setCursorVariant("default");
+  }
+
+  function contactEnter(event) {
+    setCursorText("👋");
+    setCursorVariant("contact");
+  }
+
+  function contactLeave(event) {
+    setCursorText("");
+    setCursorVariant("default");
+  }
+
   return (
     <>
-      <S.Container>
+      <S.Container ref={ref}>
+        <motion.div
+          variants={variants}
+          className="circle"
+          animate={cursorVariant}
+          transition={spring}
+        >
+          <span className="cursorText">{cursorText}</span>
+        </motion.div>
+        <div
+          className="contact"
+          onMouseEnter={contactEnter}
+          onMouseLeave={contactLeave}
+        >
+          Want to Chat?
+        </div>
         <S.Bg>
           {/* <Image src={main_bg1} layout="fill" objectFit="cover" /> */}
         </S.Bg>
@@ -81,7 +181,7 @@ export default function LeftContainer() {
             <S.Title text="JEREMY'S BLOG" />
           </Sv>
         </Sv>
-        <Sv mt={30} row gx={20}>
+        <Sv mt={30} row act gx={20}>
           {renderCategoryList()}
         </Sv>
         <Sv h={1} bg={colors.g5}></Sv>
@@ -99,7 +199,7 @@ const S: any = {};
 
 const blur = css`
   background: rgba(255, 255, 255, 0.6);
-  backdrop-filter: blur(30px);
+  /* backdrop-filter: blur(30px); */
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
   -webkit-backdrop-filter: blur(4px);
   border: 1px solid rgba(255, 255, 255, 0.18);

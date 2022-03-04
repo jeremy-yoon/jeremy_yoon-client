@@ -10,7 +10,7 @@ import { Layout, Menu, Breadcrumb, Row, Col } from "antd";
 import { RecoilRoot } from "recoil";
 import { AnimatePresence, domAnimation, LazyMotion, m } from "framer-motion";
 import { animations } from "animations/animations";
-import react, { useState } from "react";
+import React, { useState } from "react";
 
 const { Header, Content, Footer } = Layout;
 
@@ -27,8 +27,6 @@ const MyApp: React.FC<MyAppProps> = ({ Component, pageProps }) => {
   return (
     <RecoilRoot>
       <Layout>
-        {/* {router.pathname !== "/" && <MainHeader />} */}
-
         <S.Content>
           <LazyMotion features={domAnimation}>
             <AnimatePresence exitBeforeEnter>

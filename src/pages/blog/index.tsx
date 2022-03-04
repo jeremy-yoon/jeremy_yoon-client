@@ -55,6 +55,7 @@ S.Body = styled(Sv)`
   display: flex;
   flex-direction: row;
   justify-content: center;
+  min-height: 100vh;
 `;
 
 S.bg = styled(Sv)`

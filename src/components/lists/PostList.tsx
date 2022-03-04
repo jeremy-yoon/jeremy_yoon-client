@@ -32,7 +32,7 @@ export const PostList: React.FC<PostListProps> = ({
 }) => {
   return (
     <Link href={href}>
-      <Sv>
+      <Sv pointer>
         <S.Container jsb>
           <Sv pointer>
             <Sv row act>

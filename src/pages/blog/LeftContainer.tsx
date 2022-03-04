@@ -12,6 +12,7 @@ import moment from "moment";
 import main_bg1 from "images/blog-bg.jpg";
 import useMouse from "@react-hook/mouse-position";
 import { motion, useTransform } from "framer-motion";
+import dummy from "images/dummy.png";
 
 interface LeftContainer {}
 
@@ -46,7 +47,11 @@ export default function LeftContainer() {
         title={item.title}
         date={item.create_date}
         body={item.body}
-        imgSrc={`http://127.0.0.1:8000${item.represent_image}`}
+        imgSrc={
+          item.represent_image
+            ? `http://127.0.0.1:8000${item.represent_image}`
+            : dummy
+        }
         href={`/post/${item.id}`}
       />
     ));

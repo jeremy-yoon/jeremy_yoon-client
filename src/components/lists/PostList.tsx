@@ -41,7 +41,12 @@ export const PostList: React.FC<PostListProps> = ({
             </Sv>
             <Sv col>
               <St s2 g0 mt={4} text={title} />
-              <S.BodyText b2 g2 mt={8} text={parse(body)} />
+              <S.BodyText
+                b2
+                g2
+                mt={8}
+                text={body.replace(/(<([^>]+)>)/gi, "")}
+              />
             </Sv>
             <Sv mt={16} row act gx={12}>
               <Sv bg={colors.g6} br={99} px={8} py={2} ml={-4}>
@@ -92,7 +97,6 @@ S.BodyText = styled(St)`
 export const PostListSkeleton = () => (
   <SkeletonTheme baseColor={colors.g7}>
     <Sv row act jsb py={16}>
-      {/* <Skeleton circle height={40} width={40} /> */}
       <Sv col>
         <Skeleton count={1} width={40} height={16} />
         <Sv h={8} />

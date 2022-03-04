@@ -18,8 +18,6 @@ import ic_like from "images/svg/ic_like.svg";
 import { useTitle } from "react-use";
 
 const LeftContainer: React.FC = () => {
-  useTitle(post?.title || "Jeremy's Blog");
-
   const router = useRouter();
   const { id } = router.query;
   const bottomNavRef = useRef<HTMLDivElement>(null);

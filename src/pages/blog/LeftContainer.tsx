@@ -99,17 +99,6 @@ export default function LeftContainer() {
         mass: 0.6,
       },
     },
-    project: {
-      opacity: 1,
-      // backgroundColor: "rgba(255, 255, 255, 0.6)",
-      backgroundColor: "#fff",
-      color: "#000",
-      height: 80,
-      width: 80,
-      fontSize: "18px",
-      x: mouseXPosition - 32,
-      y: mouseYPosition - 32,
-    },
     contact: {
       opacity: 1,
       backgroundColor: "#FFBCBC",
@@ -127,16 +116,6 @@ export default function LeftContainer() {
     stiffness: 500,
     damping: 28,
   };
-
-  function projectEnter(event) {
-    setCursorText("View");
-    setCursorVariant("project");
-  }
-
-  function projectLeave(event) {
-    setCursorText("");
-    setCursorVariant("default");
-  }
 
   function contactEnter(event) {
     setCursorText("👋");
@@ -159,18 +138,13 @@ export default function LeftContainer() {
         >
           <span className="cursorText">{cursorText}</span>
         </motion.div>
-        <div
-          className="contact"
-          onMouseEnter={contactEnter}
-          onMouseLeave={contactLeave}
-        >
-          Want to Chat?
-        </div>
         <S.Bg>
           {/* <Image src={main_bg1} layout="fill" objectFit="cover" /> */}
         </S.Bg>
         <Sv>
-          <MainLogo />
+          <Sv onMouseEnter={contactEnter} onMouseLeave={contactLeave}>
+            <MainLogo />
+          </Sv>
           <Sv row mt={16}>
             <S.Title>
               WELCOME

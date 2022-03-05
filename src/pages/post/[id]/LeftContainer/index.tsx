@@ -77,12 +77,17 @@ const LeftContainer: React.FC = () => {
         <S.Wrapper>
           <MainLogo />
           <Sv col>
-            <St h2 g0 title>
+            <St h2 g0 title weight={400}>
               {post?.title}
             </St>
-            <St b2 g3 mt={8}>
-              {moment(post?.create_date).format("YYYY년 M월 D일")}
-            </St>
+            <Sv row mt={8}>
+              <St b2 g3 mr={8}>
+                by Jeremy Yoon
+              </St>
+              <St b2 g4>
+                {moment(post?.create_date).format("YYYY년 M월 D일")}
+              </St>
+            </Sv>
           </Sv>
           <Sv mt={40}>
             {post?.represent_image && (

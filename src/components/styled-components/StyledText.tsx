@@ -171,7 +171,7 @@ const h1 = css`
 `;
 const h2 = css`
   font-weight: 600;
-  font-size: min(7.5vw, 38px);
+  font-size: min(7.5vw, 42px);
   line-height: 1.4;
 `;
 const h3 = css`

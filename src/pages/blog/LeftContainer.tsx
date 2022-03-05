@@ -157,7 +157,7 @@ export default function LeftContainer() {
             </S.Title>
           </Sv>
           <Sv>
-            <S.Title text="JEREMY'S BLOG" />
+            <S.Title>JELOG :{`)`}</S.Title>
           </Sv>
         </Sv>
         <Sv mt={30} row act gx={20}>

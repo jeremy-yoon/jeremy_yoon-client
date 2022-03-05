@@ -18,12 +18,12 @@ export const MainLogo: React.FC<MainLogoProps> = ({
 }) => {
   return (
     <Link href={href}>
-      <Sv py={16} pointer>
-        <St s1 weight={900} size={size} en g0>
-          Jeremy
+      <Sv py={16} pointer row>
+        <St s1 weight={200} size={size} en g0 style={{ fontStyle: "italic" }}>
+          je
         </St>
-        <St s1 weight={200} size={size} en g0>
-          yoon!
+        <St s1 weight={200} size={size} en g0 style={{ fontStyle: "italic" }}>
+          log!
         </St>
       </Sv>
     </Link>

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Head from "next/head";
 import Image from "next/image";
 import { Sv, St, ButtonL, ProfileContainer, Navigation } from "components";
 import styled from "styled-components";
@@ -33,6 +34,9 @@ export default function BlogScreen() {
 
   return (
     <S.Body gx={16}>
+      <Head>
+        <title>Jelog</title>
+      </Head>
       <S.bg>
         <Image src={blog_bg} width={800} height={800} />
       </S.bg>

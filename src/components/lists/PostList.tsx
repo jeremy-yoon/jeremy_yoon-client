@@ -56,10 +56,16 @@ export const PostList: React.FC<PostListProps> = ({
             </Sv>
           </Sv>
           <S.ImageWrapper>
-            <Image src={imgSrc} width={140} height={140} objectFit="cover" />
+            <Image
+              src={imgSrc}
+              width={140}
+              height={140}
+              objectFit="cover"
+              objectPosition="right"
+            />
           </S.ImageWrapper>
         </S.Container>
-        <Sv h={1} bg={colors.g5} />
+        <Sv h={1} bg={colors.g6} />
       </Sv>
     </Link>
   );

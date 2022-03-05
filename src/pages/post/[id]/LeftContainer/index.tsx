@@ -16,6 +16,7 @@ import dummy from "images/dummy.png";
 import ic_comment from "images/svg/ic_comment.svg";
 import ic_like from "images/svg/ic_like.svg";
 import { useTitle } from "react-use";
+import Head from "next/head";
 
 const LeftContainer: React.FC = () => {
   const router = useRouter();
@@ -73,10 +74,13 @@ const LeftContainer: React.FC = () => {
 
   return (
     <>
+      <Head>
+        <title>{post?.title}</title>
+      </Head>
       <S.Container>
         <S.Wrapper>
           <MainLogo />
-          <Sv col>
+          <Sv col mt={40}>
             <St h2 g0 title weight={400}>
               {post?.title}
             </St>
@@ -89,7 +93,7 @@ const LeftContainer: React.FC = () => {
               </St>
             </Sv>
           </Sv>
-          <Sv mt={40}>
+          <Sv mt={64}>
             {post?.represent_image && (
               <S.ImageWrapper>
                 <Image
@@ -152,7 +156,7 @@ S.Container = styled(Sv)`
   position: relative;
   width: 1024px;
   max-height: 100vh;
-  padding-top: 72px;
+  padding-top: 100px;
   padding-bottom: 64px;
   z-index: 1;
   overflow-y: scroll;

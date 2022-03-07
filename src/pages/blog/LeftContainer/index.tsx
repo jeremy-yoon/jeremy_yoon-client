@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Sv, St, MainLogo, PostList, PostListSkeleton } from "components";
-import { CategoryList, TitleText, NavButton } from "./components";
+import { CategoryList, Banner } from "./components";
 import { Row, Col } from "antd";
 import styled, { css } from "styled-components";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
@@ -146,20 +146,10 @@ export default function LeftContainer() {
         <S.Bg>
           {/* <Image src={main_bg1} layout="fill" objectFit="cover" /> */}
         </S.Bg>
-        <Sv>
-          <Sv onMouseEnter={contactEnter} onMouseLeave={contactLeave}>
-            <MainLogo />
-          </Sv>
-          <Sv row mt={16}>
-            <S.Title>
-              WELCOME
-              <S.Title text=" to" weight={200} italic />
-            </S.Title>
-          </Sv>
-          <Sv>
-            <S.Title>JELOG :{`)`}</S.Title>
-          </Sv>
+        <Sv onMouseEnter={contactEnter} onMouseLeave={contactLeave}>
+          <MainLogo />
         </Sv>
+        <Banner />
         <Sv mt={30} row act gx={20}>
           {renderCategoryList()}
         </Sv>
@@ -214,8 +204,8 @@ S.Bg = styled(Sv)`
 `;
 
 S.Title = styled(St)`
-  font-size: 80px;
-  font-weight: ${(props) => props.weight || 800};
+  font-size: 100px;
+  font-weight: ${(props) => props.weight || 600};
   font-style: ${(props) => (props.italic ? "italic" : "normal")};
   color: ${colors.g0};
   font-family: "Gilroy";

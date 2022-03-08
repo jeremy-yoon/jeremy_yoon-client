@@ -47,7 +47,7 @@ const blur = css`
 S.Container = styled(Sv)`
   padding: 32px;
   background: #f6f6f9;
-  border-bottom: 40px solid ${colors.primary};
+  border-bottom: 40px solid ${colors.g6};
   /* ${blur} */
 `;
 
@@ -64,7 +64,7 @@ S.Title = styled(St)`
 `;
 
 S.TextContainer = styled(Sv)`
-  background-color: ${colors.primary};
+  /* background-color: ${colors.g6}; */
 `;
 
 S.TextWrapper = styled(Sv)`

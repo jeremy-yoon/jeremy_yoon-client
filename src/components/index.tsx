@@ -8,6 +8,7 @@ export { Profile } from "components/avatars/Profile";
 //lists
 export { PostCardL, PostCardM, PostCardS } from "components/lists/PostCard";
 export { PostList, PostListSkeleton } from "components/lists/PostList";
+export { PostListS } from "components/lists/PostListS";
 export { Comment } from "components/lists/Comment";
 
 //buttons

@@ -21,17 +21,10 @@ export const ButtonL: React.FC<ButtonLProps> = ({
 }) => {
   return (
     <Link href={href}>
-      <S.Container
-        onClick={onClick}
-        act
-        jct
-        py={8}
-        px={20}
-        pointer
-        bg={colors.g0}
-        line={line}
-      >
-        <St white={!line}>{title}</St>
+      <S.Container onClick={onClick} act jct py={8} px={20} pointer line={line}>
+        <St s4 white={!line}>
+          {title}
+        </St>
       </S.Container>
     </Link>
   );

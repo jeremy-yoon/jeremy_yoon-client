@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import styled from "styled-components";
-import { Sv, St, ButtonL } from "components";
+import { Sv, St, ButtonL, PostListS } from "components";
 import profile_me from "images/profile_me.png";
 
 interface ProfileProps {
@@ -27,16 +27,21 @@ export const Profile: React.FC<ProfileProps> = ({
       <Sv h={4} />
       <St
         b2
-        g0
-        text={`최고의 프로그래머는 그냥 좋은 프로그래머들보다
-조금 더 나은 게 아니다. 그들은 어떻게 측정하던 간에 보통 사람들 보다 한 자리 수 이상이다.
-창의력, 스피드, 설계능력, 문제해결 능력까지.
-- Randall E. Stross -`}
+        g3
+        text={`효율적으로 일하는 방법을 고민하는 개발자 윤정탁 입니다.
+현재 스타트업에서 UI/UX 디자이너 겸 front-end 개발자로 일하고 있습니다. 
+`}
       />
       <Sv h={40} />
       <Sv col gy={8}>
         <ButtonL title="연락하기" href="/resume" />
         <ButtonL title="GitHub Repo" href="/contact" line />
+      </Sv>
+      <Sv mt={40}>
+        <St s2 g0 text="당신이 최근 본 포스트" />
+        <Sv h={16} />
+        <PostListS />
+        <PostListS />
       </Sv>
     </Sv>
   );

@@ -62,11 +62,7 @@ export const CategoryList: React.FC<CategoryListProps> = ({
 
 const S: any = {};
 
-S.ListContainer = styled(Sv)`
-  display: grid;
-  grid-template-columns: repeat(6, minmax(0, auto));
-  /* grid-template-columns: repeat(4, minmax(0, 1fr)); */
-`;
+S.ListContainer = styled(Sv)``;
 
 S.Image = styled(Image)`
   max-width: 40px;

@@ -30,6 +30,7 @@
     "react-pdf": "^5.7.0",
     "react-use": "^15.3.8",
     "recoil": "^0.1.2",
+    "recoil-persist": "^4.0.0",
     "styled-components": "^5.3.3"
   },
   "devDependencies": {

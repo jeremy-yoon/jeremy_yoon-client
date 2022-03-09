@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import styled from "styled-components";
-import { Sv, St, ButtonL, PostListS } from "components";
+import { Sv, St, ButtonL } from "components";
 import profile_me from "images/profile_me.png";
 
 interface ProfileProps {
@@ -36,12 +36,6 @@ export const Profile: React.FC<ProfileProps> = ({
       <Sv col gy={8}>
         <ButtonL title="연락하기" href="/resume" />
         <ButtonL title="GitHub Repo" href="/contact" line />
-      </Sv>
-      <Sv mt={40}>
-        <St s2 g0 text="당신이 최근 본 포스트" />
-        <Sv h={16} />
-        <PostListS />
-        <PostListS />
       </Sv>
     </Sv>
   );

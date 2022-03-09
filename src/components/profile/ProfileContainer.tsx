@@ -1,22 +1,45 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Sv, St, ButtonL, SearchInput, Profile } from "components";
+import { Sv, St, ButtonL, SearchInput, Profile, PostListS } from "components";
 import { Row, Col } from "antd";
 import styled, { css } from "styled-components";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import { colors } from "styles/colors";
+import { useRecoilState } from "recoil";
+import { userRecentReadPostAtom } from "recoil/atoms/user";
 
 interface ProfileContainer {
   bg: any;
 }
 
 export function ProfileContainer({ bg = "rgba(255, 255, 255, 0.4)" }) {
+  const [recentReadPost, setRecentReadPost] = useRecoilState(
+    userRecentReadPostAtom
+  );
   return (
     <S.Container bg={bg}>
       <Sv mt={72} col>
         <SearchInput />
         <Profile />
+        <Sv mt={40}>
+          <St s2 g0 text="당신이 최근 본 포스트" />
+          <Sv h={16} />
+          {/* {recentReadPost.map((post, index) => (
+            <PostListS
+              title={post}
+              // key={index}
+              // href={`/post/${post.id}`}
+              // title={post.title}
+              // date={post.create_date}
+              // body={post.body}
+              // imgSrc={post.represent_image}
+            />
+          ))} */}
+          {recentReadPost[0] && <PostListS title={recentReadPost[0]} />}
+          {recentReadPost[1] && <PostListS title={recentReadPost[1]} />}
+          {recentReadPost[2] && <PostListS title={recentReadPost[2]} />}
+        </Sv>
       </Sv>
       <S.Footer>
         <St s3 g3 weight={600} text="Powered by" />

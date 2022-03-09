@@ -17,6 +17,8 @@ import ic_comment from "images/svg/ic_comment.svg";
 import ic_like from "images/svg/ic_like.svg";
 import { useTitle } from "react-use";
 import Head from "next/head";
+import { useRecoilState } from "recoil";
+import { userRecentReadPostAtom } from "recoil/atoms/user";
 
 const LeftContainer: React.FC = () => {
   const router = useRouter();
@@ -27,6 +29,10 @@ const LeftContainer: React.FC = () => {
   const [scrollY, setScrollY] = useState(0);
   const [bottomNavY, setBottomNavY] = useState(0);
   const [hitCount, setHitCount] = useState(0);
+
+  const [recentReadPost, setRecentReadPost] = useRecoilState(
+    userRecentReadPostAtom
+  );
 
   //get y position of bottomNav
   const getBottomNavY = () => {
@@ -61,6 +67,33 @@ const LeftContainer: React.FC = () => {
   useEffect(() => {
     if (id) {
       getPost(setPost, id);
+    }
+  }, [id]);
+
+  useEffect(() => {
+    //null값이 아닐 때만 실행
+    if (id) {
+      //현재 게시물의 id가 "최근 본 게시물 리스트"의 첫 번째 원소로 존재한다면 리스트를 변경시키지 않는다.
+      if (recentReadPost[0] == id) {
+        setRecentReadPost([...recentReadPost]);
+        //현재 게시물의 id가 "최근 본 게시물 리스트"의 두 번째 원소로 존재한다면 두 번째 원소를 첫 번째 자리로 놓고, 첫 번째 원소를 두 번째 자리에 놓는다.
+      } else if (recentReadPost[1] == id) {
+        setRecentReadPost([
+          recentReadPost[1],
+          recentReadPost[0],
+          recentReadPost[2],
+        ]);
+        //현재 게시물의 id가 "최근 본 게시물 리스트"의 세 번째 원소로 존재한다면 세 번째 원소를 첫 번째 자리로 놓고, 첫 번째 원소를 세 번째 자리에 놓는다.
+      } else if (recentReadPost[2] == id) {
+        setRecentReadPost([
+          recentReadPost[2],
+          recentReadPost[0],
+          recentReadPost[1],
+        ]);
+        //현재 게시물의 id가 "최근 본 게시물 리스트"에 존재하지 않는다면, 현재 게시물의 id를 첫 번째 자리에 놓고, 마지막 원소는 삭제한다.
+      } else if (!recentReadPost.includes(id)) {
+        setRecentReadPost([id, recentReadPost[0], recentReadPost[1]]);
+      }
     }
   }, [id]);
 

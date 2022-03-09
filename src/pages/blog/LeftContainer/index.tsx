@@ -27,17 +27,6 @@ export default function LeftContainer() {
     getPostList(setPostList, setLoading);
   }, []);
 
-  // render category list
-  const renderCategoryList = () =>
-    categoryList.map((item, index) => (
-      <Sv py={8} pointer onClick={() => setSelectedCategory(item.title)}>
-        <CategoryList
-          title={item.title}
-          selectedCategory={selectedCategory == item.title}
-        />
-      </Sv>
-    ));
-
   // render post list
   const renderPostList = () =>
     postList.map((item, index) => (
@@ -143,16 +132,15 @@ export default function LeftContainer() {
         >
           <span className="cursorText">{cursorText}</span>
         </motion.div>
-        <S.Bg>
-          {/* <Image src={main_bg1} layout="fill" objectFit="cover" /> */}
-        </S.Bg>
         <Sv onMouseEnter={contactEnter} onMouseLeave={contactLeave}>
           <MainLogo />
         </Sv>
         <Banner />
-        <Sv mt={30} row act gx={20}>
-          {renderCategoryList()}
-        </Sv>
+        <CategoryList
+          categoryList={categoryList}
+          selectedCategory={selectedCategory}
+          setSelectedCategory={setSelectedCategory}
+        />
         <Sv h={1} bg={colors.g5}></Sv>
         <Sv h={24} />
         {renderSkeleton()}
@@ -201,15 +189,4 @@ S.Bg = styled(Sv)`
   right: 24px;
   height: 250px;
   z-index: -1;
-`;
-
-S.Title = styled(St)`
-  font-size: 100px;
-  font-weight: ${(props) => props.weight || 600};
-  font-style: ${(props) => (props.italic ? "italic" : "normal")};
-  color: ${colors.g0};
-  font-family: "Gilroy";
-  @media only screen and (max-width: 414px) {
-    font-size: 16vw;
-  }
 `;

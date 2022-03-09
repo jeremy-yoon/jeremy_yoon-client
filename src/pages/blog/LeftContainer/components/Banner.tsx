@@ -17,17 +17,17 @@ interface BannerProps {
 export const Banner: React.FC<BannerProps> = ({}) => {
   return (
     <S.Container>
-      <St b1 text="좋은 개발자가 되려면" />
+      {/* <St s2 text="Jeremy의 개발 블로그" /> */}
       <S.TextContainer>
         <S.TextWrapper>
           <S.Title text="PROGRAMMING IS " />
         </S.TextWrapper>
         <S.TextWrapper>
-          <S.Title text="Thinking " weight={800} italic />
+          <S.Title text="Thinking." weight={800} italic />
         </S.TextWrapper>
         <S.TextWrapper row>
           <S.Title text="NOT" />
-          <S.Title text=" Typing " weight={800} italic />
+          <S.Title text=" Typing. " weight={800} italic />
         </S.TextWrapper>
       </S.TextContainer>
     </S.Container>
@@ -45,15 +45,16 @@ const blur = css`
 `;
 
 S.Container = styled(Sv)`
-  padding: 32px;
-  background: #f6f6f9;
-  border-bottom: 40px solid ${colors.g6};
+  padding-top: 16px;
+  /* padding: 32px; */
+  /* background: ${colors.g7}; */
+  /* border-bottom: 40px solid ${colors.g6}; */
   /* ${blur} */
 `;
 
 S.Title = styled(St)`
   line-height: 110px;
-  font-size: 84px;
+  font-size: 88px;
   font-weight: ${(props) => props.weight || 500};
   font-style: ${(props) => (props.italic ? "italic" : "normal")};
   color: ${colors.g0};
@@ -64,11 +65,11 @@ S.Title = styled(St)`
 `;
 
 S.TextContainer = styled(Sv)`
-  /* background-color: ${colors.g6}; */
+  /* background-color: ${colors.g5}; */
 `;
 
 S.TextWrapper = styled(Sv)`
-  background: #f6f6f9;
+  /* background: ${colors.g7}; */
   display: flex;
   width: fit-content;
 `;

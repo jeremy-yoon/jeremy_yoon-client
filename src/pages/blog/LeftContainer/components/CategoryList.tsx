@@ -11,9 +11,10 @@ interface CategoryListProps {
   imgSrc: StaticImageData;
   title: string;
   selectedCategory: boolean;
+  categoryList: Array;
 }
 
-export const CategoryList: React.FC<CategoryListProps> = ({
+const CategoryItem: React.FC<CategoryListProps> = ({
   href = "/",
   imgSrc = dummy,
   title = "title",
@@ -21,25 +22,51 @@ export const CategoryList: React.FC<CategoryListProps> = ({
 }) => {
   return (
     <Sv
-      col
       p={12}
-      b={selectedCategory && `1px solid ${colors.g0}`}
+      b={`1px solid ${selectedCategory ? colors.g0 : "transparent"}`}
       br={100}
       act
       jct
       style={{ minWidth: 80 }}
     >
       <S.BodyText
+        selectedCategory={selectedCategory}
         en
         bold={selectedCategory}
         color={selectedCategory ? colors.g0 : colors.g4}
         text={title}
+        center
       />
     </Sv>
   );
 };
 
+export const CategoryList: React.FC<CategoryListProps> = ({
+  categoryList = [],
+  selectedCategory,
+  setSelectedCategory,
+}) => {
+  return (
+    <S.ListContainer mt={30} row act gx={20}>
+      {categoryList.map((item, index) => (
+        <Sv py={8} pointer onClick={() => setSelectedCategory(item.title)}>
+          <CategoryItem
+            title={item.title}
+            selectedCategory={selectedCategory == item.title}
+          />
+        </Sv>
+      ))}
+    </S.ListContainer>
+  );
+};
+
 const S: any = {};
+
+S.ListContainer = styled(Sv)`
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, auto));
+  /* grid-template-columns: repeat(4, minmax(0, 1fr)); */
+`;
 
 S.Image = styled(Image)`
   max-width: 40px;

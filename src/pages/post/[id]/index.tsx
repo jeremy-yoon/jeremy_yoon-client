@@ -57,7 +57,7 @@ export default PostScreen;
 const S: any = {};
 
 S.Body = styled(Sv)`
-  background-color: ${colors.g6};
+  background-color: ${colors.g7};
   display: flex;
   flex-direction: row;
   justify-content: center;

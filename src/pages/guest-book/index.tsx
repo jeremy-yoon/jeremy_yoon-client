@@ -1,43 +1,46 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import Image from "next/image";
-import { Sv, St, Profile, Comment, CommentInput, PostIt } from "components";
+import { Sv, St, ProfileContainer, Navigation } from "components";
 import { Row, Col } from "antd";
 import styled from "styled-components";
-import { getRequest } from "apis/common";
+import { getRequest, postRequest } from "apis/common";
 import moment from "moment";
 import { colors } from "styles/colors";
+import parse from "html-react-parser";
+import { getPost } from "apis/service";
+import LeftContainer from "./LeftContainer";
 
-export default function GuestBookScreen() {
+const PostScreen: React.FC = () => {
   const router = useRouter();
   const { id } = router.query;
 
+  const [post, setPost] = useState();
+
+  const [isCommentModalOpen, setCommentModalOpen] = useState(undefined);
+
+  useEffect(() => {
+    if (id) {
+      getPost(setPost, id);
+    }
+  }, [id]);
+
   return (
-    <S.Body>
-      <Sv mt={100} col>
-        <St h2 g0>
-          방명록
-        </St>
-      </Sv>
-      <Sv mt={40}>
-        <St b2 g0>
-          작성해주세용
-        </St>
-      </Sv>
-      <Sv mt={100}>
-        <Sv h={1} bg={colors.g6} />
-        <PostIt />
-        <PostIt />
-        <PostIt />
-        <CommentInput />
-      </Sv>
+    <S.Body gx={16}>
+      <Navigation />
+      <LeftContainer />
+      <ProfileContainer bg={colors.g8} />
     </S.Body>
   );
-}
+};
 
-const S = {};
+export default PostScreen;
+
+const S: any = {};
 
 S.Body = styled(Sv)`
-  flex: 1;
-  max-width: 512px;
+  background-color: ${colors.g6};
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 `;

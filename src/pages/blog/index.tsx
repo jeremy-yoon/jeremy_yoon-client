@@ -1,84 +1,192 @@
 import React, { useState, useEffect } from "react";
-import Head from "next/head";
 import Image from "next/image";
-import { Sv, St, ButtonL, ProfileContainer, Navigation } from "components";
-import styled from "styled-components";
+import Link from "next/link";
+import { Sv, St, MainLogo, PostList, PostListSkeleton } from "components";
+import { CategoryList, Banner } from "./components";
+import { Row, Col } from "antd";
+import styled, { css } from "styled-components";
+import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
+import { getCategoryList, getPostList } from "apis/service";
 import { colors } from "styles/colors";
-import LeftContainer from "./LeftContainer";
-import blog_bg from "images/blog-bg.jpg";
-import blog_bg2 from "images/blog-bg2.jpg";
-import blog_bg3 from "images/blog-bg3.jpg";
-import { useWindowSize } from "@react-hook/window-size";
+import moment from "moment";
+import main_bg1 from "images/blog-bg.jpg";
+import useMouse from "@react-hook/mouse-position";
+import { motion, useTransform } from "framer-motion";
+import dummy from "images/dummy.png";
 
 interface BlogScreen {}
 
 export default function BlogScreen() {
-  const [width] = useWindowSize();
-  const [isTablet, setIsTablet] = useState(false);
-
-  const renderProfileContainer = () => {
-    if (!isTablet) {
-      return <ProfileContainer />;
-    }
-  };
-
-  const renderNavigation = () => {
-    if (!isTablet) {
-      return <Navigation />;
-    }
-  };
+  const [postList, setPostList] = useState([]);
+  const [categoryList, setCategoryList] = useState([]);
+  const [isLoading, setLoading] = useState(true);
+  const [selectedCategory, setSelectedCategory] = useState("All");
 
   useEffect(() => {
-    setIsTablet(width < 1024);
-  }, [width]);
+    getCategoryList(setCategoryList);
+    getPostList(setPostList, setLoading);
+  }, []);
+
+  // render post list
+  const renderPostList = () =>
+    postList.map((item, index) => (
+      <PostList
+        key={index}
+        category={categoryList[item.category]?.title}
+        title={item.title}
+        date={item.create_date}
+        body={item.body}
+        imgSrc={
+          item.represent_image
+            ? `http://127.0.0.1:8000${item.represent_image}`
+            : dummy
+        }
+        href={`/post/${item.id}`}
+      />
+    ));
+
+  // render Skeleton
+  const renderSkeleton = () => {
+    if (isLoading) {
+      return (
+        <Sv>
+          <PostListSkeleton />
+          <PostListSkeleton />
+          <PostListSkeleton />
+          <PostListSkeleton />
+        </Sv>
+      );
+    }
+  };
+
+  const [cursorText, setCursorText] = useState("");
+  const [cursorVariant, setCursorVariant] = useState("default");
+
+  const ref = React.useRef(null);
+  const mouse = useMouse(ref, {
+    enterDelay: 100,
+    leaveDelay: 100,
+  });
+
+  let mouseXPosition = 0;
+  let mouseYPosition = 0;
+
+  if (mouse.x !== null) {
+    mouseXPosition = mouse.clientX;
+  }
+
+  if (mouse.y !== null) {
+    mouseYPosition = mouse.clientY;
+  }
+
+  const variants = {
+    default: {
+      opacity: 1,
+      height: 10,
+      width: 10,
+      fontSize: "16px",
+      backgroundColor: "#1e91d6",
+      x: mouseXPosition,
+      y: mouseYPosition,
+      transition: {
+        type: "spring",
+        mass: 0.6,
+      },
+    },
+    contact: {
+      opacity: 1,
+      backgroundColor: "#FFBCBC",
+      color: "#000",
+      height: 64,
+      width: 64,
+      fontSize: "32px",
+      x: mouseXPosition - 48,
+      y: mouseYPosition - 48,
+    },
+  };
+
+  const spring = {
+    type: "spring",
+    stiffness: 500,
+    damping: 28,
+  };
+
+  function contactEnter(event) {
+    setCursorText("👋");
+    setCursorVariant("contact");
+  }
+
+  function contactLeave(event) {
+    setCursorText("");
+    setCursorVariant("default");
+  }
 
   return (
-    <S.Body gx={16}>
-      <Head>
-        <title>Jelog</title>
-      </Head>
-      <S.bg>
-        <Image src={blog_bg} width={800} height={800} />
-      </S.bg>
-      <S.bg2>
-        <Image src={blog_bg2} width={400} height={400} />
-      </S.bg2>
-      <S.bg3>
-        <Image src={blog_bg3} width={400} height={400} />
-      </S.bg3>
-      {renderNavigation()}
-      <LeftContainer />
-      {renderProfileContainer()}
-    </S.Body>
+    <>
+      <S.Container ref={ref}>
+        <motion.div
+          variants={variants}
+          className="circle"
+          animate={cursorVariant}
+          transition={spring}
+        >
+          <span className="cursorText">{cursorText}</span>
+        </motion.div>
+        <Sv onMouseEnter={contactEnter} onMouseLeave={contactLeave}>
+          <MainLogo />
+        </Sv>
+        <Banner />
+        <CategoryList
+          categoryList={categoryList}
+          selectedCategory={selectedCategory}
+          setSelectedCategory={setSelectedCategory}
+        />
+        <Sv h={1} bg={colors.g5}></Sv>
+        <Sv h={24} />
+        {renderSkeleton()}
+        {renderPostList()}
+        {renderPostList()}
+        <Sv h={40} />
+      </S.Container>
+    </>
   );
 }
 
 const S: any = {};
 
-S.Body = styled(Sv)`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  min-height: 100vh;
+const blur = css`
+  background: rgba(255, 255, 255, 0.6);
+  /* backdrop-filter: blur(30px); */
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
 `;
 
-S.bg = styled(Sv)`
-  position: fixed;
-  opacity: 0.8;
-  top: 10%;
-  right: -15%;
+S.Container = styled(Sv)`
+  width: 1024px;
+  max-height: 100vh;
+  padding-left: 120px;
+  padding-right: 120px;
+  padding-top: 60px;
+  z-index: 1;
+  overflow-y: scroll;
+  ${blur}
+  ::-webkit-scrollbar {
+    width: 0px;
+    display: none;
+  }
+  @media only screen and (max-width: 768px) {
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-top: 24px;
+  }
 `;
 
-S.bg2 = styled(Sv)`
-  position: fixed;
-  opacity: 0.3;
-  top: 10%;
-  right: 30%;
-`;
-
-S.bg3 = styled(Sv)`
-  position: fixed;
-  opacity: 0.3;
-  bottom: 10%;
-  left: 2%;
+S.Bg = styled(Sv)`
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  right: 24px;
+  height: 250px;
+  z-index: -1;
 `;

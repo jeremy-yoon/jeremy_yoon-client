@@ -80,6 +80,7 @@ export const StyledText: any = styled.span<StProps>`
   ${(props) => props.s5 && s5}
   ${(props) => props.b1 && b1}
   ${(props) => props.b2 && b2}
+  ${(props) => props.b3 && b3}
   ${(props) => props.c1 && c1}
   ${(props) => props.c2 && c2}
   ${(props) => props.c3 && c3}

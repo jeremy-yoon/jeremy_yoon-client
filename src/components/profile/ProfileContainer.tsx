@@ -46,9 +46,9 @@ export function ProfileContainer({ bg = "rgba(255, 255, 255, 0.4)" }) {
       <Sv mt={72} col>
         <SearchInput />
         <Profile />
-        <Sv mt={40}>
+        <Sv mt={48}>
           <St s2 g0 text="당신이 최근 본 포스트" />
-          <Sv h={16} />
+          <Sv h={8} />
           {recentPost1 && (
             <PostListS
               title={recentPost1.title}

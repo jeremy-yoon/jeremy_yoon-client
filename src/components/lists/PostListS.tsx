@@ -34,7 +34,7 @@ export const PostListS: React.FC<PostListSProps> = ({
   return (
     <Link href={href}>
       <>
-        <Sv pointer row act py={24}>
+        <Sv pointer row act py={20}>
           <S.ImageWrapper>
             <Image
               src={imgSrc}
@@ -45,8 +45,8 @@ export const PostListS: React.FC<PostListSProps> = ({
             />
           </S.ImageWrapper>
           <Sv col ml={12} mb={6}>
-            <St s2 g0 mt={4} text={title} />
-            <S.BodyText b2 g2 mt={8} text={body.replace(/(<([^>]+)>)/gi, "")} />
+            <St s3 g0 mt={4} text={title} />
+            <S.BodyText c1 g2 mt={4} text={body.replace(/(<([^>]+)>)/gi, "")} />
           </Sv>
         </Sv>
         <Sv h={1} bg={colors.g6} />
@@ -68,5 +68,5 @@ S.BodyText = styled(St)`
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
-  max-width: 608px;
+  max-width: 264px;
 `;

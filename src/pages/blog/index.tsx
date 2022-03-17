@@ -163,30 +163,7 @@ const blur = css`
 `;
 
 S.Container = styled(Sv)`
-  width: 1024px;
-  max-height: 100vh;
+  padding-top: 60px;
   padding-left: 120px;
   padding-right: 120px;
-  padding-top: 60px;
-  z-index: 1;
-  overflow-y: scroll;
-  ${blur}
-  ::-webkit-scrollbar {
-    width: 0px;
-    display: none;
-  }
-  @media only screen and (max-width: 768px) {
-    padding-left: 24px;
-    padding-right: 24px;
-    padding-top: 24px;
-  }
-`;
-
-S.Bg = styled(Sv)`
-  position: absolute;
-  top: 24px;
-  left: 24px;
-  right: 24px;
-  height: 250px;
-  z-index: -1;
 `;

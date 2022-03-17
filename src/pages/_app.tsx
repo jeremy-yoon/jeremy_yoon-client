@@ -66,20 +66,22 @@ const MyApp: React.FC<MyAppProps> = ({ Component, pageProps }) => {
               <Image src={blog_bg3} width={400} height={400} />
             </S.bg3>
             {renderNavigation()}
-            <LazyMotion features={domAnimation}>
-              <AnimatePresence exitBeforeEnter>
-                <m.div
-                  key={router.route.concat(animation.name)}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.2 }}
-                  variants={animation.variants}
-                >
-                  <Component {...pageProps} />
-                </m.div>
-              </AnimatePresence>
-            </LazyMotion>
+            <S.Container>
+              <LazyMotion features={domAnimation}>
+                <AnimatePresence exitBeforeEnter>
+                  <m.div
+                    key={router.route.concat(animation.name)}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.2 }}
+                    variants={animation.variants}
+                  >
+                    <Component {...pageProps} />
+                  </m.div>
+                </AnimatePresence>
+              </LazyMotion>
+            </S.Container>
             {renderProfileContainer()}
           </S.Body>
         </S.Content>
@@ -125,6 +127,32 @@ S.bg3 = styled(Sv)`
   opacity: 0.3;
   bottom: 10%;
   left: 2%;
+`;
+
+const blur = css`
+  background: rgba(255, 255, 255, 0.6);
+  /* backdrop-filter: blur(30px); */
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+`;
+
+S.Container = styled(Sv)`
+  width: 1024px;
+  max-height: 100vh;
+  z-index: 2;
+  overflow-y: scroll;
+  position: relative;
+  ${blur}
+  ::-webkit-scrollbar {
+    width: 0px;
+    display: none;
+  }
+  @media only screen and (max-width: 768px) {
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-top: 24px;
+  }
 `;
 
 export default MyApp;

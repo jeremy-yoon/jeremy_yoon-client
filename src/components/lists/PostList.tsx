@@ -52,7 +52,7 @@ export const PostList: React.FC<PostListProps> = ({
               <Sv bg={colors.g6} br={99} px={8} py={2} ml={-4}>
                 <St c1 g0 text={category} />
               </Sv>
-              <St c1 g3 text={moment(date).format("YYYY년 MM월 DD일")} />
+              <St c1 g3 text={moment(date).format("YYYY년 M월 D일")} />
             </Sv>
           </Sv>
           <S.ImageWrapper>

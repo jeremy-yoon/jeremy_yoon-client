@@ -114,7 +114,7 @@ const PostScreen: React.FC = () => {
         <S.Wrapper>
           <MainLogo />
           <Sv col mt={40}>
-            <St h2 g0 title weight={400}>
+            <St h2 g0 weight={400}>
               {post?.title}
             </St>
             <Sv row mt={8}>

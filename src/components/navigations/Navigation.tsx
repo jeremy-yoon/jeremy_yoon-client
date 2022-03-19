@@ -26,6 +26,11 @@ export const Navigation = () => {
         href="/guest-book"
       />
       <NavigationButton
+        icon={ic_chat}
+        selected={router.pathname.includes("guest-book")}
+        href="/portfolio"
+      />
+      <NavigationButton
         icon={ic_resume}
         selected={router.pathname.includes("resume")}
         href="/resume"

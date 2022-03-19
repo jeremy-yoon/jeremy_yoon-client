@@ -6,7 +6,7 @@ import styled, { css } from "styled-components";
 import { getRequest, postRequest } from "apis/common";
 import { colors } from "styles/colors";
 
-const PortfolioScreen: React.FC = () => {
+const SearchScreen: React.FC = () => {
   const router = useRouter();
 
   const [keyword, setKeyword] = useState("keyword");
@@ -29,6 +29,6 @@ const PortfolioScreen: React.FC = () => {
   );
 };
 
-export default PortfolioScreen;
+export default SearchScreen;
 
 const S: any = {};

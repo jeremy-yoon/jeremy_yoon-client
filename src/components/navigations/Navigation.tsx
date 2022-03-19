@@ -14,7 +14,10 @@ export const Navigation = () => {
     <S.Container col gy={12} jct>
       <NavigationButton
         icon={ic_home}
-        selected={router.pathname.includes("blog")}
+        selected={
+          !router.pathname.includes("guest-book") &&
+          !router.pathname.includes("resume")
+        }
         href="/blog"
       />
       <NavigationButton

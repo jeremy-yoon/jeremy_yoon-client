@@ -113,12 +113,13 @@ const S: any = {};
 
 const blur = css`
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
-  backdrop-filter: blur(30px);
-  -webkit-backdrop-filter: blur(4px);
+  /* backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(4px); */
   border: 1px solid rgba(255, 255, 255, 0.18);
 `;
 
 S.Container = styled(Sv)`
+  position: relative;
   background: ${(props) => props.bg};
   overflow: hidden;
   width: 414px;
@@ -129,7 +130,7 @@ S.Container = styled(Sv)`
 `;
 
 S.Footer = styled(Sv)`
-  position: fixed;
+  position: absolute;
   bottom: 40px;
   left: 40px;
   right: 0;

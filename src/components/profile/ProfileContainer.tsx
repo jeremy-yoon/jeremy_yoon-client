@@ -9,6 +9,7 @@ import { colors } from "styles/colors";
 import { useRecoilState } from "recoil";
 import { userRecentReadPostAtom } from "recoil/atoms/user";
 import { getPost } from "apis/service";
+import dummy from "images/dummy.png";
 
 interface ProfileContainer {
   bg: any;
@@ -19,9 +20,11 @@ export function ProfileContainer({ bg = "rgba(255, 255, 255, 0.4)" }) {
     userRecentReadPostAtom
   );
 
-  const [recentPost1, setRecentPost1] = useState();
-  const [recentPost2, setRecentPost2] = useState();
-  const [recentPost3, setRecentPost3] = useState();
+  const [searchKeyword, setSearchKeyword] = useState("");
+
+  const [recentPost1, setRecentPost1] = useState([] as any);
+  const [recentPost2, setRecentPost2] = useState([] as any);
+  const [recentPost3, setRecentPost3] = useState([] as any);
 
   useEffect(() => {
     if (recentReadPost[0]) {
@@ -44,7 +47,10 @@ export function ProfileContainer({ bg = "rgba(255, 255, 255, 0.4)" }) {
   return (
     <S.Container bg={bg}>
       <Sv mt={72} col>
-        <SearchInput />
+        <SearchInput
+          value={searchKeyword}
+          onChange={(e: any) => setSearchKeyword(e.target.value)}
+        />
         <Profile />
         <Sv mt={48}>
           <St s2 g0 text="당신이 최근 본 포스트" />
@@ -52,7 +58,6 @@ export function ProfileContainer({ bg = "rgba(255, 255, 255, 0.4)" }) {
           {recentPost1 && (
             <PostListS
               title={recentPost1.title}
-              date={recentPost1.create_date}
               body={recentPost1.body}
               imgSrc={
                 recentPost1.represent_image
@@ -65,7 +70,6 @@ export function ProfileContainer({ bg = "rgba(255, 255, 255, 0.4)" }) {
           {recentPost2 && (
             <PostListS
               title={recentPost2.title}
-              date={recentPost2.create_date}
               body={recentPost2.body}
               imgSrc={
                 recentPost2.represent_image
@@ -78,7 +82,6 @@ export function ProfileContainer({ bg = "rgba(255, 255, 255, 0.4)" }) {
           {recentPost3 && (
             <PostListS
               title={recentPost3.title}
-              date={recentPost3.create_date}
               body={recentPost3.body}
               imgSrc={
                 recentPost3.represent_image

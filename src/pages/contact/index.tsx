@@ -13,7 +13,7 @@ export default function ContactModal() {
   return <S.Body></S.Body>;
 }
 
-const S = {};
+const S: any = {};
 
 S.Body = styled(Sv)`
   flex: 1;

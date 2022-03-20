@@ -6,40 +6,38 @@ import { Sv, St, ButtonL } from "components";
 import dummy from "images/dummy.png";
 import { colors } from "styles/colors";
 
-interface CategoryListProps {
-  href: string;
-  imgSrc: StaticImageData;
+interface CategoryItemProps {
   title: string;
-  selectedCategory: boolean;
-  categoryList: Array;
+  isSelected: boolean;
 }
 
-const CategoryItem: React.FC<CategoryListProps> = ({
-  href = "/",
-  imgSrc = dummy,
-  title = "title",
-  selectedCategory,
-}) => {
+const CategoryItem: React.FC<CategoryItemProps> = ({ title, isSelected }) => {
   return (
     <Sv
       p={12}
-      b={`1px solid ${selectedCategory ? colors.g0 : "transparent"}`}
+      b={`1px solid ${isSelected ? colors.g0 : "transparent"}`}
       br={100}
       act
       jct
       style={{ minWidth: 80 }}
     >
       <S.BodyText
-        selectedCategory={selectedCategory}
+        selectedCategory={isSelected}
         en
-        bold={selectedCategory}
-        color={selectedCategory ? colors.g0 : colors.g4}
+        bold={isSelected}
+        color={isSelected ? colors.g0 : colors.g4}
         text={title}
         center
       />
     </Sv>
   );
 };
+
+interface CategoryListProps {
+  selectedCategory: string;
+  setSelectedCategory: Function;
+  categoryList: any;
+}
 
 export const CategoryList: React.FC<CategoryListProps> = ({
   categoryList = [],
@@ -48,11 +46,11 @@ export const CategoryList: React.FC<CategoryListProps> = ({
 }) => {
   return (
     <S.ListContainer mt={30} row act gx={20}>
-      {categoryList.map((item, index) => (
+      {categoryList.map((item: any) => (
         <Sv py={8} pointer onClick={() => setSelectedCategory(item.title)}>
           <CategoryItem
             title={item.title}
-            selectedCategory={selectedCategory == item.title}
+            isSelected={selectedCategory == item.title}
           />
         </Sv>
       ))}

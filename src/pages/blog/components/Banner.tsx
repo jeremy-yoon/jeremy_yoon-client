@@ -7,12 +7,7 @@ import { motion } from "framer-motion";
 import { preventDrag } from "styles/global-styles";
 import blog_sample from "images/blog-sample.jpeg";
 
-interface BannerProps {
-  href?: string;
-  title: string;
-  duration?: number;
-  reverse?: boolean;
-}
+interface BannerProps {}
 
 export const Banner: React.FC<BannerProps> = ({}) => {
   return (

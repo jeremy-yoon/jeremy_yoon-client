@@ -13,7 +13,7 @@ import parse from "html-react-parser";
 
 interface PostListProps {
   href: any;
-  imgSrc: StaticImageData;
+  imgSrc: StaticImageData | string;
   date: string;
   category: string;
   title: string;
@@ -28,8 +28,8 @@ export const PostList: React.FC<PostListProps> = ({
   category = "category",
   title = "title",
   body = "body",
-  likeCount = "0",
-  viewCount = "0",
+  likeCount = 0,
+  viewCount = 0,
 }) => {
   return (
     <Link href={href}>

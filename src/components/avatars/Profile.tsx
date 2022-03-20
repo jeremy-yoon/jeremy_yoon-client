@@ -5,23 +5,13 @@ import styled from "styled-components";
 import { Sv, St, ButtonL } from "components";
 import profile_me from "images/profile_me.png";
 
-interface ProfileProps {
-  href: string;
-  imgSrc: StaticImageData;
-  name: string;
-  body: string;
-}
+interface ProfileProps {}
 
-export const Profile: React.FC<ProfileProps> = ({
-  href = "/",
-  imgSrc = profile_me,
-  name = "제레미",
-  body = "body",
-}) => {
+export const Profile: React.FC<ProfileProps> = ({}) => {
   return (
     <Sv col pt={40}>
       <Sv>
-        <S.Image src={imgSrc} width={88} height={88} objectFit="cover" />
+        <S.Image src={profile_me} width={88} height={88} objectFit="cover" />
       </Sv>
       <St s1 g0 text="Jeremy Yoon" />
       <Sv h={4} />

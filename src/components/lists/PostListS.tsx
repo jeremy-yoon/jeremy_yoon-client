@@ -13,23 +13,15 @@ import parse from "html-react-parser";
 
 interface PostListSProps {
   href: any;
-  imgSrc: StaticImageData;
-  date: string;
-  category: string;
+  imgSrc: StaticImageData | string;
   title: string;
   body: string;
-  likeCount: number;
-  viewCount: number;
 }
 export const PostListS: React.FC<PostListSProps> = ({
   href = "/",
   imgSrc = main_bg1,
-  date = "date",
-  category = "category",
   title = "title",
   body = "body",
-  likeCount = "0",
-  viewCount = "0",
 }) => {
   return (
     <Link href={href}>

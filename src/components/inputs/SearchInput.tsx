@@ -8,19 +8,11 @@ import { colors } from "styles/colors";
 import ic_search from "images/svg/ic_search.svg";
 
 interface SearchInputProps {
-  href: string;
-  title: string;
-  body: string;
-  onClickSearch: Function;
   value: string;
   onChange: Function;
 }
 
 export const SearchInput: React.FC<SearchInputProps> = ({
-  href = "/",
-  title = "title",
-  body = "body",
-  onClickSearch,
   value,
   onChange,
 }) => {

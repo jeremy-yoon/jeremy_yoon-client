@@ -17,10 +17,10 @@ import dummy from "images/dummy.png";
 interface BlogScreen {}
 
 export default function BlogScreen() {
-  const [postList, setPostList] = useState([]);
-  const [categoryList, setCategoryList] = useState([]);
-  const [isLoading, setLoading] = useState(true);
-  const [selectedCategory, setSelectedCategory] = useState("All");
+  const [postList, setPostList] = useState([] as any);
+  const [categoryList, setCategoryList] = useState([] as any);
+  const [isLoading, setLoading] = useState(true as boolean);
+  const [selectedCategory, setSelectedCategory] = useState("All" as string);
 
   useEffect(() => {
     getCategoryList(setCategoryList);
@@ -29,7 +29,7 @@ export default function BlogScreen() {
 
   // render post list
   const renderPostList = () =>
-    postList.map((item, index) => (
+    postList.map((item: any, index: number) => (
       <PostList
         key={index}
         category={categoryList[item.category]?.title}
@@ -42,6 +42,8 @@ export default function BlogScreen() {
             : dummy
         }
         href={`/post/${item.id}`}
+        likeCount={0}
+        viewCount={0}
       />
     ));
 
@@ -68,8 +70,8 @@ export default function BlogScreen() {
     leaveDelay: 100,
   });
 
-  let mouseXPosition = 0;
-  let mouseYPosition = 0;
+  let mouseXPosition: any = 0;
+  let mouseYPosition: any = 0;
 
   if (mouse.x !== null) {
     mouseXPosition = mouse.clientX;
@@ -111,12 +113,12 @@ export default function BlogScreen() {
     damping: 28,
   };
 
-  function contactEnter(event) {
+  function contactEnter() {
     setCursorText("👋");
     setCursorVariant("contact");
   }
 
-  function contactLeave(event) {
+  function contactLeave() {
     setCursorText("");
     setCursorVariant("default");
   }

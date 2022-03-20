@@ -1,6 +1,5 @@
 import { wrapRequest, instance } from "./index";
 import axios from "axios";
-import { getToken } from "pages/_app";
 import { ROOT_URL } from "./url";
 
 // 기본 post 요청

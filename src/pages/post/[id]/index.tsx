@@ -18,7 +18,10 @@ import ic_like from "images/svg/ic_like.svg";
 import { useTitle } from "react-use";
 import Head from "next/head";
 import { useRecoilState } from "recoil";
-import { userRecentReadPostAtom } from "recoil/atoms/user";
+import {
+  userRecentReadPostAtom,
+  userTotalReadHistoryAtom,
+} from "recoil/atoms/user";
 
 const PostScreen: React.FC = () => {
   const router = useRouter();
@@ -32,6 +35,9 @@ const PostScreen: React.FC = () => {
 
   const [recentReadPost, setRecentReadPost] = useRecoilState(
     userRecentReadPostAtom
+  );
+  const [totalReadHistory, setTotalReadHistory] = useRecoilState(
+    userTotalReadHistoryAtom
   );
 
   //get y position of bottomNav
@@ -96,6 +102,13 @@ const PostScreen: React.FC = () => {
       }
     }
   }, [id]);
+
+  useEffect(() => {
+    if (id) {
+      //읽은 모든 기록을 저장.
+      setTotalReadHistory([...totalReadHistory, id]);
+    }
+  });
 
   useEffect(() => {
     getBottomNavY();

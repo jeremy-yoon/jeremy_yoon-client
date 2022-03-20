@@ -8,3 +8,9 @@ export const userRecentReadPostAtom = atom({
   default: [],
   effects_UNSTABLE: [persistAtom],
 });
+
+export const userTotalReadHistoryAtom = atom({
+  key: "userTotalReadHistoryAtom",
+  default: [],
+  effects_UNSTABLE: [persistAtom],
+});

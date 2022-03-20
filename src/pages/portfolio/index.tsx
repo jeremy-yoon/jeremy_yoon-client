@@ -20,9 +20,9 @@ const SearchScreen: React.FC = () => {
             <St h2 weight={200} text="에 대한 검색결과" />
           </Sv>
           <Sv h={1} bg={colors.g5} my={20} />
+          {/* <PostList />
           <PostList />
-          <PostList />
-          <PostList />
+          <PostList /> */}
         </Sv>
       </Sv>
     </>

@@ -24,7 +24,7 @@ export default function Background() {
   const rotateX = useTransform(y, [0, 1900], [45, -45]);
   const rotateY = useTransform(x, [0, 1900], [-45, 45]);
 
-  function handleMouse(event) {
+  function handleMouse(event: any) {
     const rect = event.currentTarget.getBoundingClientRect();
 
     x.set(event.clientX - rect.left);
@@ -42,8 +42,8 @@ export default function Background() {
     leaveDelay: 100,
   });
 
-  let mouseXPosition = 0;
-  let mouseYPosition = 0;
+  let mouseXPosition: any = 0;
+  let mouseYPosition: any = 0;
 
   if (mouse.x !== null) {
     mouseXPosition = mouse.clientX;
@@ -96,22 +96,22 @@ export default function Background() {
     damping: 28,
   };
 
-  function projectEnter(event) {
+  function projectEnter() {
     setCursorText("View");
     setCursorVariant("project");
   }
 
-  function projectLeave(event) {
+  function projectLeave() {
     setCursorText("");
     setCursorVariant("default");
   }
 
-  function contactEnter(event) {
+  function contactEnter() {
     setCursorText("👋");
     setCursorVariant("contact");
   }
 
-  function contactLeave(event) {
+  function contactLeave() {
     setCursorText("");
     setCursorVariant("default");
   }

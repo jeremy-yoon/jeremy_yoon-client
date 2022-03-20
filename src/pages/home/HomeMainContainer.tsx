@@ -6,7 +6,7 @@ import { Row, Col } from "antd";
 import styled, { css, keyframes } from "styled-components";
 import { getRequest } from "apis/common";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
-import BlogScreen from "pages/blog";
+import BlogScreen from "pages/blog/index.page";
 import { colors } from "styles/colors";
 import { NavButton, TitleText } from "./components";
 import Background from "./Background";

@@ -10,9 +10,9 @@ import { colors } from "styles/colors";
 import parse from "html-react-parser";
 
 interface CommentModalProps {
-  postId: string;
+  postId: any;
   isCommentModalOpen: boolean;
-  setCommentModalOpen: boolean;
+  setCommentModalOpen: Function;
 }
 
 const CommentModal: React.FC<CommentModalProps> = ({
@@ -85,7 +85,7 @@ const CommentModal: React.FC<CommentModalProps> = ({
             </Sv>
             <CommentInput
               value={commentContent}
-              onChange={(e) => setCommentContent(e.target.value)}
+              onChange={(e: any) => setCommentContent(e.target.value)}
               onClickRegister={postComment}
             />
           </Sv>

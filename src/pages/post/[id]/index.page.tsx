@@ -10,7 +10,7 @@ import { colors } from "styles/colors";
 import parse from "html-react-parser";
 import CommentModal from "./CommentModal";
 import RecommendPost from "./RecommendPost";
-import BottomNav from "./BottomNav";
+import { BottomNav } from "./BottomNav";
 import { getPost } from "apis/service";
 import dummy from "images/dummy.png";
 import ic_comment from "images/svg/ic_comment.svg";
@@ -27,8 +27,10 @@ const PostScreen: React.FC = () => {
   const router = useRouter();
   const { id } = router.query;
   const bottomNavRef = useRef<HTMLDivElement>(null);
-  const [post, setPost] = useState();
-  const [isCommentModalOpen, setCommentModalOpen] = useState(undefined);
+  const [post, setPost] = useState([] as any);
+  const [isCommentModalOpen, setCommentModalOpen] = useState(
+    undefined as undefined | boolean
+  );
   const [scrollY, setScrollY] = useState(0);
   const [bottomNavY, setBottomNavY] = useState(0);
   const [hitCount, setHitCount] = useState(0);
@@ -54,7 +56,7 @@ const PostScreen: React.FC = () => {
 
   const renderBottomNav = () => {
     if (scrollY < bottomNavY) {
-      return <BottomNav />;
+      return <BottomNav setCommentModalOpen={setCommentModalOpen} />;
     }
   };
 

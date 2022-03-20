@@ -9,9 +9,13 @@ import { colors } from "styles/colors";
 import ic_comment from "images/svg/ic_comment.svg";
 import ic_like from "images/svg/ic_like.svg";
 
-interface BottomNav {}
+interface BottomNavProps {
+  setCommentModalOpen: Function;
+}
 
-export default function BottomNav({ setCommentModalOpen }) {
+export const BottomNav: React.FC<BottomNavProps> = ({
+  setCommentModalOpen,
+}) => {
   return (
     <S.Container jct pt={20}>
       <S.Wrapper w={1024} h={64} act jsb>
@@ -32,7 +36,7 @@ export default function BottomNav({ setCommentModalOpen }) {
       <S.Dummy w={358} />
     </S.Container>
   );
-}
+};
 const S: any = {};
 
 const blur = css`

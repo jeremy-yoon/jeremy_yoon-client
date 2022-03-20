@@ -8,18 +8,11 @@ import { colors } from "styles/colors";
 import moment from "moment";
 
 interface CommentProps {
-  href: string;
-  imgSrc: StaticImageData;
   body: string;
   date: string;
 }
 
-export const Comment: React.FC<CommentProps> = ({
-  href = "/",
-  imgSrc = dummy,
-  body = "body",
-  date,
-}) => {
+export const Comment: React.FC<CommentProps> = ({ body = "body", date }) => {
   return (
     <>
       <Sv py={12}>

@@ -13,4 +13,5 @@ module.exports = {
   images: {
     domains: ["127.0.0.1"],
   },
+  pageExtensions: ["page.tsx", "page.ts", "page.jsx", "page.js"],
 };

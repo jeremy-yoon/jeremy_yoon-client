@@ -32,6 +32,13 @@
     },
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "src/apis/service/index.js",
+    "src/apis/index.js",
+    "src/apis/common.js"
+  ],
   "exclude": ["node_modules"]
 }

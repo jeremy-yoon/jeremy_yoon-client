@@ -18,9 +18,9 @@ const RecommendPost: React.FC = () => {
           <St s1 g0 text="당신에게 더 추천할 만한 글들" />
         </Sv>
         <Sv mt={20}>
+          {/* <PostList />
           <PostList />
-          <PostList />
-          <PostList />
+          <PostList /> */}
         </Sv>
       </S.Wrapper>
     </>

@@ -1,9 +1,9 @@
 import React, { useState, lazy, Suspense } from "react";
-import { Sv, DraggableSquare } from "components";
+import { Sv } from "components";
 import HomeMainContainer from "pages/home/HomeMainContainer";
 import dynamic from "next/dynamic";
 import Head from "next/head";
-import BlogScreen from "pages/blog";
+import BlogScreen from "pages/blog/index.page";
 
 export default function Home() {
   // const RateStar = dynamic(() => import("../components/buttons/RateStar"), {

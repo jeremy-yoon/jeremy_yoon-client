@@ -7,20 +7,12 @@ import dummy from "images/dummy.png";
 import { colors } from "styles/colors";
 
 interface CommentInputProps {
-  href: string;
-  imgSrc: StaticImageData;
-  title: string;
-  body: string;
   onClickRegister: Function;
   value: string;
   onChange: Function;
 }
 
 export const CommentInput: React.FC<CommentInputProps> = ({
-  href = "/",
-  imgSrc = dummy,
-  title = "title",
-  body = "body",
   onClickRegister,
   value,
   onChange,

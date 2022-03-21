@@ -116,7 +116,6 @@ const blur = css`
 
 S.Container = styled(Sv)`
   position: relative;
-  min-height: 100vh;
   width: 1024px;
   max-height: 100vh;
   padding-top: 72px;

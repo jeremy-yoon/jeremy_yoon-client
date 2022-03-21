@@ -45,7 +45,7 @@ const MyApp: React.FC<MyAppProps> = ({ Component, pageProps }) => {
   };
 
   useEffect(() => {
-    setIsTablet(width < 1024);
+    setIsTablet(width < 1200);
   }, [width]);
 
   return (
@@ -93,11 +93,9 @@ const MyApp: React.FC<MyAppProps> = ({ Component, pageProps }) => {
 const S: any = {};
 
 S.Content = styled(Sv)`
-  min-height: 100vh;
-  min-width: 100vw;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  /* padding-top: 64px; */
   background: white;
 `;
 
@@ -105,7 +103,6 @@ S.Body = styled(Sv)`
   display: flex;
   flex-direction: row;
   justify-content: center;
-  min-height: 100vh;
 `;
 
 S.bg = styled(Sv)`
@@ -140,6 +137,8 @@ const blur = css`
 S.Container = styled(Sv)`
   width: 1024px;
   max-height: 100vh;
+  display: flex;
+  justify-content: center;
   z-index: 2;
   overflow-y: scroll;
   position: relative;

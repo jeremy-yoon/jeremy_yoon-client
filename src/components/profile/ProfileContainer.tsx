@@ -46,68 +46,70 @@ export function ProfileContainer({ bg = "rgba(255, 255, 255, 0.4)" }) {
 
   return (
     <S.Container bg={bg}>
-      <Sv mt={72} col>
-        <SearchInput
-          value={searchKeyword}
-          onChange={(e: any) => setSearchKeyword(e.target.value)}
-        />
-        <Profile />
-        <Sv mt={48}>
-          <St s2 g0 text="당신이 최근 본 포스트" />
-          <Sv h={8} />
-          {recentPost1 && (
-            <PostListS
-              title={recentPost1.title}
-              body={recentPost1.body}
-              imgSrc={
-                recentPost1.represent_image
-                  ? `http://127.0.0.1:8000${recentPost1.represent_image}`
-                  : dummy
-              }
-              href={`/post/${recentPost1.id}`}
-            />
-          )}
-          {recentPost2 && (
-            <PostListS
-              title={recentPost2.title}
-              body={recentPost2.body}
-              imgSrc={
-                recentPost2.represent_image
-                  ? `http://127.0.0.1:8000${recentPost2.represent_image}`
-                  : dummy
-              }
-              href={`/post/${recentPost2.id}`}
-            />
-          )}
-          {recentPost3 && (
-            <PostListS
-              title={recentPost3.title}
-              body={recentPost3.body}
-              imgSrc={
-                recentPost3.represent_image
-                  ? `http://127.0.0.1:8000${recentPost3.represent_image}`
-                  : dummy
-              }
-              href={`/post/${recentPost3.id}`}
-            />
-          )}
+      <S.Wrapper>
+        <Sv mt={72} col>
+          <SearchInput
+            value={searchKeyword}
+            onChange={(e: any) => setSearchKeyword(e.target.value)}
+          />
+          <Profile />
+          <Sv mt={48}>
+            <St s2 g0 text="당신이 최근 본 포스트" />
+            <Sv h={8} />
+            {recentPost1 && (
+              <PostListS
+                title={recentPost1.title}
+                body={recentPost1.body}
+                imgSrc={
+                  recentPost1.represent_image
+                    ? `http://127.0.0.1:8000${recentPost1.represent_image}`
+                    : dummy
+                }
+                href={`/post/${recentPost1.id}`}
+              />
+            )}
+            {recentPost2 && (
+              <PostListS
+                title={recentPost2.title}
+                body={recentPost2.body}
+                imgSrc={
+                  recentPost2.represent_image
+                    ? `http://127.0.0.1:8000${recentPost2.represent_image}`
+                    : dummy
+                }
+                href={`/post/${recentPost2.id}`}
+              />
+            )}
+            {recentPost3 && (
+              <PostListS
+                title={recentPost3.title}
+                body={recentPost3.body}
+                imgSrc={
+                  recentPost3.represent_image
+                    ? `http://127.0.0.1:8000${recentPost3.represent_image}`
+                    : dummy
+                }
+                href={`/post/${recentPost3.id}`}
+              />
+            )}
+          </Sv>
         </Sv>
-      </Sv>
-      <S.Footer>
-        <St s3 g3 weight={600} text="Powered by" />
-        <Sv mt={4} row gx={12} wrap>
-          <St c1 g4 text="Next.js" />
-          <St c1 g4 text="Typescript" />
-          <St c1 g4 text="Django" />
-          <St c1 g4 text="Framer-motion" />
-        </Sv>
-        <St
-          mt={16}
-          b2
-          g4
-          text="Copyrightⓒ 2022 All rights reserved by Jeremy Yoon"
-        />
-      </S.Footer>
+        <S.Footer>
+          <St s3 g3 weight={600} text="Powered by" />
+          <Sv mt={4} row gx={12} wrap>
+            <St c1 g4 text="Next.js" />
+            <St c1 g4 text="Typescript" />
+            <St c1 g4 text="Django" />
+            <St c1 g4 text="Framer-motion" />
+          </Sv>
+          <St
+            mt={16}
+            b2
+            g4
+            text="Copyrightⓒ 2022 All rights reserved by Jeremy Yoon"
+          />
+        </S.Footer>
+      </S.Wrapper>
     </S.Container>
   );
 }
@@ -126,10 +128,19 @@ S.Container = styled(Sv)`
   background: ${(props) => props.bg};
   overflow: hidden;
   width: 414px;
-  padding-left: 40px;
-  padding-right: 40px;
+  min-width: 388px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   z-index: 1;
   ${blur}
+`;
+
+S.Wrapper = styled(Sv)`
+  padding-left: 24px;
+  padding-right: 24px;
+  min-width: 366px;
 `;
 
 S.Footer = styled(Sv)`

@@ -166,6 +166,7 @@ const blur = css`
 
 S.Container = styled(Sv)`
   padding-top: 60px;
-  padding-left: 120px;
-  padding-right: 120px;
+  max-width: 800px;
+  padding-left: 24px;
+  padding-right: 24px;
 `;

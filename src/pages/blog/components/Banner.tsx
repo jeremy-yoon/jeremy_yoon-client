@@ -41,15 +41,11 @@ const blur = css`
 
 S.Container = styled(Sv)`
   padding-top: 16px;
-  /* padding: 32px; */
-  /* background: ${colors.g7}; */
-  /* border-bottom: 40px solid ${colors.g6}; */
-  /* ${blur} */
 `;
 
 S.Title = styled(St)`
   line-height: 110px;
-  font-size: 88px;
+  font-size: 80px;
   font-weight: ${(props) => props.weight || 500};
   font-style: ${(props) => (props.italic ? "italic" : "normal")};
   color: ${colors.g0};

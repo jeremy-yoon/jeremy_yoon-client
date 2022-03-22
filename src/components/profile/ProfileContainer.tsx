@@ -1,7 +1,15 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Sv, St, ButtonL, SearchInput, Profile, PostListS } from "components";
+import {
+  Sv,
+  St,
+  ButtonL,
+  SearchInput,
+  Profile,
+  PostListS,
+  PostListSSkeleton,
+} from "components";
 import { Row, Col } from "antd";
 import styled, { css } from "styled-components";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
@@ -20,27 +28,42 @@ export function ProfileContainer({ bg = "rgba(255, 255, 255, 0.4)" }) {
     userRecentReadPostAtom
   );
 
+  const [isLoading, setLoading] = useState(true as boolean);
+
   const [searchKeyword, setSearchKeyword] = useState("");
 
   const [recentPost1, setRecentPost1] = useState([] as any);
   const [recentPost2, setRecentPost2] = useState([] as any);
   const [recentPost3, setRecentPost3] = useState([] as any);
 
+  const renderSkeleton = () => {
+    if (isLoading) {
+      return (
+        <Sv>
+          <PostListSSkeleton />
+          <PostListSSkeleton />
+          <PostListSSkeleton />
+          <PostListSSkeleton />
+        </Sv>
+      );
+    }
+  };
+
   useEffect(() => {
     if (recentReadPost[0]) {
-      getPost(setRecentPost1, recentReadPost[0]);
+      getPost(setRecentPost1, setLoading, recentReadPost[0]);
     }
   }, [recentReadPost[0]]);
 
   useEffect(() => {
     if (recentReadPost[1]) {
-      getPost(setRecentPost2, recentReadPost[1]);
+      getPost(setRecentPost2, setLoading, recentReadPost[1]);
     }
   }, [recentReadPost[1]]);
 
   useEffect(() => {
     if (recentReadPost[2]) {
-      getPost(setRecentPost3, recentReadPost[2]);
+      getPost(setRecentPost3, setLoading, recentReadPost[2]);
     }
   }, [recentReadPost[2]]);
 
@@ -56,6 +79,7 @@ export function ProfileContainer({ bg = "rgba(255, 255, 255, 0.4)" }) {
           <Sv mt={48}>
             <St s2 g0 text="당신이 최근 본 포스트" />
             <Sv h={8} />
+            {renderSkeleton()}
             {recentPost1 && (
               <PostListS
                 title={recentPost1.title}

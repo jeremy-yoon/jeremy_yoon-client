@@ -37,13 +37,18 @@ export const getPostList = (setPostList, setLoading) =>
   );
 
 // 포스트 상세 불러오기
-const getPostRequest = async (setPost, id) => {
+const getPostRequest = async (setPost, setLoading, id) => {
   const result = await getRequest(`/post/${id}/`);
   setPost(result);
   console.log("getPost", result);
+  setLoading(false);
 };
-const getPostException = async (e) => {
+const getPostException = async (setLoading, e) => {
   console.log("getPost 에러", e);
+  setLoading(false);
 };
-export const getPost = (setPost, id) =>
-  commonExceptionForm(() => getPostRequest(setPost, id), getPostException);
+export const getPost = (setPost, setLoading, id) =>
+  commonExceptionForm(
+    () => getPostRequest(setPost, setLoading, id),
+    getPostException
+  );

@@ -147,7 +147,6 @@ export default function BlogScreen() {
         <Sv h={24} />
         {renderSkeleton()}
         {renderPostList()}
-        {renderPostList()}
         <Sv h={40} />
       </S.Container>
     </>

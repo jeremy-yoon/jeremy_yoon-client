@@ -47,6 +47,22 @@ export const PostListS: React.FC<PostListSProps> = ({
   );
 };
 
+export const PostListSSkeleton = () => (
+  <SkeletonTheme baseColor={colors.g7}>
+    <Sv row py={16}>
+      <Sv mr={16}>
+        <Skeleton height={64} width={64} />
+      </Sv>
+      <Sv col>
+        <Skeleton count={1} width={80} height={16} />
+        <Sv h={4} />
+        <Skeleton count={1} width={200} height={12} />
+        <Skeleton count={1} width={150} height={12} />
+      </Sv>
+    </Sv>
+  </SkeletonTheme>
+);
+
 const S: any = {};
 
 S.ImageWrapper = styled(Sv)`

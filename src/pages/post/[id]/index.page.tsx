@@ -28,6 +28,7 @@ const PostScreen: React.FC = () => {
   const { id } = router.query;
   const bottomNavRef = useRef<HTMLDivElement>(null);
   const [post, setPost] = useState([] as any);
+  const [isLoading, setLoading] = useState(true as boolean);
   const [isCommentModalOpen, setCommentModalOpen] = useState(
     undefined as undefined | boolean
   );
@@ -74,7 +75,7 @@ const PostScreen: React.FC = () => {
 
   useEffect(() => {
     if (id) {
-      getPost(setPost, id);
+      getPost(setPost, setLoading, id);
     }
   }, [id]);
 

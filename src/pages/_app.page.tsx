@@ -17,6 +17,7 @@ import { useWindowSize } from "@react-hook/window-size";
 import blog_bg from "images/blog-bg.jpg";
 import blog_bg2 from "images/blog-bg2.jpg";
 import blog_bg3 from "images/blog-bg3.jpg";
+import favicon from "../public/favicon.ico";
 
 const { Header, Content, Footer } = Layout;
 
@@ -55,6 +56,11 @@ const MyApp: React.FC<MyAppProps> = ({ Component, pageProps }) => {
           <S.Body gx={16}>
             <Head>
               <title>Jelog</title>
+              <link
+                rel="shortcut icon"
+                href={favicon.src}
+                type="image/x-icon"
+              />
             </Head>
             <S.bg>
               <Image src={blog_bg} width={800} height={800} />

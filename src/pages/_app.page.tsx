@@ -116,6 +116,9 @@ S.bg = styled(Sv)`
   opacity: 0.8;
   top: 10%;
   right: -15%;
+  /* @media only screen and (max-width: 768px) {
+    display: none
+  } */
 `;
 
 S.bg2 = styled(Sv)`

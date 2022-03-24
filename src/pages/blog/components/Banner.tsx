@@ -45,13 +45,12 @@ S.Container = styled(Sv)`
 
 S.Title = styled(St)`
   line-height: 110px;
-  font-size: 80px;
+  font-size: min(12vw, 80px);
   font-weight: ${(props) => props.weight || 500};
   font-style: ${(props) => (props.italic ? "italic" : "normal")};
   color: ${colors.g0};
   font-family: "Gilroy";
   @media only screen and (max-width: 414px) {
-    font-size: 16vw;
   }
 `;
 

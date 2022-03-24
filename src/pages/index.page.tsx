@@ -12,9 +12,6 @@ export default function Home() {
 
   return (
     <Sv col f={1}>
-      <Head>
-        <link rel="icon" href="../public/favicon.ico" />
-      </Head>
       <BlogScreen />
       {/* <HomeMainContainer /> */}
     </Sv>

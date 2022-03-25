@@ -34,8 +34,8 @@ export const PostList: React.FC<PostListProps> = ({
   return (
     <Link href={href}>
       <Sv pointer>
-        <S.Container jsb>
-          <Sv pointer>
+        <S.Container jsb act>
+          <Sv>
             <Sv row act>
               <St c2 g3 text={`Likes ${likeCount} · Views ${viewCount}`} />
             </Sv>
@@ -79,6 +79,8 @@ S.ImageWrapper = styled(Sv)`
   @media only screen and (max-width: 768px) {
     max-width: 64px;
     max-height: 64px;
+    min-width: 64px;
+    min-height: 64px;
   }
 `;
 
@@ -98,6 +100,9 @@ S.BodyText = styled(St)`
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   max-width: 608px;
+  @media only screen and (max-width: 768px) {
+    max-width: 60vw;
+  }
 `;
 
 export const PostListSkeleton = () => (

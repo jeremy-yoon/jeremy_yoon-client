@@ -168,4 +168,7 @@ S.Container = styled(Sv)`
   max-width: 100vw;
   padding-left: 24px;
   padding-right: 24px;
+  @media only screen and (max-width: 768px) {
+    padding-top: 0px;
+  }
 `;

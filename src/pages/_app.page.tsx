@@ -116,9 +116,10 @@ S.bg = styled(Sv)`
   opacity: 0.8;
   top: 10%;
   right: -15%;
-  /* @media only screen and (max-width: 768px) {
-    display: none
-  } */
+  max-width: 90vw;
+  @media only screen and (max-width: 768px) {
+    left: 0;
+  }
 `;
 
 S.bg2 = styled(Sv)`
@@ -126,6 +127,7 @@ S.bg2 = styled(Sv)`
   opacity: 0.3;
   top: 10%;
   right: 30%;
+  max-width: 90vw;
 `;
 
 S.bg3 = styled(Sv)`
@@ -133,6 +135,7 @@ S.bg3 = styled(Sv)`
   opacity: 0.3;
   bottom: 10%;
   left: 2%;
+  max-width: 90vw;
 `;
 
 const blur = css`
@@ -160,6 +163,7 @@ S.Container = styled(Sv)`
     padding-left: 24px;
     padding-right: 24px;
     padding-top: 24px;
+    overflow: hidden;
   }
 `;
 

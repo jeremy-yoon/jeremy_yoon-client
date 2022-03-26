@@ -60,7 +60,16 @@ export const CategoryList: React.FC<CategoryListProps> = ({
 
 const S: any = {};
 
-S.ListContainer = styled(Sv)``;
+S.ListContainer = styled(Sv)`
+  margin-left: -24px;
+  margin-right: -24px;
+  padding-left: 24px;
+  padding-right: 24px;
+  overflow-x: scroll;
+  ::-webkit-scrollbar {
+    display: none;
+  }
+`;
 
 S.Image = styled(Image)`
   max-width: 40px;
@@ -69,6 +78,6 @@ S.Image = styled(Image)`
 `;
 
 S.BodyText = styled(St)`
-  font-size: 16px;
+  font-size: 14px;
   font-weight: ${(props: any) => (props.bold ? "bold" : "normal")};
 `;

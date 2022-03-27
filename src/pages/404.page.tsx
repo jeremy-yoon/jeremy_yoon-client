@@ -4,7 +4,7 @@ import { Sv, St } from "components"
 export default function FourOhFour() {
   return (
     <>
-      <h1>404 - 페이지를 찾을 수  없어요 :(</h1>
+      <St h1>404 - 페이지를 찾을 수  없어요 :(</St>
       <Link href="/">
         <Sv>
           <St>

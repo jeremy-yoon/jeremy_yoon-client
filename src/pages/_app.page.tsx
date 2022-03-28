@@ -163,7 +163,7 @@ S.Container = styled(Sv)`
     padding-left: 24px;
     padding-right: 24px;
     padding-top: 24px;
-    overflow: hidden;
+    overflow-x: hidden;
   }
 `;
 

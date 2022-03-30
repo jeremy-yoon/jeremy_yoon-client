@@ -205,8 +205,8 @@ S.Container = styled(Sv)`
 `;
 
 S.Wrapper = styled(Sv)`
-  padding-left: 160px;
-  padding-right: 160px;
+  /* padding-left: 160px; */
+  /* padding-right: 160px; */
   @media only screen and (max-width: 768px) {
     padding-left: 24px;
     padding-right: 24px;

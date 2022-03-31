@@ -197,19 +197,23 @@ S.Container = styled(Sv)`
   width: 100%;
   padding-top: 100px;
   padding-bottom: 64px;
+  padding-left: 160px;
+  padding-right: 160px;
+  width: 1024px;
   z-index: 1;
   @media only screen and (max-width: 768px) {
     padding-top: 24px;
+    padding-left: 24px;
+    padding-right: 24px;
     width: 100vw;
   }
 `;
 
 S.Wrapper = styled(Sv)`
-  /* padding-left: 160px; */
-  /* padding-right: 160px; */
+  width: 100%;
   @media only screen and (max-width: 768px) {
-    padding-left: 24px;
-    padding-right: 24px;
+    /* padding-left: 24px;
+    padding-right: 24px; */
   }
 `;
 
@@ -220,5 +224,5 @@ S.BottomNavContainer = styled.div`
 
 S.ImageWrapper = styled(Sv)`
   position: relative;
-  height: 400px;
+  height: min(50vw, 400px);
 `;

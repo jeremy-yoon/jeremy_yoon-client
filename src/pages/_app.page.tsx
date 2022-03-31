@@ -109,6 +109,7 @@ S.Body = styled(Sv)`
   display: flex;
   flex-direction: row;
   justify-content: center;
+  min-height: 100vh;
 `;
 
 S.bg = styled(Sv)`
@@ -140,7 +141,6 @@ S.bg3 = styled(Sv)`
 
 const blur = css`
   background: rgba(255, 255, 255, 0.6);
-  /* backdrop-filter: blur(30px); */
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
   -webkit-backdrop-filter: blur(4px);
   border: 1px solid rgba(255, 255, 255, 0.18);

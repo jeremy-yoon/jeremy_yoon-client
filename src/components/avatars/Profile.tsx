@@ -25,7 +25,12 @@ export const Profile: React.FC<ProfileProps> = ({}) => {
       <Sv h={40} />
       <Sv col gy={8}>
         <ButtonL title="연락하기" href="/resume" />
-        <ButtonL title="GitHub Repo" href="/contact" line />
+        <ButtonL
+          isOpenNewTab
+          title="GitHub Repo"
+          href="https://github.com/jeremy-yoon"
+          line
+        />
       </Sv>
     </Sv>
   );

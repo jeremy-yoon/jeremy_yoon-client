@@ -11,6 +11,7 @@ interface ButtonLProps {
   href?: string;
   title: string;
   line?: boolean;
+  isOpenNewTab?: boolean;
 }
 
 export const ButtonL: React.FC<ButtonLProps> = ({
@@ -18,14 +19,28 @@ export const ButtonL: React.FC<ButtonLProps> = ({
   href = "/",
   title = "title",
   line,
+  isOpenNewTab,
 }) => {
   return (
     <Link href={href}>
-      <S.Container onClick={onClick} act jct py={8} px={20} pointer line={line}>
-        <St s4 white={!line}>
-          {title}
-        </St>
-      </S.Container>
+      <a
+        href={isOpenNewTab ? href : ""}
+        target={isOpenNewTab ? "_blank" : "_self"}
+      >
+        <S.Container
+          onClick={onClick}
+          act
+          jct
+          py={8}
+          px={20}
+          pointer
+          line={line}
+        >
+          <St s4 white={!line}>
+            {title}
+          </St>
+        </S.Container>
+      </a>
     </Link>
   );
 };

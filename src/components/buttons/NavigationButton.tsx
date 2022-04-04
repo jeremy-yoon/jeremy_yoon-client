@@ -26,7 +26,7 @@ export const NavigationButton: React.FC<NavigationButtonProps> = ({
           as={icon}
           width={20}
           fill={selected ? colors.g0 : "none"}
-          stroke={selected ? "none" : colors.g4}
+          stroke={selected ? colors.g0 : colors.g4}
         />
       </S.Container>
     </Link>

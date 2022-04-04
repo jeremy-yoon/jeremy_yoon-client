@@ -9,6 +9,7 @@ export { Profile } from "components/avatars/Profile";
 export { PostCardL, PostCardM, PostCardS } from "components/lists/PostCard";
 export { PostList, PostListSkeleton } from "components/lists/PostList";
 export { PostListS, PostListSSkeleton } from "components/lists/PostListS";
+export { GalleryCard } from "components/lists/GalleryCard";
 export { Comment } from "components/lists/Comment";
 
 //buttons

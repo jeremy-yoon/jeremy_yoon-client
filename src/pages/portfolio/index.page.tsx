@@ -1,34 +1,63 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/router";
 import Image from "next/image";
-import { Sv, St, PostList } from "components";
+import { Sv, St, MainLogo, GalleryCard } from "components";
 import styled, { css } from "styled-components";
 import { getRequest, postRequest } from "apis/common";
 import { colors } from "styles/colors";
 
-const SearchScreen: React.FC = () => {
+const PortfolioScreen: React.FC = () => {
   const router = useRouter();
-
-  const [keyword, setKeyword] = useState("keyword");
 
   return (
     <>
-      <Sv>
+      <S.Container>
         <Sv px={120} col>
-          <Sv row mt={64}>
-            <St h2 weight={800} text={`${keyword}`} />
-            <St h2 weight={200} text="에 대한 검색결과" />
+          <MainLogo />
+          <Sv row mt={16}>
+            <St size={80} weight={800} text="포트폴리오" />
+            <St size={80} weight={200} text="를" />
           </Sv>
-          <Sv h={1} bg={colors.g5} my={20} />
-          {/* <PostList />
-          <PostList />
-          <PostList /> */}
+          <St size={80} weight={200} text="둘러보세요." />
         </Sv>
-      </Sv>
+        <GalleryCard />
+        <GalleryCard />
+        <GalleryCard />
+      </S.Container>
     </>
   );
 };
 
-export default SearchScreen;
+export default PortfolioScreen;
 
 const S: any = {};
+
+const blur = css`
+  background: ${colors.g8};
+  backdrop-filter: blur(30px);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+`;
+
+S.Container = styled(Sv)`
+  position: relative;
+  width: 1024px;
+  max-height: 100vh;
+  padding-top: 72px;
+  padding-bottom: 64px;
+  z-index: 1;
+  overflow-y: scroll;
+  ${blur}
+  ::-webkit-scrollbar {
+    width: 0px;
+    display: none;
+  }
+`;
+
+S.RepresentImage = styled(Image)``;
+
+S.BottomNavContainer = styled.div`
+  position: fixed;
+  bottom: 0;
+`;

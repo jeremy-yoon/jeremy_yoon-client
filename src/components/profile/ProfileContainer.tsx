@@ -32,15 +32,14 @@ export function ProfileContainer({ bg = "rgba(255, 255, 255, 0.4)" }) {
 
   const [searchKeyword, setSearchKeyword] = useState("");
 
-  const [recentPost1, setRecentPost1] = useState([] as any);
-  const [recentPost2, setRecentPost2] = useState([] as any);
-  const [recentPost3, setRecentPost3] = useState([] as any);
+  const [recentPost1, setRecentPost1] = useState({} as any);
+  const [recentPost2, setRecentPost2] = useState({} as any);
+  const [recentPost3, setRecentPost3] = useState({} as any);
 
   const renderSkeleton = () => {
     if (isLoading) {
       return (
         <Sv>
-          <PostListSSkeleton />
           <PostListSSkeleton />
           <PostListSSkeleton />
           <PostListSSkeleton />
@@ -67,6 +66,10 @@ export function ProfileContainer({ bg = "rgba(255, 255, 255, 0.4)" }) {
     }
   }, [recentReadPost[2]]);
 
+  useEffect(() => {
+    console.log(Object.keys(recentPost1).length, "recentPost1");
+  }, [recentPost1]);
+
   return (
     <S.Container bg={bg}>
       <S.Wrapper>
@@ -80,7 +83,7 @@ export function ProfileContainer({ bg = "rgba(255, 255, 255, 0.4)" }) {
             <St s2 g0 text="당신이 최근 본 포스트" />
             <Sv h={8} />
             {renderSkeleton()}
-            {recentPost1 && (
+            {Object.keys(recentPost1).length > 0 && (
               <PostListS
                 title={recentPost1.title}
                 body={recentPost1.body}
@@ -92,7 +95,7 @@ export function ProfileContainer({ bg = "rgba(255, 255, 255, 0.4)" }) {
                 href={`/post/${recentPost1.id}`}
               />
             )}
-            {recentPost2 && (
+            {Object.keys(recentPost2).length > 0 && (
               <PostListS
                 title={recentPost2.title}
                 body={recentPost2.body}
@@ -104,7 +107,7 @@ export function ProfileContainer({ bg = "rgba(255, 255, 255, 0.4)" }) {
                 href={`/post/${recentPost2.id}`}
               />
             )}
-            {recentPost3 && (
+            {Object.keys(recentPost3).length > 0 && (
               <PostListS
                 title={recentPost3.title}
                 body={recentPost3.body}

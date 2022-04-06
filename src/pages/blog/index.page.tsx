@@ -155,14 +155,6 @@ export default function BlogScreen() {
 
 const S: any = {};
 
-const blur = css`
-  background: rgba(255, 255, 255, 0.6);
-  /* backdrop-filter: blur(30px); */
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
-  -webkit-backdrop-filter: blur(4px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-`;
-
 S.Container = styled(Sv)`
   padding-top: 60px;
   max-width: 100vw;

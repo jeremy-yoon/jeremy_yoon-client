@@ -31,14 +31,6 @@ export const Banner: React.FC<BannerProps> = ({}) => {
 
 const S: any = {};
 
-const blur = css`
-  background: rgba(233, 233, 237, 0.4);
-  backdrop-filter: blur(30px);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.04);
-  -webkit-backdrop-filter: blur(4px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-`;
-
 S.Container = styled(Sv)`
   padding-top: 16px;
 `;
@@ -52,12 +44,9 @@ S.Title = styled(St)`
   font-family: "Gilroy";
 `;
 
-S.TextContainer = styled(Sv)`
-  /* background-color: ${colors.g5}; */
-`;
+S.TextContainer = styled(Sv)``;
 
 S.TextWrapper = styled(Sv)`
-  /* background: ${colors.g7}; */
   display: flex;
   width: fit-content;
 `;

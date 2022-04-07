@@ -31,12 +31,11 @@ const S: any = {};
 
 S.Container = styled(Sv)`
   padding-top: 60px;
-  width: 100%;
+  width: 742px;
   max-width: 100vw;
   padding-left: 24px;
   padding-right: 24px;
   overflow: visible;
-  background-color: pink;
   @media only screen and (max-width: 768px) {
     padding-top: 0px;
   }

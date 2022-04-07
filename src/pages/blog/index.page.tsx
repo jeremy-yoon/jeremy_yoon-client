@@ -157,6 +157,7 @@ const S: any = {};
 
 S.Container = styled(Sv)`
   padding-top: 60px;
+  width: 742px;
   max-width: 100vw;
   padding-left: 24px;
   padding-right: 24px;

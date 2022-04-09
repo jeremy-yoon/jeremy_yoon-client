@@ -20,11 +20,11 @@ const PortfolioScreen: React.FC = () => {
             <St size={80} weight={200} text="를" />
           </Sv>
           <St size={80} weight={200} text="둘러보세요." />
-          <Row>
-            <Col span={24}>
-              <GalleryCard />
-            </Col>
-          </Row>
+          <Sv col gy={40} mt={64}>
+            <GalleryCard />
+            <GalleryCard />
+            <GalleryCard />
+          </Sv>
         </Sv>
       </S.Container>
     </>

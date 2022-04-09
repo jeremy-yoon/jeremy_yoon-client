@@ -5,6 +5,7 @@ import { Sv, St, MainLogo, GalleryCard } from "components";
 import styled, { css } from "styled-components";
 import { getRequest, postRequest } from "apis/common";
 import { colors } from "styles/colors";
+import { Row, Col } from "antd";
 
 const PortfolioScreen: React.FC = () => {
   const router = useRouter();
@@ -19,10 +20,12 @@ const PortfolioScreen: React.FC = () => {
             <St size={80} weight={200} text="를" />
           </Sv>
           <St size={80} weight={200} text="둘러보세요." />
+          <Row>
+            <Col span={24}>
+              <GalleryCard />
+            </Col>
+          </Row>
         </Sv>
-        <GalleryCard />
-        <GalleryCard />
-        <GalleryCard />
       </S.Container>
     </>
   );

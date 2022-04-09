@@ -20,80 +20,10 @@ export const GalleryCard: React.FC<GalleryCardProps> = ({
 }) => {
   return (
     <Link href={href}>
-      <Sv row pointer>
-        <S.Image src={imgSrc} width="676px" height="352px" objectFit="cover" />
-        <Sv ml={24}>
-          <Sv col mt={16}>
-            <St s1 g0>
-              {title}
-            </St>
-            <St b1 g3>
-              {body}
-            </St>
-          </Sv>
-        </Sv>
-      </Sv>
-    </Link>
-  );
-};
-
-interface PostCardMProps {
-  href: any;
-  imgSrc: StaticImageData;
-  title: string;
-  body: string;
-}
-export const PostCardM: React.FC<PostCardMProps> = ({
-  href = "/",
-  imgSrc = dummy,
-  title = "title",
-  body = "body",
-}) => {
-  return (
-    <Link href={href}>
-      <Sv>
-        <S.Image
-          src={imgSrc}
-          layout="responsive"
-          width="504px"
-          height="280px"
-          objectFit="cover"
-        />
-        <Sv col mt={16}>
-          <St s1 g0>
-            {title}
-          </St>
-          <St b1 g3>
-            {body}
-          </St>
-        </Sv>
-      </Sv>
-    </Link>
-  );
-};
-
-interface PostCardSProps {
-  href: any;
-  imgSrc: StaticImageData;
-  title: string;
-  body: string;
-}
-export const PostCardS: React.FC<PostCardSProps> = ({
-  href = "/",
-  imgSrc = dummy,
-  title = "title",
-  body = "body",
-}) => {
-  return (
-    <Link href={href}>
-      <Sv>
-        <S.Image
-          src={imgSrc}
-          layout="responsive"
-          width="400px"
-          height="260px"
-          objectFit="cover"
-        />
+      <Sv pointer>
+        <S.ImageWrapper>
+          <S.Image src={imgSrc} layout="fill" objectFit="cover" />
+        </S.ImageWrapper>
         <Sv col mt={16}>
           <St s1 g0>
             {title}
@@ -110,3 +40,9 @@ export const PostCardS: React.FC<PostCardSProps> = ({
 const S: any = {};
 
 S.Image = styled(Image)``;
+
+S.ImageWrapper = styled.div`
+  position: relative;
+  height: 480px;
+  width: 100%;
+`;

@@ -181,8 +181,8 @@ const PostScreen: React.FC = () => {
             </Sv>
           </Sv>
         </S.Wrapper>
-        <RecommendPost />
       </S.Container>
+      <RecommendPost />
       {renderBottomNav()}
       {renderCommentModal()}
     </>
@@ -196,7 +196,6 @@ const S: any = {};
 S.Container = styled(Sv)`
   width: 100%;
   padding-top: 100px;
-  padding-bottom: 64px;
   padding-left: 160px;
   padding-right: 160px;
   width: 1024px;

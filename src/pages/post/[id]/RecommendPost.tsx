@@ -10,7 +10,7 @@ const RecommendPost: React.FC = () => {
   const { id } = router.query;
 
   return (
-    <>
+    <S.Container>
       <Sv h={16} bg={colors.g6} mt={80} />
       <S.Wrapper bg={colors.g10} py={80}>
         <Sv col>
@@ -23,7 +23,7 @@ const RecommendPost: React.FC = () => {
           <PostList /> */}
         </Sv>
       </S.Wrapper>
-    </>
+    </S.Container>
   );
 };
 
@@ -31,7 +31,9 @@ export default RecommendPost;
 
 const S: any = {};
 
-S.Container = styled(Sv)``;
+S.Container = styled(Sv)`
+  padding-bottom: 64px;
+`;
 
 S.Wrapper = styled(Sv)`
   padding-left: 160px;

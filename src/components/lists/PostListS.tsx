@@ -12,38 +12,36 @@ import moment from "moment";
 import parse from "html-react-parser";
 
 interface PostListSProps {
-  href: any;
   imgSrc: StaticImageData | string;
   title: string;
   body: string;
+  onClick?: any;
 }
 export const PostListS: React.FC<PostListSProps> = ({
-  href = "/",
   imgSrc = main_bg1,
   title = "title",
   body = "body",
+  onClick,
 }) => {
   return (
-    <Link href={href}>
-      <>
-        <Sv pointer row act py={20}>
-          <S.ImageWrapper>
-            <Image
-              src={imgSrc}
-              width={64}
-              height={64}
-              objectFit="cover"
-              objectPosition="right"
-            />
-          </S.ImageWrapper>
-          <Sv col ml={12} mb={6}>
-            <St s3 g0 mt={4} text={title} />
-            <S.BodyText c1 g2 mt={4} text={body.replace(/(<([^>]+)>)/gi, "")} />
-          </Sv>
+    <Sv onClick={onClick && onClick}>
+      <Sv pointer row act py={20}>
+        <S.ImageWrapper>
+          <Image
+            src={imgSrc}
+            width={64}
+            height={64}
+            objectFit="cover"
+            objectPosition="right"
+          />
+        </S.ImageWrapper>
+        <Sv col ml={12} mb={6}>
+          <St s3 g0 mt={4} text={title} />
+          <S.BodyText c1 g2 mt={4} text={body.replace(/(<([^>]+)>)/gi, "")} />
         </Sv>
-        <Sv h={1} bg={colors.g6} />
-      </>
-    </Link>
+      </Sv>
+      <Sv h={1} bg={colors.g6} />
+    </Sv>
   );
 };
 

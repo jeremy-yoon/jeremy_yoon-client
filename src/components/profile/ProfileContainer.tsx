@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import {
   Sv,
   St,
@@ -24,6 +25,7 @@ interface ProfileContainer {
 }
 
 export function ProfileContainer({ bg = "rgba(255, 255, 255, 0.4)" }) {
+  const router = useRouter();
   const [recentReadPost, setRecentReadPost] = useRecoilState(
     userRecentReadPostAtom
   );
@@ -92,7 +94,9 @@ export function ProfileContainer({ bg = "rgba(255, 255, 255, 0.4)" }) {
                     ? `http://127.0.0.1:8000${recentPost1.represent_image}`
                     : dummy
                 }
-                href={`/post/${recentPost1.id}`}
+                onClick={() => {
+                  router.push(`/post/${recentPost1.id}`);
+                }}
               />
             )}
             {Object.keys(recentPost2).length > 0 && (
@@ -104,7 +108,9 @@ export function ProfileContainer({ bg = "rgba(255, 255, 255, 0.4)" }) {
                     ? `http://127.0.0.1:8000${recentPost2.represent_image}`
                     : dummy
                 }
-                href={`/post/${recentPost2.id}`}
+                onClick={() => {
+                  router.push(`/post/${recentPost2.id}`);
+                }}
               />
             )}
             {Object.keys(recentPost3).length > 0 && (
@@ -116,7 +122,9 @@ export function ProfileContainer({ bg = "rgba(255, 255, 255, 0.4)" }) {
                     ? `http://127.0.0.1:8000${recentPost3.represent_image}`
                     : dummy
                 }
-                href={`/post/${recentPost3.id}`}
+                onClick={() => {
+                  router.push(`/post/${recentPost3.id}`);
+                }}
               />
             )}
           </Sv>

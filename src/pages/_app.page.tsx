@@ -18,6 +18,7 @@ import blog_bg from "images/blog-bg.jpg";
 import blog_bg2 from "images/blog-bg2.jpg";
 import blog_bg3 from "images/blog-bg3.jpg";
 import favicon from "../public/favicon.ico";
+import NextNProgress from "nextjs-progressbar";
 
 const { Header, Content, Footer } = Layout;
 
@@ -83,6 +84,13 @@ const MyApp: React.FC<MyAppProps> = ({ Component, pageProps }) => {
                     transition={{ duration: 0.2 }}
                     variants={animation.variants}
                   >
+                    <NextNProgress
+                      color="#29D"
+                      startPosition={0.3}
+                      stopDelayMs={200}
+                      height={3}
+                      showOnShallow={true}
+                    />
                     <Component {...pageProps} />
                   </m.div>
                 </AnimatePresence>

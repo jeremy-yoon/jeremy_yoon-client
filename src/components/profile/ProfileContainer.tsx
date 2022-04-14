@@ -132,10 +132,18 @@ export function ProfileContainer({ bg = "rgba(255, 255, 255, 0.4)" }) {
         <S.Footer>
           <St s3 g3 weight={600} text="Powered by" />
           <Sv mt={4} row gx={12} wrap>
-            <St c1 g4 text="Next.js" />
-            <St c1 g4 text="Typescript" />
-            <St c1 g4 text="Django" />
-            <St c1 g4 text="Framer-motion" />
+            <a href="https://nextjs.org/" target="_blank">
+              <St c1 g4 text="Next.js" />
+            </a>
+            <a href="https://www.typescriptlang.org/" target="_blank">
+              <St c1 g4 text="Typescript" />
+            </a>
+            <a href="https://www.djangoproject.com/" target="_blank">
+              <St c1 g4 text="Django" />
+            </a>
+            <a href="https://www.framer.com/motion/" target="_blank">
+              <St c1 g4 text="Framer-motion" />
+            </a>
           </Sv>
           <St
             mt={16}

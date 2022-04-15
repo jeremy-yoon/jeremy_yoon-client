@@ -216,10 +216,6 @@ const gy = css<{ gy: any }>`
   row-gap: ${(props) => props.gy}px;
 `;
 
-const disableSelect = css`
-  user-select: none;
-`;
-
 const pointer = css`
   cursor: pointer;
 `;

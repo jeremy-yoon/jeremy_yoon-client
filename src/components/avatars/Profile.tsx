@@ -27,7 +27,7 @@ export const Profile: React.FC<ProfileProps> = ({}) => {
         <ButtonL title="연락하기" href="/resume" />
         <ButtonL
           isOpenNewTab
-          title="GitHub Repo"
+          title="GitHub Profile"
           href="https://github.com/jeremy-yoon"
           line
         />

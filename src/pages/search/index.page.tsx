@@ -11,6 +11,10 @@ const PortfolioScreen: React.FC = () => {
 
   const [keyword, setKeyword] = useState("keyword");
 
+  useEffect(() => {
+    setKeyword(router.query.q);
+  }, [router]);
+
   return (
     <>
       <Sv>

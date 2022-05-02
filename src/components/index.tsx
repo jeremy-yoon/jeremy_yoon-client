@@ -2,6 +2,9 @@
 export { Sv } from "components/styled-components/StyledDiv";
 export { St } from "components/styled-components/StyledText";
 
+//framer
+export { MotionButton } from "components/framer/MotionButton";
+
 //avatars
 export { Profile } from "components/avatars/Profile";
 

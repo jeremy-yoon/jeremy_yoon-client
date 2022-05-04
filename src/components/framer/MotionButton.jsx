@@ -31,10 +31,11 @@ export const MotionButton = ({
       whileTap={"whileTap"}
       whileHover={"whileHover"}
       layout="position"
+      style={{
+        width: "100%",
+      }}
     >
-      <Sv act jct>
-        {children}
-      </Sv>
+      {children}
     </motion.div>
   );
 };

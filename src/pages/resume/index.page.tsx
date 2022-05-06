@@ -12,7 +12,7 @@ const ResumeScreen: React.FC = () => {
   return (
     <>
       <S.Container>
-        <Sv col>
+        <Sv col pb={100}>
           <MainLogo />
           <Sv row mt={16}>
             <St size={80} weight={200} text="안녕하세요." />

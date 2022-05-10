@@ -3,7 +3,13 @@ import "../styles/star-icon.css";
 import "antd/dist/antd.css";
 import "react-loading-skeleton/dist/skeleton.css";
 import "styles/cursor.css";
-import { Sv, St, ProfileContainer, Navigation } from "components";
+import {
+  Sv,
+  St,
+  ProfileContainer,
+  Navigation,
+  MobileNavigation,
+} from "components";
 import Head from "next/head";
 import Image from "next/image";
 import { useRouter } from "next/router";
@@ -46,6 +52,12 @@ const MyApp: React.FC<MyAppProps> = ({ Component, pageProps }) => {
     }
   };
 
+  const renderMobileNavigation = () => {
+    if (isTablet) {
+      return <MobileNavigation />;
+    }
+  };
+
   useEffect(() => {
     setIsTablet(width < 1200);
   }, [width]);
@@ -73,6 +85,7 @@ const MyApp: React.FC<MyAppProps> = ({ Component, pageProps }) => {
               <Image src={blog_bg3} width={400} height={400} />
             </S.bg3>
             {renderNavigation()}
+            {renderMobileNavigation()}
             <S.Container>
               <LazyMotion features={domAnimation}>
                 <AnimatePresence exitBeforeEnter>

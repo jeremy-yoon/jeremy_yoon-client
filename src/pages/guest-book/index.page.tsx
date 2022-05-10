@@ -12,13 +12,15 @@ const GuestBookScreen: React.FC = () => {
   return (
     <>
       <S.Container>
-        <MainLogo />
         <Sv col>
-          <Sv row mt={16}>
-            <St size={80} weight={200} text="안녕하세요." />
+          <MainLogo />
+          <Sv col>
+            <Sv row mt={16}>
+              <St size={80} weight={200} text="안녕하세요." />
+            </Sv>
+            <St size={80} weight={800} text="방명록을" />
+            <St size={80} weight={200} text="작성해보세요." />
           </Sv>
-          <St size={80} weight={800} text="방명록을" />
-          <St size={80} weight={200} text="작성해보세요." />
         </Sv>
       </S.Container>
     </>
@@ -38,6 +40,10 @@ S.Container = styled(Sv)`
   overflow: visible;
   @media only screen and (max-width: 768px) {
     padding-top: 0px;
+  }
+  ::-webkit-scrollbar {
+    width: 0px;
+    display: none;
   }
 `;
 

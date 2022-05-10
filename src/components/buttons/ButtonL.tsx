@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import styled from "styled-components";
-import { Sv, St, Profile } from "components";
+import { Sv, St, MotionButton } from "components";
 import dummy from "images/dummy.png";
 import { colors } from "styles/colors";
 
@@ -23,24 +23,26 @@ export const ButtonL: React.FC<ButtonLProps> = ({
 }) => {
   return (
     <Link href={href}>
-      <a
-        href={isOpenNewTab ? href : ""}
-        target={isOpenNewTab ? "_blank" : "_self"}
-      >
-        <S.Container
-          onClick={onClick}
-          act
-          jct
-          py={8}
-          px={20}
-          pointer
-          line={line}
+      <MotionButton>
+        <a
+          href={isOpenNewTab ? href : ""}
+          target={isOpenNewTab ? "_blank" : "_self"}
         >
-          <St s4 white={!line}>
-            {title}
-          </St>
-        </S.Container>
-      </a>
+          <S.Container
+            onClick={onClick}
+            act
+            jct
+            py={8}
+            px={20}
+            pointer
+            line={line}
+          >
+            <St s4 white={!line}>
+              {title}
+            </St>
+          </S.Container>
+        </a>
+      </MotionButton>
     </Link>
   );
 };

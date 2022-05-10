@@ -126,14 +126,14 @@ export default function BlogScreen() {
   return (
     <>
       <S.Container ref={ref}>
-        <motion.div
+        {/* <motion.div
           variants={variants}
           className="circle"
           animate={cursorVariant}
           transition={spring}
         >
           <span className="cursorText">{cursorText}</span>
-        </motion.div>
+        </motion.div> */}
         <Sv onMouseEnter={contactEnter} onMouseLeave={contactLeave}>
           <MainLogo />
         </Sv>

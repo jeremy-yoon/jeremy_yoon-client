@@ -12,7 +12,6 @@ interface BannerProps {}
 export const Banner: React.FC<BannerProps> = ({}) => {
   return (
     <S.Container>
-      {/* <St s2 text="Jeremy의 개발 블로그" /> */}
       <S.TextContainer>
         <S.TextWrapper>
           <S.Title text="PROGRAMMING IS " />

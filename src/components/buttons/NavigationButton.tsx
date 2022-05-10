@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import styled, { css } from "styled-components";
-import { Sv, St, Profile } from "components";
+import { Sv, St, MotionButton } from "components";
 import { colors } from "styles/colors";
 import ic_home from "images/svg/ic_home.svg";
 
@@ -21,14 +21,16 @@ export const NavigationButton: React.FC<NavigationButtonProps> = ({
 }) => {
   return (
     <Link href={href}>
-      <S.Container py={16} pointer selected={selected}>
-        <Sv
-          as={icon}
-          width={20}
-          fill={selected ? colors.g0 : "none"}
-          stroke={selected ? colors.g0 : colors.g4}
-        />
-      </S.Container>
+      <MotionButton>
+        <S.Container py={16} pointer selected={selected}>
+          <Sv
+            as={icon}
+            width={20}
+            fill={selected ? colors.g0 : "none"}
+            stroke={selected ? colors.g0 : colors.g4}
+          />
+        </S.Container>
+      </MotionButton>
     </Link>
   );
 };

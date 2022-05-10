@@ -6,6 +6,7 @@ import { Sv, St, ButtonL } from "components";
 import dummy from "images/dummy.png";
 import { colors } from "styles/colors";
 import ic_search from "images/svg/ic_search.svg";
+import { useRouter } from "next/router";
 
 interface SearchInputProps {
   value: string;
@@ -16,6 +17,17 @@ export const SearchInput: React.FC<SearchInputProps> = ({
   value,
   onChange,
 }) => {
+  const router = useRouter();
+
+  const onClickEnter = () => {
+    router.push(`/search?q=${value}`);
+  };
+
+  const onKeyPress = (event: { key: any }) => {
+    const { key } = event;
+    if (key === "Enter" && onClickEnter) onClickEnter();
+  };
+
   return (
     <S.InputWrapper>
       <S.Icon width={14} />
@@ -23,6 +35,7 @@ export const SearchInput: React.FC<SearchInputProps> = ({
         placeholder="검색어를 입력하세요."
         value={value}
         onChange={onChange && onChange}
+        onKeyPress={onKeyPress}
       />
     </S.InputWrapper>
   );

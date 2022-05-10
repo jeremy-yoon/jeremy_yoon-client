@@ -2,6 +2,9 @@
 export { Sv } from "components/styled-components/StyledDiv";
 export { St } from "components/styled-components/StyledText";
 
+//framer
+export { MotionButton } from "components/framer/MotionButton";
+
 //avatars
 export { Profile } from "components/avatars/Profile";
 
@@ -32,5 +35,6 @@ export { PostEditor } from "components/editor/PostEditor";
 export { PostIt } from "components/guest-book/post-it/PostIt";
 
 export { Navigation } from "components/navigations/Navigation";
+export { MobileNavigation } from "components/navigations/MobileNavigation";
 
 export { ProfileContainer } from "components/profile/ProfileContainer";

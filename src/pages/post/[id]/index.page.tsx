@@ -210,10 +210,6 @@ S.Container = styled(Sv)`
 
 S.Wrapper = styled(Sv)`
   width: 100%;
-  @media only screen and (max-width: 768px) {
-    /* padding-left: 24px;
-    padding-right: 24px; */
-  }
 `;
 
 S.BottomNavContainer = styled.div`

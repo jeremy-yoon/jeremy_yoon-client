@@ -25,6 +25,7 @@ import blog_bg2 from "images/blog-bg2.jpg";
 import blog_bg3 from "images/blog-bg3.jpg";
 import favicon from "../public/favicon.ico";
 import NextNProgress from "nextjs-progressbar";
+import { colors } from "styles/colors";
 
 const { Header, Content, Footer } = Layout;
 
@@ -186,6 +187,7 @@ S.Container = styled(Sv)`
     padding-right: 24px;
     padding-top: 24px;
     overflow-x: hidden;
+    background-color: ${colors.g8};
   }
 `;
 

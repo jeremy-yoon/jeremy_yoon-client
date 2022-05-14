@@ -22,28 +22,18 @@ export const ButtonL: React.FC<ButtonLProps> = ({
   isOpenNewTab,
 }) => {
   return (
-    <Link href={href}>
-      <MotionButton>
-        <a
-          href={isOpenNewTab ? href : ""}
-          target={isOpenNewTab ? "_blank" : "_self"}
-        >
-          <S.Container
-            onClick={onClick}
-            act
-            jct
-            py={8}
-            px={20}
-            pointer
-            line={line}
-          >
-            <St s4 white={!line}>
-              {title}
-            </St>
-          </S.Container>
-        </a>
-      </MotionButton>
-    </Link>
+    <MotionButton onClick={onClick && onClick}>
+      <a
+        href={isOpenNewTab ? href : ""}
+        target={isOpenNewTab ? "_blank" : "_self"}
+      >
+        <S.Container act jct py={8} px={20} pointer line={line}>
+          <St s4 white={!line}>
+            {title}
+          </St>
+        </S.Container>
+      </a>
+    </MotionButton>
   );
 };
 

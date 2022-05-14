@@ -7,11 +7,14 @@ import { Sv, St, Profile, ButtonL } from "components";
 import dummy from "images/dummy.png";
 import { Layout, Menu } from "antd";
 import { colors } from "styles/colors";
+import Router from "next/router";
+
 const { Header } = Layout;
 
 interface MainProps {}
 
 export const MainHeader: React.FC<MainProps> = ({}) => {
+  const { router } = Router;
   return (
     <S.Header>
       <S.Wrapper>
@@ -27,7 +30,7 @@ export const MainHeader: React.FC<MainProps> = ({}) => {
           <a href="https://github.com/jeremy-yoon" target="_blank">
             <S.Item>깃허브</S.Item>
           </a>
-          <ButtonL title="연락하기" href="/" />
+          <ButtonL title="연락하기" onClick={() => router?.push("/resume")} />
         </Sv>
       </S.Wrapper>
     </S.Header>

@@ -20,7 +20,7 @@ const PortfolioScreen: React.FC = () => {
             <St size={80} weight={200} text="를" />
           </Sv>
           <St size={80} weight={200} text="둘러보세요." />
-          <Sv col gy={40} mt={64}>
+          <Sv col gy={40} mt={64} mb={100}>
             <GalleryCard />
             <GalleryCard />
             <GalleryCard />

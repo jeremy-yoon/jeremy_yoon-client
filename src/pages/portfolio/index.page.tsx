@@ -24,14 +24,17 @@ const PortfolioScreen: React.FC = () => {
             <GalleryCard
               title="주디, 좀 귀여운 슬라임"
               href="/portfolio/joody"
+              body="2022년 5월"
             />
             <GalleryCard
               title="스매시, 쉽고 빠른 매칭"
               href="/portfolio/smaxh"
+              body="2022년 2월"
             />
             <GalleryCard
               title="샤벳, 새로운 웹소설"
               href="/portfolio/charbet"
+              body="2021년 10월"
             />
           </Sv>
         </Sv>

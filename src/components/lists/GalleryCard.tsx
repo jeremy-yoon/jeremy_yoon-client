@@ -24,11 +24,11 @@ export const GalleryCard: React.FC<GalleryCardProps> = ({
         <S.ImageWrapper>
           <S.Image src={imgSrc} layout="fill" objectFit="cover" />
         </S.ImageWrapper>
-        <Sv col mt={16}>
-          <St s1 g0>
+        <Sv col gy={4} mt={16}>
+          <St s2 g0>
             {title}
           </St>
-          <St b1 g3>
+          <St b2 g3>
             {body}
           </St>
         </Sv>

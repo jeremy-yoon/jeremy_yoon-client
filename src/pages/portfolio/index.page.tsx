@@ -6,6 +6,7 @@ import styled, { css } from "styled-components";
 import { getRequest, postRequest } from "apis/common";
 import { colors } from "styles/colors";
 import { Row, Col } from "antd";
+import joodyMain from "./joody/images/joody-main.png";
 
 const PortfolioScreen: React.FC = () => {
   const router = useRouter();
@@ -23,6 +24,7 @@ const PortfolioScreen: React.FC = () => {
           <Sv col gy={40} mt={64} mb={100}>
             <GalleryCard
               title="주디, 좀 귀여운 슬라임"
+              imgSrc={joodyMain}
               href="/portfolio/joody"
               body="2022년 5월"
             />

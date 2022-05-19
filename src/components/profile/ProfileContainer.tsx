@@ -130,7 +130,7 @@ export function ProfileContainer({ bg = "rgba(255, 255, 255, 0.4)" }) {
           </Sv>
         </Sv>
         <S.Footer>
-          <St s3 g3 weight={600} text="Powered by" />
+          <St s3 g3 weight={600} text="Technical overview" />
           <Sv mt={4} row gx={12} wrap>
             <a href="https://nextjs.org/" target="_blank">
               <St c1 g4 text="Next.js" />

@@ -16,9 +16,26 @@ const PortfolioScreen: React.FC = () => {
         <Sv px={120} col>
           <MainLogo />
           <Sv row mt={16}>
-            <St size={80} weight={800} text="주디, 좀 귀여운 슬라임" />
+            <St h1 weight={800} text="주디, 좀 귀여운 슬라임" />
           </Sv>
-          <Sv col gy={40} mt={64}></Sv>
+          <Sv col gy={40} mt={64}>
+            <Sv>
+              <St s1 g0 text="Technical overview" />
+              <Sv row gx={8} mt={20}>
+                <St b1 g0 text="Next.js" />
+                <St b1 g0 text="Django" />
+                <St b1 g0 text="Framer-motion" />
+              </Sv>
+            </Sv>
+            <Sv>
+              <St s1 g0 text="개요" />
+              <Sv row gx={8} mt={20}>
+                <St b1 g0>
+                  개요입니다.
+                </St>
+              </Sv>
+            </Sv>
+          </Sv>
         </Sv>
       </S.Container>
     </>
@@ -29,14 +46,6 @@ export default PortfolioScreen;
 
 const S: any = {};
 
-const blur = css`
-  background: ${colors.g8};
-  backdrop-filter: blur(30px);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
-  -webkit-backdrop-filter: blur(4px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-`;
-
 S.Container = styled(Sv)`
   position: relative;
   width: 1024px;
@@ -45,7 +54,6 @@ S.Container = styled(Sv)`
   padding-bottom: 64px;
   z-index: 1;
   overflow-y: scroll;
-  ${blur}
   ::-webkit-scrollbar {
     width: 0px;
     display: none;

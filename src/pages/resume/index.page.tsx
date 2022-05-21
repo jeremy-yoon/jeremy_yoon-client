@@ -15,13 +15,13 @@ const ResumeScreen: React.FC = () => {
         <Sv col pb={100}>
           <MainLogo />
           <Sv row mt={16}>
-            <St size={80} weight={200} text="안녕하세요." />
+            <St h0 weight={200} text="안녕하세요." />
           </Sv>
-          <St size={80} weight={800} text="세상에 강한 임팩트를" />
-          <St size={80} weight={200} text="주고자 하는 개발자," />
+          <St h0 weight={800} text="세상에 강한 임팩트를" />
+          <St h0 weight={200} text="주고자 하는 개발자," />
           <Sv row>
-            <St size={80} weight={800} text="윤정탁" />
-            <St size={80} weight={200} text=" 입니다." />
+            <St h0 weight={800} text="윤정탁" />
+            <St h0 weight={200} text=" 입니다." />
           </Sv>
           <Sv mt={80} col>
             <St s1 text="Introduce." />

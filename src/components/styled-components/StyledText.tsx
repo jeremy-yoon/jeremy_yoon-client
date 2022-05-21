@@ -9,6 +9,7 @@ export const St = (props: any) => (
 );
 
 interface StProps {
+  h0: any;
   h1: any;
   h2: any;
   h3: any;
@@ -71,6 +72,7 @@ export const StyledText: any = styled.span<StProps>`
   word-break: keep-all;
   line-height: 1.4;
 
+  ${(props) => props.h0 && h0}
   ${(props) => props.h1 && h1}
   ${(props) => props.h2 && h2}
   ${(props) => props.h3 && h3}
@@ -86,6 +88,7 @@ export const StyledText: any = styled.span<StProps>`
   ${(props) => props.c2 && c2}
   ${(props) => props.c3 && c3}
 
+  ${(props) => props.typo == "h0" && h0}
   ${(props) => props.typo == "h1" && h1}
   ${(props) => props.typo == "h2" && h2}
   ${(props) => props.typo == "h3" && h3}
@@ -166,6 +169,11 @@ export const StyledText: any = styled.span<StProps>`
   ${(props) => props.title && title}
 `;
 
+const h0 = css`
+  font-weight: 700;
+  font-size: min(14vw, 80px);
+  line-height: 1.4;
+`;
 const h1 = css`
   font-weight: 700;
   font-size: min(9vw, 60px);

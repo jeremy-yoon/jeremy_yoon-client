@@ -16,10 +16,10 @@ const PortfolioScreen: React.FC = () => {
         <Sv px={120} col>
           <MainLogo />
           <Sv row mt={16}>
-            <St size={80} weight={800} text="포트폴리오" />
-            <St size={80} weight={200} text="를" />
+            <St h0 weight={800} text="포트폴리오" />
+            <St h0 weight={200} text="를" />
           </Sv>
-          <St size={80} weight={200} text="둘러보세요." />
+          <St h0 weight={200} text="둘러보세요." />
           <Sv col gy={40} mt={64}>
             <GalleryCard onClick={() => router.push()} />
             <GalleryCard />

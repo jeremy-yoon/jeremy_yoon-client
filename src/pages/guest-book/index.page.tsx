@@ -19,7 +19,7 @@ const GuestBookScreen: React.FC = () => {
               <St h0 weight={200} text="안녕하세요." />
             </Sv>
             <St h0 weight={800} text="방명록을" />
-            <St h0 weight={200} text="작성해보세요." />
+            <St h0 weight={200} text="작성해보세요!" />
           </Sv>
         </Sv>
       </S.Container>

@@ -5,6 +5,7 @@ import styled from "styled-components";
 import { Sv, St, Profile } from "components";
 import { SvTest } from "components/styled-components/StyledComponentTest";
 import dummy from "images/dummy.png";
+import { colors } from "styles/colors";
 
 interface GalleryCardProps {
   href: any;
@@ -45,4 +46,5 @@ S.ImageWrapper = styled.div`
   position: relative;
   height: 480px;
   width: 100%;
+  background-color: ${colors.g7};
 `;

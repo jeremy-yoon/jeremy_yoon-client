@@ -13,17 +13,28 @@ const PortfolioScreen: React.FC = () => {
   return (
     <>
       <S.Container>
-        <Sv px={120} col>
+        <Sv col>
           <MainLogo />
           <Sv row mt={16}>
-            <St h0 weight={800} text="포트폴리오" />
-            <St h0 weight={200} text="를" />
+            <St h1 weight={800} text="샤벳" />
           </Sv>
-          <St h0 weight={200} text="둘러보세요." />
           <Sv col gy={40} mt={64}>
-            <GalleryCard onClick={() => router.push()} />
-            <GalleryCard />
-            <GalleryCard />
+            <Sv>
+              <St s1 g0 text="Technical overview" />
+              <Sv row gx={8} mt={20}>
+                <St b1 g0 text="Next.js" />
+                <St b1 g0 text="Django" />
+                <St b1 g0 text="Framer-motion" />
+              </Sv>
+            </Sv>
+            <Sv>
+              <St s1 g0 text="개요" />
+              <Sv row gx={8} mt={20}>
+                <St b1 g0>
+                  개요입니다.
+                </St>
+              </Sv>
+            </Sv>
           </Sv>
         </Sv>
       </S.Container>
@@ -45,11 +56,8 @@ S.Container = styled(Sv)`
   @media only screen and (max-width: 768px) {
     padding-top: 0px;
   }
-`;
-
-S.RepresentImage = styled(Image)``;
-
-S.BottomNavContainer = styled.div`
-  position: fixed;
-  bottom: 0;
+  ::-webkit-scrollbar {
+    width: 0px;
+    display: none;
+  }
 `;

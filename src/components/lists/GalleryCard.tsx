@@ -47,4 +47,7 @@ S.ImageWrapper = styled.div`
   height: 480px;
   width: 100%;
   background-color: ${colors.g7};
+  @media only screen and (max-width: 768px) {
+    height: 28vh;
+  }
 `;

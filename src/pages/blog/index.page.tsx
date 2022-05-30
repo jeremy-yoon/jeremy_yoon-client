@@ -1,7 +1,14 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Sv, St, MainLogo, PostList, PostListSkeleton } from "components";
+import {
+  Sv,
+  St,
+  MainLogo,
+  PostList,
+  PostListSkeleton,
+  SearchInput,
+} from "components";
 import { CategoryList, Banner } from "./components";
 import { Row, Col } from "antd";
 import styled, { css } from "styled-components";
@@ -21,6 +28,7 @@ export default function BlogScreen() {
   const [categoryList, setCategoryList] = useState([] as any);
   const [isLoading, setLoading] = useState(true as boolean);
   const [selectedCategory, setSelectedCategory] = useState("All" as string);
+  const [searchKeyword, setSearchKeyword] = useState("");
 
   useEffect(() => {
     getCategoryList(setCategoryList);
@@ -134,8 +142,16 @@ export default function BlogScreen() {
         >
           <span className="cursorText">{cursorText}</span>
         </motion.div> */}
-        <Sv onMouseEnter={contactEnter} onMouseLeave={contactLeave}>
-          <MainLogo />
+        <Sv jsb act>
+          <Sv onMouseEnter={contactEnter} onMouseLeave={contactLeave}>
+            <MainLogo />
+          </Sv>
+          <S.SearchInputWrapper>
+            <SearchInput
+              value={searchKeyword}
+              onChange={(e: any) => setSearchKeyword(e.target.value)}
+            />
+          </S.SearchInputWrapper>
         </Sv>
         <Banner />
         <CategoryList
@@ -164,5 +180,12 @@ S.Container = styled(Sv)`
   overflow: visible;
   @media only screen and (max-width: 768px) {
     padding-top: 0px;
+  }
+`;
+
+S.SearchInputWrapper = styled(Sv)`
+  display: none;
+  @media only screen and (max-width: 768px) {
+    display: block;
   }
 `;

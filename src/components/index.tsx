@@ -38,3 +38,6 @@ export { Navigation } from "components/navigations/Navigation";
 export { MobileNavigation } from "components/navigations/MobileNavigation";
 
 export { ProfileContainer } from "components/profile/ProfileContainer";
+
+//modals
+export { ContactModal } from "components/modals/ContactModal";

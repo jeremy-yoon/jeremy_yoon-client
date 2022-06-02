@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Modal, Button } from "antd";
+import { Sv, St } from "components";
 
 interface ContactModalProps {
   isModalVisible: boolean;
@@ -21,14 +22,17 @@ export const ContactModal: React.FC<ContactModalProps> = ({
   return (
     <>
       <Modal
-        title="Basic Modal"
+        title="연락하기"
         visible={isModalVisible}
         onOk={handleOk}
         onCancel={handleCancel}
       >
-        <p>Some contents...</p>
-        <p>Some contents...</p>
-        <p>Some contents...</p>
+        <Sv col>
+          <St text="이메일" />
+          <a href="mailto:coco@consalad.io">
+            <St s2 text="coco@consalad.io" />
+          </a>
+        </Sv>
       </Modal>
     </>
   );

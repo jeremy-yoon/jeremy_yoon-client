@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Modal, Button } from "antd";
 import { Sv, St } from "components";
+import styled from "styled-components";
 
 interface ContactModalProps {
   isModalVisible: boolean;
@@ -21,11 +22,11 @@ export const ContactModal: React.FC<ContactModalProps> = ({
 
   return (
     <>
-      <Modal
+      <S.Modal
         title="연락하기"
         visible={isModalVisible}
-        onOk={handleOk}
         onCancel={handleCancel}
+        cancelText="닫기"
       >
         <Sv col>
           <St text="이메일" />
@@ -33,7 +34,15 @@ export const ContactModal: React.FC<ContactModalProps> = ({
             <St s2 text="coco@consalad.io" />
           </a>
         </Sv>
-      </Modal>
+      </S.Modal>
     </>
   );
 };
+
+const S: any = {};
+
+S.Modal = styled(Modal)`
+  .ant-btn-primary {
+    display: none;
+  }
+`;

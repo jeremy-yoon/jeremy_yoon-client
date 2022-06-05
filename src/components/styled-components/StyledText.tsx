@@ -63,6 +63,7 @@ interface StProps {
   z: any;
   en: any;
   title: any;
+  decoration: any;
 }
 
 export const StyledText: any = styled.span<StProps>`
@@ -167,6 +168,8 @@ export const StyledText: any = styled.span<StProps>`
   ${(props) => props.en && en}
 
   ${(props) => props.title && title}
+
+  ${(props) => props.decoration && decoration}
 `;
 
 const h0 = css`
@@ -378,4 +381,9 @@ const en = css<{ en: any }>`
 //제목일 떄 폰트를 따로 지정합니다.
 const title = css<{ title: any }>`
   font-family: "NanumMyeongjo" !important;
+`;
+
+//제목일 떄 폰트를 따로 지정합니다.
+const decoration = css<{ decoration: any }>`
+  text-decoration: ${(props) => props.decoration} !important;
 `;

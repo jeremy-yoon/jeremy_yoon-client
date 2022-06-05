@@ -31,7 +31,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({
         <Sv col>
           <St text="이메일" />
           <a href="mailto:coco@consalad.io">
-            <St s2 g0 text="coco@consalad.io" />
+            <St s2 g0 decoration="underline" text="coco@consalad.io" />
           </a>
         </Sv>
       </S.Modal>

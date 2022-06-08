@@ -23,7 +23,12 @@ export const GalleryCard: React.FC<GalleryCardProps> = ({
     <Link href={href}>
       <Sv pointer>
         <S.ImageWrapper>
-          <S.Image src={imgSrc} layout="fill" objectFit="cover" />
+          <S.Image
+            src={imgSrc}
+            layout="fill"
+            objectFit="cover"
+            placeholder="blur"
+          />
         </S.ImageWrapper>
         <Sv col gy={4} mt={16}>
           <St s2 g0>

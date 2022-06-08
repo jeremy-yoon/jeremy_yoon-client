@@ -21,7 +21,13 @@ export const PostIt: React.FC<PostItProps> = ({
   return (
     <Link href={href}>
       <Sv row pointer>
-        <S.Image src={imgSrc} width="676px" height="352px" objectFit="cover" />
+        <S.Image
+          src={imgSrc}
+          width="676px"
+          height="352px"
+          objectFit="cover"
+          placeholder="blur"
+        />
         <Sv ml={24}>
           <Sv col mt={16}>
             <St s1 g0>

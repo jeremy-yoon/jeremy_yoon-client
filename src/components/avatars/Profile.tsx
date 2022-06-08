@@ -14,7 +14,13 @@ export const Profile: React.FC<ProfileProps> = ({}) => {
     <>
       <Sv col pt={40}>
         <Sv>
-          <S.Image src={profile_me} width={88} height={88} objectFit="cover" />
+          <S.Image
+            src={profile_me}
+            width={88}
+            height={88}
+            objectFit="cover"
+            placeholder="blur"
+          />
         </Sv>
         <St s1 g0 text="Jeremy Yoon" />
         <Sv h={4} />

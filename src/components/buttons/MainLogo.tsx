@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import styled from "styled-components";
-import { Sv, St, Profile } from "components";
+import { Sv, St, MotionButton } from "components";
 import { colors } from "styles/colors";
 
 interface MainLogoProps {
@@ -18,14 +18,30 @@ export const MainLogo: React.FC<MainLogoProps> = ({
 }) => {
   return (
     <Link href={href}>
-      <Sv py={16} pointer row>
-        <St s1 weight={1000} size={size} en g0 style={{ fontStyle: "italic" }}>
-          JE
-        </St>
-        <St s1 weight={1000} size={size} en g0 style={{ fontStyle: "italic" }}>
-          Log!
-        </St>
-      </Sv>
+      <MotionButton>
+        <Sv py={16} pointer row>
+          <St
+            s1
+            weight={1000}
+            size={size}
+            en
+            g0
+            style={{ fontStyle: "italic" }}
+          >
+            JE
+          </St>
+          <St
+            s1
+            weight={1000}
+            size={size}
+            en
+            g0
+            style={{ fontStyle: "italic" }}
+          >
+            Log!
+          </St>
+        </Sv>
+      </MotionButton>
     </Link>
   );
 };

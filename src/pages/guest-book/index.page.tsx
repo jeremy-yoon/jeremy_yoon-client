@@ -14,8 +14,7 @@ const GuestBookScreen: React.FC = () => {
       <S.Container>
         <Sv col>
           <MainLogo />
-          <Sv col>
-            <St h0 weight={200} text="잘 보셨다면" />
+          <Sv col mt={16}>
             <Sv row>
               <St h0 weight={800} text="방명록" />
               <St h0 weight={200} text="을" />

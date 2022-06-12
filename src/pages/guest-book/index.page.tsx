@@ -21,6 +21,13 @@ const GuestBookScreen: React.FC = () => {
             </Sv>
             <St h0 weight={200} text="남겨주세요." />
           </Sv>
+          <Sv col f={1} h="100%">
+            <Sv h={1} bg={colors.g6} />
+            <Sv f={1} col jed mb={24}>
+              <Comment />
+            </Sv>
+            <CommentInput />
+          </Sv>
         </Sv>
       </S.Container>
     </>

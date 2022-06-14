@@ -140,6 +140,7 @@ S.bg = styled(Sv)`
   top: 10%;
   right: -15%;
   max-width: 90vw;
+  pointer-events: none;
   @media only screen and (max-width: 768px) {
     left: 0;
   }
@@ -151,6 +152,7 @@ S.bg2 = styled(Sv)`
   top: 10%;
   right: 30%;
   max-width: 90vw;
+  pointer-events: none;
 `;
 
 S.bg3 = styled(Sv)`
@@ -159,6 +161,7 @@ S.bg3 = styled(Sv)`
   bottom: 10%;
   left: 2%;
   max-width: 90vw;
+  pointer-events: none;
 `;
 
 const blur = css`

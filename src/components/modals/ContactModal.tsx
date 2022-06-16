@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Modal, Button } from "antd";
-import { Sv, St } from "components";
+import { Sv, St, ButtonL } from "components";
 import styled from "styled-components";
 
 interface ContactModalProps {
@@ -30,9 +30,12 @@ export const ContactModal: React.FC<ContactModalProps> = ({
       >
         <Sv col>
           <St text="이메일" />
-          <a href="mailto:coco@consalad.io">
-            <St s2 primary decoration="underline" text="coco@consalad.io" />
-          </a>
+          <St s2 text="coco@consalad.io" mb={20} />
+          <ButtonL
+            title="이메일 작성하기"
+            isOpenNewTab
+            href={"mailto:coco@consalad.io"}
+          />
         </Sv>
       </S.Modal>
     </>

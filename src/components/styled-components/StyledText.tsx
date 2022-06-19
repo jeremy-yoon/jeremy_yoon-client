@@ -174,7 +174,7 @@ export const StyledText: any = styled.span<StProps>`
 
 const h0 = css`
   font-weight: 700;
-  font-size: min(14vw, 80px);
+  font-size: min(11vw, 80px);
   line-height: 1.4;
 `;
 const h1 = css`

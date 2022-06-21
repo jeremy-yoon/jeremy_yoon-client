@@ -32,7 +32,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({
           <St text="이메일" />
           <St s2 text="coco@consalad.io" mb={20} />
           <ButtonL
-            title="이메일 작성하기"
+            title="이메일 보내기"
             isOpenNewTab
             href={"mailto:coco@consalad.io"}
           />

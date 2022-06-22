@@ -69,7 +69,7 @@ const MyApp: React.FC<MyAppProps> = ({ Component, pageProps }) => {
         <S.Content>
           <S.Body gx={16}>
             <Head>
-              <title>JELog! - 젤 좋은 블로그</title>
+              <title>JELog! - 젤로그</title>
               <link
                 rel="shortcut icon"
                 href={favicon.src}

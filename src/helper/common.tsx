@@ -5,9 +5,8 @@ export const commonExceptionForm = async (
   try {
     if (requestFunc) await requestFunc();
   } catch (e) {
-    if (exceptFunc) {
+    if (typeof exceptFunc === "function") {
       exceptFunc(e);
-      console.log(exceptFunc);
     }
   }
 };

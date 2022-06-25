@@ -12,6 +12,7 @@ interface ButtonLProps {
   title: string;
   line?: boolean;
   isOpenNewTab?: boolean;
+  disabled?: boolean;
 }
 
 export const ButtonL: React.FC<ButtonLProps> = ({
@@ -20,9 +21,10 @@ export const ButtonL: React.FC<ButtonLProps> = ({
   title = "title",
   line,
   isOpenNewTab,
+  disabled,
 }) => {
   return (
-    <MotionButton onClick={onClick && onClick}>
+    <MotionButton onClick={onClick && onClick} disabled={disabled}>
       <a
         href={isOpenNewTab ? href : ""}
         target={isOpenNewTab ? "_blank" : "_self"}
@@ -40,6 +42,11 @@ export const ButtonL: React.FC<ButtonLProps> = ({
 const S: any = {};
 
 S.Image = styled(Image)``;
+
+// S.MotionButton = styled(MotionButton)`
+//   pointer-events: ${(props: any) => (props.disabled ? "none" : "auto")};
+//   opacity: ${(props: any) => (props.disabled ? 0.5 : 1)};
+// `;
 
 S.Container = styled(Sv)`
   border-radius: 2px;

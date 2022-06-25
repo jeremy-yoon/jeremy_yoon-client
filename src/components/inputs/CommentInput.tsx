@@ -35,7 +35,7 @@ export const CommentInput: React.FC<CommentInputProps> = ({
           />
         </Sv>
         <Sv mt={4}>
-          <ButtonL title="등록하기" onClick={onClickRegister} />
+          <ButtonL title="등록하기" onClick={onClickRegister} disabled={true} />
         </Sv>
       </S.Container>
       <Sv h={1} bg={colors.g6} />

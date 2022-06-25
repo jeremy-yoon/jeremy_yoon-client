@@ -24,7 +24,10 @@ const GuestBookScreen: React.FC = () => {
           <Sv col f={1} h="100%">
             <Sv h={1} bg={colors.g6} />
             <Sv f={1} col jed mb={24}>
-              <Comment />
+              <Comment
+                writer="Jeremy"
+                body="방명록 기능 업데이트 준비 중 입니다."
+              />
             </Sv>
             <CommentInput />
           </Sv>

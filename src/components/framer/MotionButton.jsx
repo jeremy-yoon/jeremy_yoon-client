@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Sv } from "components";
+import styled from "styled-components";
 
 export const MotionButton = ({
   children,
@@ -8,6 +9,7 @@ export const MotionButton = ({
   hoverConfig = {},
   style = {},
   onClick,
+  disabled,
 }) => {
   const config = {
     initial: {
@@ -24,7 +26,8 @@ export const MotionButton = ({
   };
 
   return (
-    <motion.div
+    <S.MotionDiv
+      disabled={disabled}
       onMouseDown={onClick && onClick}
       variants={config}
       initial={"initial"}
@@ -36,6 +39,13 @@ export const MotionButton = ({
       }}
     >
       {children}
-    </motion.div>
+    </S.MotionDiv>
   );
 };
+
+const S = {};
+
+S.MotionDiv = styled(motion.div)`
+  pointer-events: ${(props) => (props.disabled ? "none" : "auto")};
+  opacity: ${(props) => (props.disabled ? 0.5 : 1)};
+`;

@@ -62,7 +62,7 @@ export const PostList: React.FC<PostListProps> = ({
               height={140}
               objectFit="cover"
               objectPosition="right"
-              placeholder="blur"
+              // placeholder="blur"
             />
           </S.ImageWrapper>
         </S.Container>

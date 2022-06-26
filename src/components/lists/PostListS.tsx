@@ -33,7 +33,7 @@ export const PostListS: React.FC<PostListSProps> = ({
             height={64}
             objectFit="cover"
             objectPosition="right"
-            placeholder="blur"
+            // placeholder="blur"
           />
         </S.ImageWrapper>
         <Sv col ml={12} mb={6}>

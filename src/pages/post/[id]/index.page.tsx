@@ -149,7 +149,7 @@ const PostScreen: React.FC = () => {
                   src={`http://127.0.0.1:8000${post?.represent_image}`}
                   layout="fill"
                   objectFit="cover"
-                  placeholder="blur"
+                  // placeholder="blur"
                 />
               </S.ImageWrapper>
             )}

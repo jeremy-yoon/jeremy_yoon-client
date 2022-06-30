@@ -97,7 +97,7 @@ const ResumeScreen: React.FC = () => {
             </St>
           </Sv>
           <Sv mt={80} col>
-            <St s1 text="Skill." />
+            <St h3 text="Skill." />
             <St
               text={`Front-End: JavaScript, React.js, React Native, Next.js, HTML, CSS(SCSS)
 
@@ -105,7 +105,7 @@ Design: Figma, Sketch, XD, Zeplin, Adobe tools`}
             />
           </Sv>
           <Sv mt={80} col>
-            <St s1 text="Education." />
+            <St h3 text="Education." />
             <St text={`2013.03 - 2016.02 선린인터넷고등학교 웹운영과 졸업`} />
           </Sv>
         </Sv>

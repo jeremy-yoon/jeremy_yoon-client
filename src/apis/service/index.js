@@ -23,11 +23,9 @@ const getPostListRequest = async (setPostList, setLoading) => {
   setLoading(true);
   const result = await getRequest("/post/");
   setPostList(result);
-  console.log("getPostList", result);
   setLoading(false);
 };
 const getPostListException = async (setLoading, e) => {
-  console.log("getPostList 에러", e);
   setLoading(false);
 };
 export const getPostList = (setPostList, setLoading) =>
@@ -44,11 +42,10 @@ const getPostRequest = async (setPost, setLoading, id) => {
   setLoading(false);
 };
 const getPostException = async (setLoading, e) => {
-  console.log("getPost 에러", e);
   setLoading(false);
 };
 export const getPost = (setPost, setLoading, id) =>
   commonExceptionForm(
     () => getPostRequest(setPost, setLoading, id),
-    getPostException
+    getPostException(setLoading)
   );

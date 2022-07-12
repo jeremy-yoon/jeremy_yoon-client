@@ -1,6 +1,6 @@
 import React, { useState, lazy, Suspense } from "react";
 import { Sv } from "components";
-import HomeMainContainer from "pages/home/HomeMainContainer";
+import HomeMainContainer from "pages/intro/index.page";
 import dynamic from "next/dynamic";
 import Head from "next/head";
 import BlogScreen from "pages/blog/index.page";

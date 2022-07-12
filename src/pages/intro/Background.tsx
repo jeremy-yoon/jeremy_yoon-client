@@ -197,7 +197,7 @@ const globalStyle = css`
 `;
 
 S.BGContainer = styled(motion.div)`
-  position: absolute;
+  position: fixed;
   left: 100px;
   right: 100px;
   top: 100px;

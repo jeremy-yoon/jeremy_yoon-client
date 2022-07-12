@@ -60,6 +60,11 @@ S.Body = styled(Sv)`
   flex: 1;
   overflow: hidden;
   background-color: ${colors.g7};
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 `;
 
 S.MainContainer = styled(Sv)`

@@ -32,13 +32,13 @@ const textShadow = css`
 `;
 
 S.SelectedH1 = styled(St)<{ reverse: boolean; duration: number }>`
-  font-size: 170px;
+  font-size: min(17vw, 170px);
   font-weight: 800;
   color: white;
   filter: invert(100%);
   mix-blend-mode: difference;
   letter-spacing: 0.05em;
-  line-height: 144px;
+  line-height: 90%;
   ${preventDrag}
 
   transition: all 0.25s linear;

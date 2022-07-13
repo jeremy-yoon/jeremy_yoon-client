@@ -58,7 +58,8 @@ const slidUpSet = css`
 
 S.Body = styled(Sv)`
   flex: 1;
-  overflow: hidden;
+  overflow-y: scroll;
+  overflow-x: hidden;
   background-color: ${colors.g7};
   position: fixed;
   top: 0;
@@ -68,7 +69,7 @@ S.Body = styled(Sv)`
 `;
 
 S.MainContainer = styled(Sv)`
-  height: 100vh;
+  height: 200vh;
   flex: 1;
   display: flex;
   flex-direction: column;

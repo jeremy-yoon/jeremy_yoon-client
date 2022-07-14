@@ -203,6 +203,7 @@ S.BGContainer = styled(motion.div)`
   top: 100px;
   bottom: 100px;
   overflow: hidden;
+  z-index: -1;
 `;
 
 S.Shape1 = styled(motion.div)`

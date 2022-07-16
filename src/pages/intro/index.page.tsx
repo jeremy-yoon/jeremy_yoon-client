@@ -1,7 +1,14 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Sv, St, ButtonL, PostCardL, PostCardM, PostCardS } from "components";
+import {
+  Sv,
+  St,
+  ContactModal,
+  PostCardL,
+  PostCardM,
+  PostCardS,
+} from "components";
 import { Row, Col } from "antd";
 import styled, { css, keyframes } from "styled-components";
 import { getRequest } from "apis/common";
@@ -12,6 +19,7 @@ import { NavButton, TitleText } from "./components";
 import Background from "./Background";
 
 export default function HomeMainContainer() {
+  const [isContactModalVisible, setIsContactModalVisible] = useState(false);
   return (
     <S.Body>
       <S.Logo>Jeremy.yoon</S.Logo>
@@ -26,10 +34,17 @@ export default function HomeMainContainer() {
             <NavButton title="resume." href="/resume" />
             <TitleText title="If you wanna" duration={1.2} />
             <TitleText title="work with me," duration={1.4} />
-            <NavButton title="Contact me!" href="/contact" />
+            <NavButton
+              title="Contact me!?"
+              onClick={() => setIsContactModalVisible(true)}
+            />
           </Sv>
         </Sv>
       </S.MainContainer>
+      <ContactModal
+        isModalVisible={isContactModalVisible}
+        setIsModalVisible={setIsContactModalVisible}
+      />
     </S.Body>
   );
 }

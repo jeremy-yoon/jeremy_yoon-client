@@ -11,6 +11,7 @@ interface NavButtonProps {
   title: string;
   duration?: number;
   reverse?: boolean;
+  onClick?: () => void;
 }
 
 export const NavButton: React.FC<NavButtonProps> = ({
@@ -18,9 +19,10 @@ export const NavButton: React.FC<NavButtonProps> = ({
   title = "title",
   duration = 1.0,
   reverse = false,
+  onClick,
 }) => {
   return (
-    <Sv row>
+    <Sv row onClick={onClick && onClick}>
       <Link href={href}>
         <S.SelectedH1 en duration={duration} reverse={reverse}>
           {title}

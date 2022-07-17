@@ -19,15 +19,13 @@ export const NavButton: React.FC<NavButtonProps> = ({
   title = "title",
   duration = 1.0,
   reverse = false,
-  onClick,
+  onClick = () => {},
 }) => {
   return (
     <Sv row onClick={onClick && onClick}>
-      <Link href={href}>
-        <S.SelectedH1 en duration={duration} reverse={reverse}>
-          {title}
-        </S.SelectedH1>
-      </Link>
+      <S.SelectedH1 en duration={duration} reverse={reverse}>
+        {title}
+      </S.SelectedH1>
     </Sv>
   );
 };

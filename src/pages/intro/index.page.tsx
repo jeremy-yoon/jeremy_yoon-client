@@ -35,7 +35,7 @@ export default function HomeMainContainer() {
             <TitleText title="If you wanna" duration={1.2} />
             <TitleText title="work with me," duration={1.4} />
             <NavButton
-              title="Contact me!?"
+              title="Contact me!"
               onClick={() => setIsContactModalVisible(true)}
             />
           </Sv>

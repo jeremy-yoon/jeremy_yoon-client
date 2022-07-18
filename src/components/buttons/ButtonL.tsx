@@ -5,6 +5,8 @@ import styled from "styled-components";
 import { Sv, St, MotionButton } from "components";
 import dummy from "images/dummy.png";
 import { colors } from "styles/colors";
+import { LoadingOutlined } from "@ant-design/icons";
+import { Spin } from "antd";
 
 interface ButtonLProps {
   onClick?: Function;
@@ -13,7 +15,10 @@ interface ButtonLProps {
   line?: boolean;
   isOpenNewTab?: boolean;
   disabled?: boolean;
+  isLoading?: boolean;
 }
+
+const antIcon = <LoadingOutlined style={{ fontSize: 16 }} spin />;
 
 export const ButtonL: React.FC<ButtonLProps> = ({
   onClick,
@@ -22,6 +27,7 @@ export const ButtonL: React.FC<ButtonLProps> = ({
   line,
   isOpenNewTab,
   disabled,
+  isLoading = false,
 }) => {
   return (
     <MotionButton onClick={onClick && onClick} disabled={disabled}>
@@ -29,10 +35,11 @@ export const ButtonL: React.FC<ButtonLProps> = ({
         href={isOpenNewTab ? href : ""}
         target={isOpenNewTab ? "_blank" : "_self"}
       >
-        <S.Container act jct py={8} px={20} pointer line={line}>
+        <S.Container act jct py={8} px={20} gx={8} pointer line={line}>
           <St s4 white={!line}>
             {title}
           </St>
+          {isLoading && <Spin indicator={antIcon} />}
         </S.Container>
       </a>
     </MotionButton>

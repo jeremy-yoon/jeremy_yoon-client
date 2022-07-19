@@ -109,6 +109,9 @@ S.Logo = styled(St)`
   cursor: pointer;
   font-weight: 700;
   font-size: 44px;
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 S.SideText = styled(St)`
@@ -121,4 +124,7 @@ S.SideText = styled(St)`
   font-size: 24px;
   transform: rotate(90deg);
   letter-spacing: 0.4em;
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;

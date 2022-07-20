@@ -97,6 +97,12 @@ S.BGContainer = styled(Sv)`
   right: 100px;
   top: 100px;
   bottom: 100px;
+  @media (max-width: 768px) {
+    left: 40px;
+    right: 40px;
+    top: 40px;
+    bottom: 40px;
+  }
 `;
 
 S.BG = styled.img``;

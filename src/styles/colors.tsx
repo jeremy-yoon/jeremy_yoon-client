@@ -4,7 +4,7 @@ const getMode = () => {
 };
 
 export const colors = {
-  primary: "#4b42ff",
+  primary: "#29D",
   secondary: "#00B881",
   white: "#fff",
   g0: "#161D24",

@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import styled from "styled-components";
-import { Sv, St, Profile } from "components";
+import { Sv, St, MotionButton } from "components";
 import { SvTest } from "components/styled-components/StyledComponentTest";
 import dummy from "images/dummy.png";
 import { colors } from "styles/colors";
@@ -21,7 +21,7 @@ export const GalleryCard: React.FC<GalleryCardProps> = ({
 }) => {
   return (
     <Link href={href}>
-      <Sv pointer>
+      <MotionButton>
         <S.ImageWrapper>
           <S.Image
             src={imgSrc}
@@ -38,7 +38,7 @@ export const GalleryCard: React.FC<GalleryCardProps> = ({
             {body}
           </St>
         </Sv>
-      </Sv>
+      </MotionButton>
     </Link>
   );
 };

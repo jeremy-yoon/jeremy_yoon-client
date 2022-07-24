@@ -99,7 +99,7 @@ const MyApp: React.FC<MyAppProps> = ({ Component, pageProps }) => {
                     variants={animation.variants}
                   >
                     <NextNProgress
-                      color="#4b42ff"
+                      color="#29D"
                       startPosition={0.3}
                       stopDelayMs={200}
                       height={3}

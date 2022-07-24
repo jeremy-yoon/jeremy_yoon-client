@@ -36,6 +36,7 @@ export const MotionButton = ({
       layout="position"
       style={{
         width: "100%",
+        cursor: "pointer",
       }}
     >
       {children}

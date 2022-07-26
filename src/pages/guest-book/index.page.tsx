@@ -26,7 +26,7 @@ const GuestBookScreen: React.FC = () => {
             <Sv f={1} col jed mb={24}>
               <Comment
                 writer="Jeremy"
-                body="방명록 기능 업데이트 준비 중 입니다."
+                body="방명록 기능을 업데이트 준비 중 입니다."
               />
             </Sv>
             <CommentInput />

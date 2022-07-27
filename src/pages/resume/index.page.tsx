@@ -1,7 +1,13 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/router";
 import Image from "next/image";
-import { Sv, St, MainLogo, Comment, CommentInput } from "components";
+import {
+  Sv,
+  St,
+  MainLogo,
+  LinkWithThumbnailList,
+  CommentInput,
+} from "components";
 import styled, { css } from "styled-components";
 import { getRequest, postRequest } from "apis/common";
 import { colors } from "styles/colors";
@@ -49,6 +55,7 @@ const ResumeScreen: React.FC = () => {
                   text={`
 소믈리(주류정보서비스), 탐라(여행정보서비스), 샤벳(웹소설 서비스) 개발 및 운영`}
                 />
+                <LinkWithThumbnailList />
                 <St s3>{`- Front-End Developer`}</St>
 
                 <St>{`  - 자체 CSS framwork을 개발 및 도입해 UI코딩 시간을 평균 30%이상 단축`}</St>

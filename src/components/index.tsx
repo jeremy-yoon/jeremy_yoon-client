@@ -14,6 +14,7 @@ export { PostList, PostListSkeleton } from "components/lists/PostList";
 export { PostListS, PostListSSkeleton } from "components/lists/PostListS";
 export { GalleryCard } from "components/lists/GalleryCard";
 export { Comment } from "components/lists/Comment";
+export { LinkWithThumbnailList } from "components/lists/LinkWithThumbnailList";
 
 //buttons
 export { ButtonL } from "components/buttons/ButtonL";

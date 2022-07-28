@@ -55,7 +55,9 @@ const ResumeScreen: React.FC = () => {
                   text={`
 소믈리(주류정보서비스), 탐라(여행정보서비스), 샤벳(웹소설 서비스) 개발 및 운영`}
                 />
-                <LinkWithThumbnailList />
+                <Sv py={16}>
+                  <LinkWithThumbnailList />
+                </Sv>
                 <St s3>{`- Front-End Developer`}</St>
 
                 <St>{`  - 자체 CSS framwork을 개발 및 도입해 UI코딩 시간을 평균 30%이상 단축`}</St>

@@ -36,9 +36,6 @@ export const LinkWithThumbnailList: React.FC<LinkWithThumbnailListProps> = ({
       <Sv pointer>
         <S.Container jsb act>
           <Sv>
-            <Sv row act>
-              <St c2 g3 text={`Likes ${likeCount} · Views ${viewCount}`} />
-            </Sv>
             <Sv col>
               <St s2 g0 mt={4} text={title} />
               <S.BodyText
@@ -88,6 +85,9 @@ S.ImageWrapper = styled(Sv)`
 S.Container = styled(Sv)`
   padding-top: 32px;
   padding-bottom: 32px;
+  border: 1px solid ${colors.g5};
+  padding: 20px;
+  border-radius: 0px;
   @media only screen and (max-width: 768px) {
     padding-top: 24px;
     padding-bottom: 24px;

@@ -69,6 +69,7 @@ const ResumeScreen: React.FC = () => {
                 <St>{`  - 사내이사-Co-Founder`}</St>
 
                 <St mt={24} s1 text={`깔라만시 2020.07(설립) ~ 2021.06(M&A)`} />
+                <LinkWithThumbnailList />
                 <St mt={8} s2>{`웹/모바일앱 개발 및 디자인 외주업체`}</St>
                 <St s3>{`- CEO/Co-Founder`}</St>
                 <St>{` - 개발 직군 4명, 비개발 직군 3명 채용 및 1년간 유지`}</St>
@@ -84,6 +85,7 @@ const ResumeScreen: React.FC = () => {
                   mt={8}
                   s2
                 >{`연세대학교 학식 예약 및 결제 서비스 “Yammi”`}</St>
+                <LinkWithThumbnailList />
                 <St s3>{`- UI/UX Designer`}</St>
                 <St>{` - 제품의 UI/UX를 총괄함으로서, 연세대학교의 한 식당을 시작으로 모든 식당, 모든 학생이 사용하는 단계까지 성장하는 데에 기여함.`}</St>
                 <St>{` - 식당에서 주문을 접수하고 처리할 수 있는 POS시스템을 기획하고 제작함.`}</St>
@@ -93,6 +95,7 @@ const ResumeScreen: React.FC = () => {
                   mt={8}
                   s2
                 >{`BX Design 및 기타 디자인 프로젝트를 진행하는 디자인 스튜디오`}</St>
+                <LinkWithThumbnailList />
                 <St s3>{`- BX Designer`}</St>
                 <St>{` - 300여건의 BX Design 프로젝트 진행`}</St>
                 <St s3>{`- CEO/Co-Founder`}</St>

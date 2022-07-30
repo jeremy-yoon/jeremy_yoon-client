@@ -48,7 +48,7 @@ const ResumeScreen: React.FC = () => {
             <St h3 g0 text="Experience." />
             <St g1 b1 mt={20}>
               <Sv col>
-                <St mt={24} s1 text={`컨샐러드 2021.06(설립) ~ 현재`} />
+                <St mt={36} s1 text={`컨샐러드 2021.06(설립) ~ 현재`} />
                 <St
                   mt={8}
                   s2
@@ -56,7 +56,9 @@ const ResumeScreen: React.FC = () => {
 소믈리(주류정보서비스), 탐라(여행정보서비스), 샤벳(웹소설 서비스) 개발 및 운영`}
                 />
                 <Sv py={16}>
-                  <LinkWithThumbnailList />
+                  <Sv my={16}>
+                    <LinkWithThumbnailList />
+                  </Sv>
                 </Sv>
                 <St s3>{`- Front-End Developer`}</St>
 
@@ -68,8 +70,10 @@ const ResumeScreen: React.FC = () => {
                 <St>{`  - 6개월간, 실제 출시 가능한 수준의 프로덕트 세가지 디자인 완료.`}</St>
                 <St>{`  - 사내이사-Co-Founder`}</St>
 
-                <St mt={24} s1 text={`깔라만시 2020.07(설립) ~ 2021.06(M&A)`} />
-                <LinkWithThumbnailList />
+                <St mt={36} s1 text={`깔라만시 2020.07(설립) ~ 2021.06(M&A)`} />
+                <Sv my={16}>
+                  <LinkWithThumbnailList />
+                </Sv>
                 <St mt={8} s2>{`웹/모바일앱 개발 및 디자인 외주업체`}</St>
                 <St s3>{`- CEO/Co-Founder`}</St>
                 <St>{` - 개발 직군 4명, 비개발 직군 3명 채용 및 1년간 유지`}</St>
@@ -80,22 +84,26 @@ const ResumeScreen: React.FC = () => {
                 <St s3>{`- PM(Product Manager)`}</St>
                 <St>{` - 노션, 지라를 도입해 효율적인 협업, 커뮤니케이션, 업무 프로세스를 정립`}</St>
 
-                <St mt={24} s1>{`와이콘즈 2019.01(설립) ~ 2021.03`}</St>
+                <St mt={36} s1>{`와이콘즈 2019.01(설립) ~ 2021.03`}</St>
                 <St
                   mt={8}
                   s2
                 >{`연세대학교 학식 예약 및 결제 서비스 “Yammi”`}</St>
-                <LinkWithThumbnailList />
+                <Sv my={16}>
+                  <LinkWithThumbnailList />
+                </Sv>
                 <St s3>{`- UI/UX Designer`}</St>
                 <St>{` - 제품의 UI/UX를 총괄함으로서, 연세대학교의 한 식당을 시작으로 모든 식당, 모든 학생이 사용하는 단계까지 성장하는 데에 기여함.`}</St>
                 <St>{` - 식당에서 주문을 접수하고 처리할 수 있는 POS시스템을 기획하고 제작함.`}</St>
 
-                <St mt={24} s1>{`디프 2016.06(설립) ~ 2019.01`}</St>
+                <St mt={36} s1>{`디프 2016.06(설립) ~ 2019.01`}</St>
                 <St
                   mt={8}
                   s2
                 >{`BX Design 및 기타 디자인 프로젝트를 진행하는 디자인 스튜디오`}</St>
-                <LinkWithThumbnailList />
+                <Sv my={16}>
+                  <LinkWithThumbnailList />
+                </Sv>
                 <St s3>{`- BX Designer`}</St>
                 <St>{` - 300여건의 BX Design 프로젝트 진행`}</St>
                 <St s3>{`- CEO/Co-Founder`}</St>

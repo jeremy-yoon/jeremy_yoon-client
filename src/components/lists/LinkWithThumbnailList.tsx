@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import styled from "styled-components";
-import { Sv, St, Profile } from "components";
+import { Sv, St, MotionButton } from "components";
 import { SvTest } from "components/styled-components/StyledComponentTest";
 import dummy from "images/dummy.png";
 import main_bg1 from "images/main-bg1.jpg";
@@ -33,7 +33,7 @@ export const LinkWithThumbnailList: React.FC<LinkWithThumbnailListProps> = ({
 }) => {
   return (
     <Link href={href}>
-      <Sv pointer>
+      <MotionButton>
         <S.Container jsb act>
           <Sv>
             <Sv col>
@@ -64,7 +64,7 @@ export const LinkWithThumbnailList: React.FC<LinkWithThumbnailListProps> = ({
           </S.ImageWrapper>
         </S.Container>
         <Sv h={1} bg={colors.g6} />
-      </Sv>
+      </MotionButton>
     </Link>
   );
 };
@@ -88,6 +88,7 @@ S.Container = styled(Sv)`
   border: 1px solid ${colors.g5};
   padding: 20px;
   border-radius: 0px;
+  cursor: pointer;
   @media only screen and (max-width: 768px) {
     padding-top: 24px;
     padding-bottom: 24px;

@@ -28,7 +28,7 @@ export const Profile: React.FC<ProfileProps> = ({}) => {
           b2
           g3
           text={`효율적으로 일하는 방법을 고민하는 개발자 윤정탁 입니다.
-현재 컨샐러드에서 프로덕트 디자이너 겸 프론트엔드 개발자로 일하고 있습니다. 
+현재 컨샐러드에서 프로덕트 디자이너 겸 프론트엔드 디벨로퍼로 일하고 있습니다. 
 `}
         />
         <Sv h={40} />
@@ -39,7 +39,7 @@ export const Profile: React.FC<ProfileProps> = ({}) => {
           />
           <ButtonL
             isOpenNewTab
-            title="GitHub Profile"
+            title="깃허브 프로필"
             href="https://github.com/jeremy-yoon"
             line
           />

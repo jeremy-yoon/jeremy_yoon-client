@@ -39,7 +39,7 @@ export const Profile: React.FC<ProfileProps> = ({}) => {
           />
           <ButtonL
             isOpenNewTab
-            title="깃허브 프로필"
+            title="GitHub 프로필"
             href="https://github.com/jeremy-yoon"
             line
           />

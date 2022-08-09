@@ -46,50 +46,76 @@ interface SvProps {
 }
 
 export const Sv: any = styled.div<SvProps>`
-  ${(props) => {
-    typeof props.w == "string" ? w_string : typeof props.w == "number" && w;
-    typeof props.h == "string" ? h_string : typeof props.h == "number" && h;
-    props.f && f;
-    props.b && b;
-    props.br && br;
-    props.row && row;
-    props.col && col;
-    props.ct && ct;
-    props.aed && aed;
-    props.jed && jed;
-    props.ast && ast;
-    props.jst && jst;
-    props.act && act;
-    props.jct && jct;
-    props.jsb && jsb;
-    props.g && g;
-    props.gx && gx;
-    props.gy && gy;
-    props.m && m;
-    props.mt && mt;
-    props.mb && mb;
-    props.ml && ml;
-    props.mr && mr;
-    props.mx && mx;
-    props.my && my;
-    props.p && p;
-    props.pt && pt;
-    props.pb && pb;
-    props.pl && pl;
-    props.pr && pr;
-    props.px && px;
-    props.py && py;
-    props.position && position;
-    props.top && top;
-    props.bottom && bottom;
-    props.left && left;
-    props.right && right;
-    props.bg && bg;
-    props.pointer && pointer;
-    props.z && z;
-    props.wrap && wrap;
-    props.hidden && hidden;
-  }}
+  /* width와 height */
+  //숫자만 쓰면 px로 적용, 문자열이면 그대로 적용(100% or 50vh)
+  ${(props) =>
+    typeof props.w == "string" ? w_string : typeof props.w == "number" && w}
+  ${(props) =>
+    typeof props.h == "string" ? h_string : typeof props.h == "number" && h}
+
+/* flex */
+${(props) => props.f && f}
+
+/* border */
+${(props) => props.b && b}
+${(props) => props.br && br} //border-radius
+
+  /* 정렬 속성 */
+  ${(props) => props.row && row}
+  ${(props) => props.col && col}
+  ${(props) => props.ct && ct}
+  ${(props) => props.aed && aed}
+  ${(props) => props.jed && jed}
+  ${(props) => props.ast && ast}
+  ${(props) => props.jst && jst}
+  ${(props) => props.act && act}
+  ${(props) => props.jct && jct}
+  ${(props) => props.jsb && jsb}
+
+  /* gap */
+  ${(props) => props.g && g}
+  ${(props) => props.gx && gx}
+  ${(props) => props.gy && gy}
+
+  /*마진 속성*/
+  ${(props) => props.m && m}
+  ${(props) => props.mt && mt}
+  ${(props) => props.mb && mb}
+  ${(props) => props.ml && ml}
+  ${(props) => props.mr && mr}
+  ${(props) => props.mx && mx}
+  ${(props) => props.my && my}
+  /*패딩 속성*/
+  ${(props) => props.p && p}
+  ${(props) => props.pt && pt}
+  ${(props) => props.pb && pb}
+  ${(props) => props.pl && pl}
+  ${(props) => props.pr && pr}
+  ${(props) => props.px && px}
+  ${(props) => props.py && py}
+
+  /* 배치 속성 */
+  ${(props) => props.position && position}
+
+  ${(props) => props.top && top}
+  ${(props) => props.bottom && bottom}
+  ${(props) => props.left && left}
+  ${(props) => props.right && right}
+
+
+
+
+  /*background*/
+  ${(props) => props.bg && bg}
+
+
+  ${(props) => props.pointer && pointer}
+
+  ${(props) => props.z && z}
+
+  ${(props) => props.wrap && wrap}
+
+  ${(props) => props.hidden && hidden}
 `;
 
 const w = css<{ w: any }>`

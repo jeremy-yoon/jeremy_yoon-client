@@ -56,7 +56,6 @@ S.Image = styled(Image)``;
 // `;
 
 S.Container = styled(Sv)`
-  border-radius: 2px;
   background-color: ${(props: any) => (props.line ? "transparent" : colors.g0)};
   border: ${(props: any) => (props.line ? `1px solid ${colors.g4}` : "none")};
 `;

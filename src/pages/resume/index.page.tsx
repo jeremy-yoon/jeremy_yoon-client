@@ -23,7 +23,7 @@ const ResumeScreen: React.FC = () => {
           <Sv row mt={16}>
             <St h1 weight={200} text="안녕하세요." />
           </Sv>
-          <St h1 weight={800} text="세상에 강한 임팩트" />
+          <St h1 weight={800} text="세상에 강한 임팩트를" />
           <St h1 weight={200} text="주고자 하는 개발자," />
           <Sv row>
             <St h1 weight={800} text="윤정탁" />

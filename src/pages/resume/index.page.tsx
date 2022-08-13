@@ -57,7 +57,7 @@ const ResumeScreen: React.FC = () => {
                 />
                 <Sv py={16}>
                   <Sv my={16}>
-                    <LinkWithThumbnailList />
+                    <LinkWithThumbnailList title={"컨샐러드 운영"} />
                   </Sv>
                 </Sv>
                 <St s3>{`- Front-End Developer`}</St>

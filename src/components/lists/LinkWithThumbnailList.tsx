@@ -23,7 +23,7 @@ interface LinkWithThumbnailListProps {
 }
 export const LinkWithThumbnailList: React.FC<LinkWithThumbnailListProps> = ({
   href = "/",
-  imgSrc = main_bg1,
+  imgSrc = dummy,
   date = "date",
   category = "category",
   title = "title",
@@ -59,7 +59,7 @@ export const LinkWithThumbnailList: React.FC<LinkWithThumbnailListProps> = ({
               height={140}
               objectFit="cover"
               objectPosition="right"
-              // placeholder="blur"
+              placeholder="blur"
             />
           </S.ImageWrapper>
         </S.Container>

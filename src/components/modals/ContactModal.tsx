@@ -31,17 +31,29 @@ export const ContactModal: React.FC<ContactModalProps> = ({
         <Sv col>
           <St text="이메일" />
           <St s2 text="coco@consalad.io" mb={20} />
-          <ButtonL
-            title="이메일 보내기"
-            isOpenNewTab
-            href={"mailto:coco@consalad.io"}
-          />
+          <St text="카카오 오픈채팅" />
+          <St s2 text="https://open.kakao.com/o/sPWDcGY" mb={20} />
+          <Sv gx={8}>
+            <Sv f={1}>
+              <ButtonL
+                title="이메일 보내기"
+                isOpenNewTab
+                href={"mailto:coco@consalad.io"}
+              />
+            </Sv>
+            <Sv f={1}>
+              <ButtonL
+                title="오픈채팅으로 이동하기"
+                isOpenNewTab
+                href={"https://open.kakao.com/o/sPWDcGY"}
+              />
+            </Sv>
+          </Sv>
         </Sv>
       </S.Modal>
     </>
   );
 };
-
 const S: any = {};
 
 S.Modal = styled(Modal)`

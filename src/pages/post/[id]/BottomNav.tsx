@@ -18,7 +18,7 @@ export const BottomNav: React.FC<BottomNavProps> = ({
 }) => {
   return (
     <S.Container jct pt={20}>
-      <S.Wrapper w={1024} h={64} act jsb>
+      <S.Wrapper h={64} act jsb>
         <Sv row gx={20}>
           <Sv pointer row act gx={8} onClick={() => setCommentModalOpen(true)}>
             <Sv as={ic_like} width={24} height={24} stroke={colors.g3} />
@@ -48,14 +48,12 @@ const blur = css`
 `;
 
 S.Container = styled(Sv)`
-  position: fixed;
+  position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
   z-index: 3;
   overflow: hidden;
-  padding-left: 40px;
-  padding-right: 40px;
   @media only screen and (max-width: 768px) {
     padding-left: 0px;
     padding-right: 0px;
@@ -73,6 +71,7 @@ S.Wrapper = styled(Sv)`
   ${blur}
   padding-left: 160px;
   padding-right: 160px;
+  min-width: 1024px;
   @media only screen and (max-width: 768px) {
     padding-left: 24px;
     padding-right: 24px;

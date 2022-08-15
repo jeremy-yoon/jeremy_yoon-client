@@ -46,5 +46,5 @@ const S: any = {};
 S.Container = styled(Sv)`
   position: fixed;
   bottom: 24px;
-  z-index: 10;
+  z-index: 3;
 `;

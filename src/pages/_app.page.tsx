@@ -172,7 +172,8 @@ const blur = css`
 `;
 
 S.Container = styled(Sv)`
-  width: 1024px;
+  width: 100%;
+  max-width: 1024px;
   max-height: 100vh;
   display: flex;
   flex-direction: column;

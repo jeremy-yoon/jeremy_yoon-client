@@ -127,7 +127,7 @@ S.Body = styled(Sv)`
   display: flex;
   align-items: center;
   max-width: 512px;
-  z-index: 3;
+  z-index: 100;
 
   animation-duration: 0.25s;
   animation-timing-function: ease-in-out;
@@ -152,7 +152,7 @@ S.Overlay = styled(Sv)`
   right: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.1);
-  z-index: 3;
+  z-index: 100;
   transition: 1s;
   opacity: ${(props) => (props.isCommentModalOpen ? 1 : 0)};
   display: ${(props) => (props.isCommentModalOpen ? "inline" : "none")};

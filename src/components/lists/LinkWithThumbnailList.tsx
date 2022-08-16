@@ -85,7 +85,7 @@ S.ImageWrapper = styled(Sv)`
 S.Container = styled(Sv)`
   padding-top: 32px;
   padding-bottom: 32px;
-  border: 1px solid ${colors.g5};
+  border: 1px solid ${colors.g6};
   padding: 20px;
   border-radius: 0px;
   cursor: pointer;
@@ -106,22 +106,3 @@ S.BodyText = styled(St)`
     max-width: 60vw;
   }
 `;
-
-export const LinkWithThumbnailListSkeleton = () => (
-  <SkeletonTheme baseColor={colors.g7}>
-    <Sv row act jsb py={16}>
-      <Sv col>
-        <Skeleton count={1} width={40} height={16} />
-        <Sv h={8} />
-        <Skeleton count={1} width={300} height={24} />
-        <Sv h={16} />
-        <Skeleton count={2} width={500} height={16} />
-        <Sv h={24} />
-        <Skeleton count={1} width={80} height={16} />
-      </Sv>
-      <Sv>
-        <Skeleton height={112} width={112} />
-      </Sv>
-    </Sv>
-  </SkeletonTheme>
-);

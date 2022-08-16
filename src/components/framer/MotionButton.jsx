@@ -16,11 +16,11 @@ export const MotionButton = ({
       scale: 1,
     },
     whileTap: {
-      scale: 0.97,
+      scale: 0.98,
       ...tapConfig,
     },
     whileHover: {
-      scale: 1.03,
+      scale: 1.02,
       ...hoverConfig,
     },
   };

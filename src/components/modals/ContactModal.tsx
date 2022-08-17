@@ -43,7 +43,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({
             </Sv>
             <Sv f={1}>
               <ButtonL
-                title="오픈채팅으로 이동하기"
+                title="카카오톡 오픈채팅으로 이동하기"
                 isOpenNewTab
                 href={"https://open.kakao.com/o/sPWDcGY"}
               />

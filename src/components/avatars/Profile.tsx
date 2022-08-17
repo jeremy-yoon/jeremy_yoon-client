@@ -34,7 +34,7 @@ export const Profile: React.FC<ProfileProps> = ({}) => {
         <Sv h={40} />
         <Sv col gy={8}>
           <ButtonL
-            title="연락하기"
+            title="연락하기 (이메일, 카카오톡)"
             onClick={() => setIsContactModalVisible(true)}
           />
           <ButtonL

@@ -16,12 +16,12 @@ const GuestBookScreen: React.FC = () => {
           <MainLogo />
           <Sv col mt={16}>
             <Sv row>
-              <St h0 weight={800} text="방명록" />
-              <St h0 weight={200} text="을" />
+              <St h1 weight={800} text="방명록" />
+              <St h1 weight={200} text="을" />
             </Sv>
-            <St h0 weight={200} text="남겨주세요." />
+            <St h1 weight={200} text="남겨주세요." />
           </Sv>
-          <Sv col f={1} h="100%">
+          <Sv col f={1} h="100%" mt={40}>
             <Sv h={1} bg={colors.g6} />
             <Sv f={1} col jed mb={24}>
               <Comment

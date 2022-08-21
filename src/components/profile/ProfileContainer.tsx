@@ -82,7 +82,9 @@ export function ProfileContainer({ bg = "rgba(255, 255, 255, 0.4)" }) {
           />
           <Profile />
           <Sv mt={48}>
-            <St s2 g0 text="당신이 최근 본 포스트" />
+            {Object.keys(recentPost1).length > 0 && (
+              <St s2 g0 text="당신이 최근 본 포스트" />
+            )}
             <Sv h={8} />
             {renderSkeleton()}
             {Object.keys(recentPost1).length > 0 && (

@@ -35,7 +35,8 @@ export const MotionButton = ({
       whileHover={"whileHover"}
       layout="position"
       style={{
-        width: "100%",
+        width: "fitContent",
+        height: "fitContent",
         cursor: "pointer",
       }}
     >

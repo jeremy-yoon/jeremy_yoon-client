@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import styled from "styled-components";
-import { Sv, St, ButtonL, ContactModal } from "components";
+import { Sv, St, ButtonL, ContactModal, MotionButton } from "components";
 import profile_me from "images/profile_me.png";
+import { colors } from "styles/colors";
 
 interface ProfileProps {}
 
@@ -13,18 +14,23 @@ export const Profile: React.FC<ProfileProps> = ({}) => {
   return (
     <>
       <Sv col pt={40}>
-        <Sv>
-          <S.Image
-            src={profile_me}
-            width={88}
-            height={88}
-            objectFit="cover"
-            placeholder="blur"
-          />
+        <Sv row>
+          <MotionButton>
+            <S.ProfileImageWrapper>
+              <S.Image
+                src={profile_me}
+                width={88}
+                height={88}
+                objectFit="cover"
+                placeholder="blur"
+                draggable="false"
+              />
+            </S.ProfileImageWrapper>
+          </MotionButton>
         </Sv>
-        <St s1 g0 text="Jeremy Yoon" />
-        <Sv h={4} />
+        <St mt={8} s1 g0 text="Jeremy Yoon" />
         <St
+          mt={4}
           b2
           g3
           text={`효율적으로 일하는 방법을 고민하는 개발자 윤정탁 입니다.
@@ -59,4 +65,15 @@ S.Image = styled(Image)`
   max-width: 40px;
   max-height: 40px;
   border-radius: 100px;
+`;
+
+S.ProfileImageWrapper = styled.div`
+  outline: 2px solid ${colors.primary};
+  border-radius: 100px;
+  width: 94px;
+  height: 94px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 `;

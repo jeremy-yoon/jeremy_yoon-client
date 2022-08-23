@@ -42,3 +42,4 @@ export { ProfileContainer } from "components/profile/ProfileContainer";
 
 //modals
 export { ContactModal } from "components/modals/ContactModal";
+export { GalleryModal } from "components/modals/GalleryModal";

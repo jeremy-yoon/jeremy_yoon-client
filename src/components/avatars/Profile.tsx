@@ -2,7 +2,14 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import styled from "styled-components";
-import { Sv, St, ButtonL, ContactModal, MotionButton } from "components";
+import {
+  Sv,
+  St,
+  ButtonL,
+  ContactModal,
+  MotionButton,
+  GalleryModal,
+} from "components";
 import profile_me from "images/profile_me.png";
 import { colors } from "styles/colors";
 
@@ -10,12 +17,13 @@ interface ProfileProps {}
 
 export const Profile: React.FC<ProfileProps> = ({}) => {
   const [isContactModalVisible, setIsContactModalVisible] = useState(false);
+  const [isVisibleGalleryModal, setIsVisibleGalleryModal] = useState(false);
 
   return (
     <>
       <Sv col pt={40}>
         <Sv row>
-          <MotionButton>
+          <MotionButton onClick={() => setIsVisibleGalleryModal(true)}>
             <S.ProfileImageWrapper>
               <S.Image
                 src={profile_me}
@@ -54,6 +62,10 @@ export const Profile: React.FC<ProfileProps> = ({}) => {
       <ContactModal
         isModalVisible={isContactModalVisible}
         setIsModalVisible={setIsContactModalVisible}
+      />
+      <GalleryModal
+        isModalVisible={isVisibleGalleryModal}
+        setIsModalVisible={setIsVisibleGalleryModal}
       />
     </>
   );

@@ -24,14 +24,26 @@ export const GalleryModal: React.FC<GalleryModalProps> = ({
   return (
     <>
       <S.Modal
-        title="행복했던 순간들"
+        title="스타트업의 행복했던 순간들"
         visible={isModalVisible}
         onCancel={handleCancel}
         cancelText="닫기"
       >
         <S.ImagesWrapper>
           <Image
-            width={200}
+            width="100%"
+            src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
+          />
+          <Image
+            width="100%"
+            src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
+          />
+          <Image
+            width="100%"
+            src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
+          />
+          <Image
+            width="100%"
             src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
           />
         </S.ImagesWrapper>
@@ -47,4 +59,8 @@ S.Modal = styled(Modal)`
   }
 `;
 
-S.ImagesWrapper = styled.div``;
+S.ImagesWrapper = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+`;

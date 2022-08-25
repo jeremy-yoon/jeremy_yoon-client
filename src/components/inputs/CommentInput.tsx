@@ -24,17 +24,24 @@ export const CommentInput: React.FC<CommentInputProps> = ({
           <St c1 g2>
             이름 :
           </St>
-          <S.Input placeholder="작성자로 표시될 이름을 알려주세요." />
+          <S.Input
+            placeholder="작성자로 표시될 이름을 알려주세요.(최대 20자)"
+            maxLength={30}
+          />
         </Sv>
         <Sv h={1} bg={colors.g6} />
         <Sv mt={8}>
           <S.Textarea
-            placeholder="댓글을 입력하세요."
+            placeholder="댓글을 입력하세요.(최대 150자)"
             value={value}
             onChange={onChange && onChange}
+            maxLength={150}
           />
         </Sv>
-        <Sv mt={4}>
+        <Sv jed>
+          <St c1 g4 text={value?.length || 0 + "/150"} />
+        </Sv>
+        <Sv mt={8}>
           <ButtonL title="등록하기" onClick={onClickRegister} disabled={true} />
         </Sv>
       </S.Container>

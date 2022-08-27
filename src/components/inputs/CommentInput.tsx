@@ -7,9 +7,9 @@ import dummy from "images/dummy.png";
 import { colors } from "styles/colors";
 
 interface CommentInputProps {
-  onClickRegister: Function;
-  value: string;
-  onChange: Function;
+  onClickRegister?: Function;
+  value?: string;
+  onChange?: Function;
 }
 
 export const CommentInput: React.FC<CommentInputProps> = ({

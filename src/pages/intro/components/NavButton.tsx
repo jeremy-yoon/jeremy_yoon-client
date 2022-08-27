@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import styled, { css } from "styled-components";
-import { Sv, St, Profile } from "components";
+import { Sv, St, Profile, MotionButton } from "components";
 import { slidUpSet } from "../animations/SlideUpSet";
 import { scaleUpSet } from "../animations/scaleUpSet";
 import { colors } from "styles/colors";
@@ -24,19 +24,21 @@ export const NavButton: React.FC<NavButtonProps> = ({
   onClick = () => {},
 }) => {
   return (
-    <Sv row onClick={onClick && onClick}>
-      {href !== "/" ? (
-        <Link href={href}>
+    <MotionButton onClick={onClick}>
+      <Sv row>
+        {href !== "/" ? (
+          <Link href={href}>
+            <S.SelectedH1 en duration={duration} reverse={reverse}>
+              {title}
+            </S.SelectedH1>
+          </Link>
+        ) : (
           <S.SelectedH1 en duration={duration} reverse={reverse}>
             {title}
           </S.SelectedH1>
-        </Link>
-      ) : (
-        <S.SelectedH1 en duration={duration} reverse={reverse}>
-          {title}
-        </S.SelectedH1>
-      )}
-    </Sv>
+        )}
+      </Sv>
+    </MotionButton>
   );
 };
 

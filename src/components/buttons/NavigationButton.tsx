@@ -20,18 +20,16 @@ export const NavigationButton: React.FC<NavigationButtonProps> = ({
   icon = ic_home,
 }) => {
   return (
-    <Link href={href}>
-      <MotionButton>
-        <S.Container py={16} pointer selected={selected}>
-          <Sv
-            as={icon}
-            width={20}
-            fill={selected ? colors.g0 : "none"}
-            stroke={selected ? colors.g0 : colors.g4}
-          />
-        </S.Container>
-      </MotionButton>
-    </Link>
+    <MotionButton href={href}>
+      <S.Container py={16} pointer selected={selected}>
+        <Sv
+          as={icon}
+          width={20}
+          fill={selected ? colors.g0 : "none"}
+          stroke={selected ? colors.g0 : colors.g4}
+        />
+      </S.Container>
+    </MotionButton>
   );
 };
 

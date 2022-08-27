@@ -9,7 +9,7 @@ import { colors } from "styles/colors";
 
 interface GalleryCardProps {
   href: any;
-  imgSrc: StaticImageData;
+  imgSrc?: StaticImageData;
   title: string;
   body: string;
 }
@@ -20,26 +20,24 @@ export const GalleryCard: React.FC<GalleryCardProps> = ({
   body = "body",
 }) => {
   return (
-    <Link href={href}>
-      <MotionButton>
-        <S.ImageWrapper>
-          <S.Image
-            src={imgSrc}
-            layout="fill"
-            objectFit="cover"
-            placeholder="blur"
-          />
-        </S.ImageWrapper>
-        <Sv col gy={4} mt={16}>
-          <St s2 g0>
-            {title}
-          </St>
-          <St b2 g3>
-            {body}
-          </St>
-        </Sv>
-      </MotionButton>
-    </Link>
+    <MotionButton href={href}>
+      <S.ImageWrapper>
+        <S.Image
+          src={imgSrc}
+          layout="fill"
+          objectFit="cover"
+          placeholder="blur"
+        />
+      </S.ImageWrapper>
+      <Sv col gy={4} mt={16}>
+        <St s2 g0>
+          {title}
+        </St>
+        <St b2 g3>
+          {body}
+        </St>
+      </Sv>
+    </MotionButton>
   );
 };
 

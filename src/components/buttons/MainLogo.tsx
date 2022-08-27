@@ -18,7 +18,7 @@ export const MainLogo: React.FC<MainLogoProps> = ({
 }) => {
   return (
     <Link href={href}>
-      <MotionButton>
+      <MotionButton href={"/"}>
         <Sv py={16} pointer row>
           <St
             s1

@@ -21,7 +21,7 @@ interface ButtonLProps {
 const antIcon = <LoadingOutlined style={{ fontSize: 16 }} spin />;
 
 export const ButtonL: React.FC<ButtonLProps> = ({
-  onClick,
+  onClick = () => {},
   href = "/",
   title = "title",
   line,
@@ -30,7 +30,7 @@ export const ButtonL: React.FC<ButtonLProps> = ({
   isLoading = false,
 }) => {
   return (
-    <MotionButton onClick={onClick && onClick} disabled={disabled}>
+    <MotionButton onClick={onClick} disabled={disabled}>
       <a
         href={isOpenNewTab ? href : ""}
         target={isOpenNewTab ? "_blank" : "_self"}

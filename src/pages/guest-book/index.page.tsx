@@ -5,6 +5,7 @@ import { Sv, St, MainLogo, Comment, CommentInput } from "components";
 import styled, { css } from "styled-components";
 import { getRequest, postRequest } from "apis/common";
 import { colors } from "styles/colors";
+import moment from "moment";
 
 const GuestBookScreen: React.FC = () => {
   const router = useRouter();
@@ -27,6 +28,7 @@ const GuestBookScreen: React.FC = () => {
               <Comment
                 writer="Jeremy"
                 body="방명록 기능을 업데이트 준비 중 입니다."
+                date={moment().format("YYYY-MM-DD")}
               />
             </Sv>
             <CommentInput />

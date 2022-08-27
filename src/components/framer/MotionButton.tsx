@@ -3,11 +3,16 @@ import { motion } from "framer-motion";
 import { Sv } from "components";
 import styled from "styled-components";
 
-export const MotionButton = ({
+interface MotionButtonProps {
+  onClick?: Function;
+  children?: React.ReactNode;
+  style?: React.CSSProperties;
+  disabled?: boolean;
+  href?: string;
+}
+
+export const MotionButton: React.FC<MotionButtonProps> = ({
   children,
-  tapConfig = {},
-  hoverConfig = {},
-  style = {},
   onClick,
   disabled,
 }) => {
@@ -17,18 +22,16 @@ export const MotionButton = ({
     },
     whileTap: {
       scale: 0.98,
-      ...tapConfig,
     },
     whileHover: {
       scale: 1.02,
-      ...hoverConfig,
     },
   };
 
   return (
     <S.MotionDiv
       disabled={disabled}
-      onMouseDown={onClick && onClick}
+      onMouseDown={onClick}
       variants={config}
       initial={"initial"}
       whileTap={"whileTap"}
@@ -40,14 +43,14 @@ export const MotionButton = ({
         cursor: "pointer",
       }}
     >
-      {children}
+      <a href={disabled ? undefined : "/"}>{children}</a>
     </S.MotionDiv>
   );
 };
 
-const S = {};
+const S: any = {};
 
 S.MotionDiv = styled(motion.div)`
-  pointer-events: ${(props) => (props.disabled ? "none" : "auto")};
-  opacity: ${(props) => (props.disabled ? 0.5 : 1)};
+  pointer-events: ${(props: any) => (props.disabled ? "none" : "auto")};
+  opacity: ${(props: any) => (props.disabled ? 0.5 : 1)};
 `;

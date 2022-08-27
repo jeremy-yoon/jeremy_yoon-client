@@ -48,7 +48,7 @@ const CommentModal: React.FC<CommentModalProps> = ({
   const renderCommentList = () => {
     if (commentList.length > 0) {
       return commentList.map((v: any) => (
-        <Comment body={v.content} date={v.create_date} />
+        <Comment writer={v.writer} body={v.content} date={v.create_date} />
       ));
     } else {
       return (

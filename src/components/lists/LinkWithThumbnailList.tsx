@@ -12,14 +12,23 @@ import moment from "moment";
 import parse from "html-react-parser";
 
 interface LinkWithThumbnailListProps {
-  href: any;
-  imgSrc: StaticImageData | string;
-  date: string;
-  category: string;
-  title: string;
-  body: string;
-  likeCount: number;
-  viewCount: number;
+  // href: any;
+  // imgSrc: StaticImageData | string;
+  // date: string;
+  // category: string;
+  // title: string;
+  // body: string;
+  // likeCount: number;
+  // viewCount: number;
+
+  href?: any;
+  imgSrc?: StaticImageData | string;
+  date?: string;
+  category?: string;
+  title?: string;
+  body?: string;
+  likeCount?: number;
+  viewCount?: number;
 }
 export const LinkWithThumbnailList: React.FC<LinkWithThumbnailListProps> = ({
   href = "/",
@@ -32,40 +41,33 @@ export const LinkWithThumbnailList: React.FC<LinkWithThumbnailListProps> = ({
   viewCount = 0,
 }) => {
   return (
-    <Link href={href}>
-      <MotionButton>
-        <S.Container jsb act>
-          <Sv>
-            <Sv col>
-              <St s2 g0 mt={4} text={title} />
-              <S.BodyText
-                b2
-                g2
-                mt={8}
-                text={body.replace(/(<([^>]+)>)/gi, "")}
-              />
-            </Sv>
-            <Sv mt={16} row act gx={12}>
-              <Sv bg={colors.g6} br={99} px={8} py={2} ml={-4}>
-                <St c1 g0 text={category} />
-              </Sv>
-              <St c1 g3 text={moment(date).format("YYYY년 M월 D일")} />
-            </Sv>
+    <MotionButton href={href}>
+      <S.Container jsb act>
+        <Sv>
+          <Sv col>
+            <St s2 g0 mt={4} text={title} />
+            <S.BodyText b2 g2 mt={8} text={body.replace(/(<([^>]+)>)/gi, "")} />
           </Sv>
-          <S.ImageWrapper>
-            <Image
-              src={imgSrc}
-              width={140}
-              height={140}
-              objectFit="cover"
-              objectPosition="right"
-              placeholder="blur"
-            />
-          </S.ImageWrapper>
-        </S.Container>
-        <Sv h={1} bg={colors.g6} />
-      </MotionButton>
-    </Link>
+          <Sv mt={16} row act gx={12}>
+            <Sv bg={colors.g6} br={99} px={8} py={2} ml={-4}>
+              <St c1 g0 text={category} />
+            </Sv>
+            <St c1 g3 text={moment(date).format("YYYY년 M월 D일")} />
+          </Sv>
+        </Sv>
+        <S.ImageWrapper>
+          <Image
+            src={imgSrc}
+            width={140}
+            height={140}
+            objectFit="cover"
+            objectPosition="right"
+            placeholder="blur"
+          />
+        </S.ImageWrapper>
+      </S.Container>
+      <Sv h={1} bg={colors.g6} />
+    </MotionButton>
   );
 };
 

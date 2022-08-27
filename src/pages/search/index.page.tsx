@@ -9,7 +9,7 @@ import { colors } from "styles/colors";
 const PortfolioScreen: React.FC = () => {
   const router = useRouter();
 
-  const [keyword, setKeyword] = useState("keyword");
+  const [keyword, setKeyword] = useState("keyword" as any);
 
   useEffect(() => {
     setKeyword(router.query.q);

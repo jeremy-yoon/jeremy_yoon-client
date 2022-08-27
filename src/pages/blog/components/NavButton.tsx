@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import styled, { css } from "styled-components";
-import { Sv, St, Profile } from "components";
+import { Sv, St, Profile, MotionButton } from "components";
 import { colors } from "styles/colors";
 import { motion } from "framer-motion";
 import { preventDrag } from "styles/global-styles";
@@ -22,11 +22,13 @@ export const NavButton: React.FC<NavButtonProps> = ({
   onClick = () => {},
 }) => {
   return (
-    <Sv row onClick={onClick && onClick}>
-      <S.SelectedH1 en duration={duration} reverse={reverse}>
-        {title}
-      </S.SelectedH1>
-    </Sv>
+    <MotionButton onClick={onClick}>
+      <Sv row>
+        <S.SelectedH1 en duration={duration} reverse={reverse}>
+          {title}
+        </S.SelectedH1>
+      </Sv>
+    </MotionButton>
   );
 };
 

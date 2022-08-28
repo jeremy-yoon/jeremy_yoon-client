@@ -2,20 +2,23 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Sv } from "components";
 import styled from "styled-components";
+import { useRouter } from "next/router";
 
 interface MotionButtonProps {
   onClick?: Function;
   children?: React.ReactNode;
   style?: React.CSSProperties;
   disabled?: boolean;
-  href?: string;
+  href?: string | undefined;
 }
 
 export const MotionButton: React.FC<MotionButtonProps> = ({
   children,
   onClick,
   disabled,
+  href,
 }) => {
+  const router = useRouter();
   const config = {
     initial: {
       scale: 1,
@@ -42,8 +45,9 @@ export const MotionButton: React.FC<MotionButtonProps> = ({
         height: "fitContent",
         cursor: "pointer",
       }}
+      onClick={() => router.push(href || "/")}
     >
-      <a href={disabled ? undefined : "/"}>{children}</a>
+      {children}
     </S.MotionDiv>
   );
 };

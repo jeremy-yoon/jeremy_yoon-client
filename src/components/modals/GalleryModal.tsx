@@ -24,7 +24,7 @@ export const GalleryModal: React.FC<GalleryModalProps> = ({
   return (
     <>
       <S.Modal
-        title="스타트업의 행복했던 순간들"
+        title="이 맛에 일하지 🚀"
         visible={isModalVisible}
         onCancel={handleCancel}
         cancelText="닫기"

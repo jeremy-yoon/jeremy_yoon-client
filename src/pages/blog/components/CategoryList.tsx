@@ -13,9 +13,10 @@ interface CategoryItemProps {
 
 const CategoryItem: React.FC<CategoryItemProps> = ({ title, isSelected }) => {
   return (
-    <Sv
-      p={12}
-      b={`1px solid ${isSelected ? colors.g0 : "transparent"}`}
+    <S.CategoryItemContainer
+      isSelected={isSelected}
+      px={12}
+      py={10}
       br={100}
       act
       jct
@@ -29,7 +30,7 @@ const CategoryItem: React.FC<CategoryItemProps> = ({ title, isSelected }) => {
         text={title}
         center
       />
-    </Sv>
+    </S.CategoryItemContainer>
   );
 };
 
@@ -69,6 +70,12 @@ S.ListContainer = styled(Sv)`
   ::-webkit-scrollbar {
     display: none;
   }
+`;
+
+S.CategoryItemContainer = styled(Sv)`
+  transition: all 0.3s ease;
+  outline: ${(props: any) =>
+    props.isSelected ? `1px solid ${colors.g4}` : ""};
 `;
 
 S.Image = styled(Image)`

@@ -91,6 +91,7 @@ S.Container = styled(Sv)`
   padding: 20px;
   border-radius: 0px;
   cursor: pointer;
+  background-color: ${colors.white};
   @media only screen and (max-width: 768px) {
     padding-top: 24px;
     padding-bottom: 24px;

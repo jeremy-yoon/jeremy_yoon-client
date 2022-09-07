@@ -13,7 +13,7 @@ const Skills: React.FC = () => {
     <>
       <St h3 text="Skill." />
       <St>
-        {`Front-End: JavaScript, React.js, React Native, Next.js, HTML, CSS(SCSS)`}
+        {`Front-End: JavaScript, React.js, React Native, Next.js, Redux, Recoil, HTML, CSS(SCSS, Styled Components)`}
       </St>
       <St>{`Design: Figma, Sketch, XD, Zeplin, Adobe tools`}</St>
     </>

@@ -11,7 +11,7 @@ const Experiences: React.FC = () => {
 
   return (
     <>
-      <St h3 g0 text="Experience." />
+      <St h3 g0 text="Work Experience." />
       <St g1 b1 mt={20}>
         <Sv col>
           <S.H3>{`컨샐러드 2021.06(설립) ~ 현재`}</S.H3>

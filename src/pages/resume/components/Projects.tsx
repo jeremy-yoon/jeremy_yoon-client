@@ -11,7 +11,7 @@ const Projects: React.FC = () => {
 
   return (
     <>
-      <St h3 text="Project." />
+      <St h3 text="Project Experience." />
       <St g1 b1>
         <S.ProjectWrapper>
           <S.H3>{`캐릭터 코디네이팅 및 실시간 커뮤니케이션 서비스`}</S.H3>

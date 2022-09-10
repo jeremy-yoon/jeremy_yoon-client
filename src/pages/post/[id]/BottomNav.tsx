@@ -16,11 +16,12 @@ interface BottomNavProps {
 export const BottomNav: React.FC<BottomNavProps> = ({
   setCommentModalOpen,
 }) => {
+  const onClickLike = () => {};
   return (
     <S.Container jct pt={20}>
       <S.Wrapper h={64} act jsb>
         <Sv row gx={20}>
-          <Sv pointer row act gx={8} onClick={() => setCommentModalOpen(true)}>
+          <Sv pointer row act gx={8} onClick={onClickLike}>
             <Sv as={ic_like} width={24} height={24} stroke={colors.g3} />
             <St b2>3</St>
           </Sv>
@@ -29,9 +30,7 @@ export const BottomNav: React.FC<BottomNavProps> = ({
             <St b2>3</St>
           </Sv>
         </Sv>
-        <Sv>
-          <St b1> 공유하기</St>
-        </Sv>
+        <Sv></Sv>
       </S.Wrapper>
       <S.Dummy w={358} />
     </S.Container>

@@ -77,9 +77,11 @@ S.Image = styled(Image)`
   max-width: 40px;
   max-height: 40px;
   border-radius: 100px;
+  overflow: hidden;
 `;
 
 S.ProfileImageWrapper = styled.div`
+  overflow: hidden;
   outline: 2px solid ${colors.primary};
   border-radius: 100px;
   width: 94px;

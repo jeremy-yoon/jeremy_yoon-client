@@ -26,17 +26,17 @@ const PortfolioScreen: React.FC = () => {
               title="주디, 좀 귀여운 슬라임"
               imgSrc={joodyMain}
               href="/portfolio/joody"
-              body="2022년 5월"
+              body="2022년 5월 ~ 현재"
             />
             <GalleryCard
               title="스매시, 쉽고 빠른 매칭"
               href="/portfolio/smaxh"
-              body="2022년 2월"
+              body="2021월 12월 ~ 1월"
             />
             <GalleryCard
               title="샤벳, 새로운 웹소설"
               href="/portfolio/charbet"
-              body="2021년 10월"
+              body="2021년 10월 ~ 2022년 1월"
             />
           </Sv>
         </Sv>

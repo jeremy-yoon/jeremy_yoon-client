@@ -11,6 +11,8 @@ const PortfolioScreen: React.FC = () => {
 
   const [keyword, setKeyword] = useState("keyword" as any);
 
+  const [results, setResults] = useState([] as any);
+
   useEffect(() => {
     setKeyword(router.query.q);
   }, [router]);
@@ -23,6 +25,9 @@ const PortfolioScreen: React.FC = () => {
           <St h2 weight={200} text="에 대한 검색결과" />
         </Sv>
         <Sv h={1} bg={colors.g5} my={20} />
+        <Sv act jct mt={40}>
+          {results.length <= 0 && <St b1 g4 text="검색 결과가 없어요." />}
+        </Sv>
       </Sv>
     </S.Container>
   );

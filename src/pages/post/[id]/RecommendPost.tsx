@@ -10,9 +10,9 @@ const RecommendPost: React.FC = () => {
   const { id } = router.query;
 
   return (
-    <S.Container>
+    <S.Container bg={colors.g10}>
       <Sv h={16} bg={colors.g6} mt={80} />
-      <S.Wrapper bg={colors.g10} py={80}>
+      <S.Wrapper py={80}>
         <Sv col>
           <St s1 g0 text="이 글을 다 읽었다면" />
           <St s1 g0 text="당신에게 더 추천할 만한 글들" />

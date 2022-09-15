@@ -23,11 +23,11 @@ export const BottomNav: React.FC<BottomNavProps> = ({
         <Sv row gx={20}>
           <Sv pointer row act gx={8} onClick={onClickLike}>
             <Sv as={ic_like} width={24} height={24} stroke={colors.g3} />
-            <St b2>3</St>
+            <St b2>0</St>
           </Sv>
           <Sv pointer row act gx={8} onClick={() => setCommentModalOpen(true)}>
             <Sv as={ic_comment} width={24} height={24} stroke={colors.g3} />
-            <St b2>3</St>
+            <St b2>0</St>
           </Sv>
         </Sv>
         <Sv></Sv>

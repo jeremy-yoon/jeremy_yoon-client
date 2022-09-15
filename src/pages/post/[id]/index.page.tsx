@@ -168,7 +168,7 @@ const PostScreen: React.FC = () => {
               onClick={() => setCommentModalOpen(true)}
             >
               <Sv as={ic_like} width={24} height={24} stroke={colors.g3} />
-              <St b2>3</St>
+              <St b2>0</St>
             </Sv>
             <Sv
               pointer
@@ -178,7 +178,7 @@ const PostScreen: React.FC = () => {
               onClick={() => setCommentModalOpen(true)}
             >
               <Sv as={ic_comment} width={24} height={24} stroke={colors.g3} />
-              <St b2>3</St>
+              <St b2>0</St>
             </Sv>
           </Sv>
         </S.Wrapper>

@@ -17,32 +17,34 @@ export const MainLogo: React.FC<MainLogoProps> = ({
   size = 24,
 }) => {
   return (
-    <Link href={href}>
-      <MotionButton href={"/"}>
-        <Sv py={16} pointer row>
-          <St
-            s1
-            weight={1000}
-            size={size}
-            en
-            g0
-            style={{ fontStyle: "italic" }}
-          >
-            JE
-          </St>
-          <St
-            s1
-            weight={1000}
-            size={size}
-            en
-            g0
-            style={{ fontStyle: "italic" }}
-          >
-            Log!
-          </St>
-        </Sv>
-      </MotionButton>
-    </Link>
+    <Sv w="80px">
+      <Link href={href}>
+        <MotionButton href={"/"}>
+          <Sv py={16} pointer row>
+            <St
+              s1
+              weight={1000}
+              size={size}
+              en
+              g0
+              style={{ fontStyle: "italic" }}
+            >
+              JE
+            </St>
+            <St
+              s1
+              weight={1000}
+              size={size}
+              en
+              g0
+              style={{ fontStyle: "italic" }}
+            >
+              Log!
+            </St>
+          </Sv>
+        </MotionButton>
+      </Link>
+    </Sv>
   );
 };
 

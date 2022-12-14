@@ -154,9 +154,10 @@ const PostScreen: React.FC = () => {
               </S.ImageWrapper>
             )}
           </Sv>
-          <Sv mt={40}>
+          <Sv mt={40} act jct>
             <St b2 g0>
-              {parse(`${post?.body}`)}
+              {/* {parse(`${post?.body}`)} */}
+              오픈 준비 중입니다.
             </St>
           </Sv>
           <Sv mt={40} row gx={20} ref={bottomNavRef}>

@@ -26,6 +26,16 @@ import blog_bg3 from "images/blog-bg3.jpg";
 import favicon from "../public/favicon.ico";
 import NextNProgress from "nextjs-progressbar";
 import { colors } from "styles/colors";
+import { ReactQueryDevtools } from "react-query/devtools";
+import { QueryClient, QueryClientProvider } from "react-query";
+
+const client = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false,
+    },
+  },
+});
 
 const { Header, Content, Footer } = Layout;
 
@@ -65,55 +75,60 @@ const MyApp: React.FC<MyAppProps> = ({ Component, pageProps }) => {
 
   return (
     <RecoilRoot>
-      <Layout>
-        <S.Content>
-          <S.Body gx={16}>
-            <Head>
-              <title>JELog! - 젤로그</title>
-              <link
-                rel="shortcut icon"
-                href={favicon.src}
-                type="image/x-icon"
-              />
-            </Head>
-            <S.bg>
-              <Image src={blog_bg} width={800} height={800} />
-            </S.bg>
-            <S.bg2>
-              <Image src={blog_bg2} width={400} height={400} />
-            </S.bg2>
-            <S.bg3>
-              <Image src={blog_bg3} width={400} height={400} />
-            </S.bg3>
-            {renderNavigation()}
-            {renderMobileNavigation()}
-            <S.Container>
-              <LazyMotion features={domAnimation}>
-                <AnimatePresence exitBeforeEnter>
-                  <m.div
-                    key={router.route.concat(animation.name)}
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.2 }}
-                    variants={animation.variants}
-                  >
-                    <NextNProgress
-                      color="#29D"
-                      startPosition={0.3}
-                      stopDelayMs={200}
-                      height={3}
-                      showOnShallow={true}
-                    />
-                    <Component {...pageProps} />
-                  </m.div>
-                </AnimatePresence>
-              </LazyMotion>
-            </S.Container>
-            {renderProfileContainer()}
-          </S.Body>
-        </S.Content>
-      </Layout>
+      <QueryClientProvider client={client}>
+        {process.env.NODE_ENV !== "production" ? (
+          <ReactQueryDevtools initialIsOpen={false} />
+        ) : null}
+        <Layout>
+          <S.Content>
+            <S.Body gx={16}>
+              <Head>
+                <title>JELog! - 젤로그</title>
+                <link
+                  rel="shortcut icon"
+                  href={favicon.src}
+                  type="image/x-icon"
+                />
+              </Head>
+              <S.bg>
+                <Image src={blog_bg} width={800} height={800} />
+              </S.bg>
+              <S.bg2>
+                <Image src={blog_bg2} width={400} height={400} />
+              </S.bg2>
+              <S.bg3>
+                <Image src={blog_bg3} width={400} height={400} />
+              </S.bg3>
+              {renderNavigation()}
+              {renderMobileNavigation()}
+              <S.Container>
+                <LazyMotion features={domAnimation}>
+                  <AnimatePresence exitBeforeEnter>
+                    <m.div
+                      key={router.route.concat(animation.name)}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.2 }}
+                      variants={animation.variants}
+                    >
+                      <NextNProgress
+                        color="#29D"
+                        startPosition={0.3}
+                        stopDelayMs={200}
+                        height={3}
+                        showOnShallow={true}
+                      />
+                      <Component {...pageProps} />
+                    </m.div>
+                  </AnimatePresence>
+                </LazyMotion>
+              </S.Container>
+              {renderProfileContainer()}
+            </S.Body>
+          </S.Content>
+        </Layout>
+      </QueryClientProvider>
     </RecoilRoot>
   );
 };

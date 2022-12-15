@@ -186,13 +186,20 @@ S.Wrapper = styled(Sv)`
   padding-left: 24px;
   padding-right: 24px;
   min-width: 366px;
+  //vertical space-between
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 `;
 
 S.Footer = styled(Sv)`
-  position: absolute;
+  /* position: absolute;
   bottom: 40px;
   left: 40px;
-  right: 0;
+  right: 0; */
   display: flex;
   flex-direction: column;
+  margin-top: 40px;
+  margin-bottom: 40px;
 `;

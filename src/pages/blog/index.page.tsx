@@ -46,7 +46,7 @@ export default function BlogScreen() {
         body={item.body}
         imgSrc={
           item.represent_image
-            ? `https://jeremy-yoon.com${item.represent_image}`
+            ? `https://api.jeremy-yoon.com${item.represent_image}`
             : dummy
         }
         href={`/post/${item.id}`}

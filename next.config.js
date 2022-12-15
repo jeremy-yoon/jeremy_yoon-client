@@ -11,7 +11,7 @@ module.exports = {
     return config;
   },
   images: {
-    domains: ["jeremy-yoon.com"],
+    domains: ["api.jeremy-yoon.com"],
   },
   pageExtensions: ["page.tsx", "page.ts", "page.jsx", "page.js"],
 };

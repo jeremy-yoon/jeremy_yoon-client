@@ -93,7 +93,7 @@ export function ProfileContainer({ bg = "rgba(255, 255, 255, 0.4)" }) {
                 body={recentPost1.body}
                 imgSrc={
                   recentPost1.represent_image
-                    ? `https://jeremy-yoon.com${recentPost1.represent_image}`
+                    ? `https://api.jeremy-yoon.com${recentPost1.represent_image}`
                     : dummy
                 }
                 onClick={() => {
@@ -107,7 +107,7 @@ export function ProfileContainer({ bg = "rgba(255, 255, 255, 0.4)" }) {
                 body={recentPost2.body}
                 imgSrc={
                   recentPost2.represent_image
-                    ? `https://jeremy-yoon.com${recentPost2.represent_image}`
+                    ? `https://api.jeremy-yoon.com${recentPost2.represent_image}`
                     : dummy
                 }
                 onClick={() => {
@@ -121,7 +121,7 @@ export function ProfileContainer({ bg = "rgba(255, 255, 255, 0.4)" }) {
                 body={recentPost3.body}
                 imgSrc={
                   recentPost3.represent_image
-                    ? `https://jeremy-yoon.com${recentPost3.represent_image}`
+                    ? `https://api.jeremy-yoon.com${recentPost3.represent_image}`
                     : dummy
                 }
                 onClick={() => {

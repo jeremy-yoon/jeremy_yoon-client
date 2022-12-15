@@ -16,9 +16,21 @@ import Experiences from "./components/Experiences";
 import Introduce from "./components/Introduce";
 import Skills from "./components/Skills";
 import Education from "./components/Education";
+import { NotionRenderer } from "react-notion";
 
 const ResumeScreen: React.FC = () => {
   const router = useRouter();
+
+  const [response, setResponse] = useState({});
+
+  useEffect(() => {
+    const NOTION_PAGE_ID = "1f75d478c40848f0b46ff67906887e74";
+    fetch(`https://notion-api.splitbee.io/v1/page/${NOTION_PAGE_ID}`)
+      .then((res) => res.json())
+      .then((resJson) => {
+        setResponse(resJson);
+      });
+  }, []);
 
   return (
     <>
@@ -26,6 +38,10 @@ const ResumeScreen: React.FC = () => {
         <Sv col pb={100}>
           <MainLogo />
           <Introduce />
+          <NotionRenderer // 웹페이지에 노션을 렌더링
+            blockMap={response} // 페이지정보 넣기
+          />
+          {/* <Introduce />
           <Sv mt={80} col>
             <Experiences />
           </Sv>
@@ -35,7 +51,7 @@ const ResumeScreen: React.FC = () => {
           </Sv>
           <Sv mt={80} col>
             <Education />
-          </Sv>
+          </Sv> */}
         </Sv>
       </S.Container>
     </>
@@ -49,7 +65,7 @@ const S: any = {};
 S.Container = styled(Sv)`
   padding-top: 60px;
   width: 742px;
-  max-width: 100vw;
+  max-width: 742px;
   padding-left: 24px;
   padding-right: 24px;
   overflow: visible;

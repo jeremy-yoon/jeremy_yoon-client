@@ -11,16 +11,15 @@ const Introduce: React.FC = () => {
 
   return (
     <>
-      <Sv row mt={16}>
-        <St h1 weight={200} text="안녕하세요." />
+      <Sv mt={16}>
+        <St
+          h1
+          weight={800}
+          text="오너십을 가지고 효율적으로 문제를 해결하는 개발자,"
+        />
+        <St h1 weight={200} text="윤정탁 입니다." />
       </Sv>
-      <St h1 weight={800} text="세상에 강한 임팩트를" />
-      <St h1 weight={200} text="주고자 하는 개발자," />
-      <Sv row>
-        <St h1 weight={800} text="윤정탁" />
-        <St h1 weight={200} text=" 입니다." />
-      </Sv>
-      <Sv mt={80} col>
+      {/* <Sv mt={80} col>
         <St h3 g0 text="Introduce." />
         <St
           mt={20}
@@ -34,7 +33,7 @@ const Introduce: React.FC = () => {
 
 스타트업에서 여러 가지 분야를 경험해봤지만, 개발에 가장 큰 흥미를 느꼈고, 이제는 개발 역량을 높이는 데에 집중하여 좋은 개발자, 비즈니스적 임팩트를 줄 수 있는 개발자가 되고자 합니다.`}
         />
-      </Sv>
+      </Sv> */}
     </>
   );
 };

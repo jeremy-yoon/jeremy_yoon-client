@@ -28,6 +28,8 @@ import NextNProgress from "nextjs-progressbar";
 import { colors } from "styles/colors";
 import { ReactQueryDevtools } from "react-query/devtools";
 import { QueryClient, QueryClientProvider } from "react-query";
+import "react-notion/src/styles.css";
+import "prismjs/themes/prism-tomorrow.css"; // only needed for code highlighting
 
 const client = new QueryClient({
   defaultOptions: {

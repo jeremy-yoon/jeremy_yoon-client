@@ -22,12 +22,14 @@ import {
   userRecentReadPostAtom,
   userTotalReadHistoryAtom,
 } from "recoil/atoms/user";
+import { NotionRenderer } from "react-notion";
 
 const PostScreen: React.FC = () => {
   const router = useRouter();
   const { id } = router.query;
   const bottomNavRef = useRef<HTMLDivElement>(null);
   const [post, setPost] = useState([] as any);
+  const [response, setResponse] = useState({});
   const [isLoading, setLoading] = useState(true as boolean);
   const [isCommentModalOpen, setCommentModalOpen] = useState(
     undefined as undefined | boolean
@@ -118,8 +120,14 @@ const PostScreen: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    console.log("fdadfs");
-  }, [scrollY]);
+    if (post?.post_id) {
+      fetch(`https://notion-api.splitbee.io/v1/page/${post?.post_id}`)
+        .then((res) => res.json())
+        .then((resJson) => {
+          setResponse(resJson);
+        });
+    }
+  }, [post]);
 
   return (
     <>
@@ -129,7 +137,7 @@ const PostScreen: React.FC = () => {
       <S.Container>
         <S.Wrapper>
           <MainLogo />
-          <Sv col mt={40}>
+          <Sv col mt={40} mb={40}>
             <St h2 g0 weight={400}>
               {post?.title}
             </St>
@@ -142,23 +150,14 @@ const PostScreen: React.FC = () => {
               </St>
             </Sv>
           </Sv>
-          <Sv mt={64}>
-            {post?.represent_image && (
-              <S.ImageWrapper>
-                <Image
-                  src={`http://127.0.0.1:8000${post?.represent_image}`}
-                  layout="fill"
-                  objectFit="cover"
-                  // placeholder="blur"
-                />
-              </S.ImageWrapper>
-            )}
-          </Sv>
+
+          <NotionRenderer // 웹페이지에 노션을 렌더링
+            blockMap={response} // 페이지정보 넣기
+          />
           <Sv mt={40} act jct>
-            <St b2 g0>
-              {/* {parse(`${post?.body}`)} */}
-              오픈 준비 중입니다.
-            </St>
+            {/* <St b2 g0>
+              {parse(`${post?.body}`)}
+            </St> */}
           </Sv>
           <Sv mt={40} row gx={20} ref={bottomNavRef}>
             <Sv
@@ -185,7 +184,7 @@ const PostScreen: React.FC = () => {
         </S.Wrapper>
       </S.Container>
       <RecommendPost />
-      {renderBottomNav()}
+      {/* {renderBottomNav()} */}
       {renderCommentModal()}
     </>
   );
@@ -212,11 +211,6 @@ S.Container = styled(Sv)`
 
 S.Wrapper = styled(Sv)`
   width: 100%;
-`;
-
-S.BottomNavContainer = styled.div`
-  position: fixed;
-  bottom: 0;
 `;
 
 S.ImageWrapper = styled(Sv)`

@@ -93,7 +93,7 @@ export function ProfileContainer({ bg = "rgba(255, 255, 255, 0.4)" }) {
                 body={recentPost1.body}
                 imgSrc={
                   recentPost1.represent_image
-                    ? `http://127.0.0.1:8000${recentPost1.represent_image}`
+                    ? `https://jeremy-yoon.com${recentPost1.represent_image}`
                     : dummy
                 }
                 onClick={() => {
@@ -107,7 +107,7 @@ export function ProfileContainer({ bg = "rgba(255, 255, 255, 0.4)" }) {
                 body={recentPost2.body}
                 imgSrc={
                   recentPost2.represent_image
-                    ? `http://127.0.0.1:8000${recentPost2.represent_image}`
+                    ? `https://jeremy-yoon.com${recentPost2.represent_image}`
                     : dummy
                 }
                 onClick={() => {
@@ -121,7 +121,7 @@ export function ProfileContainer({ bg = "rgba(255, 255, 255, 0.4)" }) {
                 body={recentPost3.body}
                 imgSrc={
                   recentPost3.represent_image
-                    ? `http://127.0.0.1:8000${recentPost3.represent_image}`
+                    ? `https://jeremy-yoon.com${recentPost3.represent_image}`
                     : dummy
                 }
                 onClick={() => {
@@ -163,8 +163,6 @@ const S: any = {};
 
 const blur = css`
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
-  /* backdrop-filter: blur(30px);
-  -webkit-backdrop-filter: blur(4px); */
   border: 1px solid rgba(255, 255, 255, 0.18);
 `;
 
@@ -186,7 +184,6 @@ S.Wrapper = styled(Sv)`
   padding-left: 24px;
   padding-right: 24px;
   min-width: 366px;
-  //vertical space-between
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -194,10 +191,6 @@ S.Wrapper = styled(Sv)`
 `;
 
 S.Footer = styled(Sv)`
-  /* position: absolute;
-  bottom: 40px;
-  left: 40px;
-  right: 0; */
   display: flex;
   flex-direction: column;
   margin-top: 40px;

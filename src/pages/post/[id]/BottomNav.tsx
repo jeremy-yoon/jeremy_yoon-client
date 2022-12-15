@@ -47,10 +47,10 @@ const blur = css`
 `;
 
 S.Container = styled(Sv)`
-  position: absolute;
+  position: fixed;
   bottom: 0;
-  left: 0;
   right: 0;
+  left: 0;
   z-index: 3;
   overflow: hidden;
   @media only screen and (max-width: 768px) {
@@ -70,7 +70,8 @@ S.Wrapper = styled(Sv)`
   ${blur}
   padding-left: 160px;
   padding-right: 160px;
-  min-width: 1024px;
+  width: 100%;
+  max-width: 1024px;
   @media only screen and (max-width: 768px) {
     padding-left: 24px;
     padding-right: 24px;

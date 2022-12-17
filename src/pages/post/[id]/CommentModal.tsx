@@ -27,9 +27,8 @@ const CommentModal: React.FC<CommentModalProps> = ({
     try {
       const result = await getRequest(`/${postId}/comments/`);
       setCommentList(result);
-      console.log("getCommentList", result);
     } catch (e) {
-      console.log(e);
+      // console.log(e);
     }
   };
 
@@ -38,10 +37,9 @@ const CommentModal: React.FC<CommentModalProps> = ({
       const result = await postRequest(`/${postId}/comments/`, {
         content: commentContent,
       });
-      console.log("postComment", result);
       getCommentList();
     } catch (e) {
-      console.log(e);
+      // console.log(e);
     }
   };
 

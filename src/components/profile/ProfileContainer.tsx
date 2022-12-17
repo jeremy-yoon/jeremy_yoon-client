@@ -68,10 +68,6 @@ export function ProfileContainer({ bg = "rgba(255, 255, 255, 0.4)" }) {
     }
   }, [recentReadPost[2]]);
 
-  useEffect(() => {
-    console.log(Object.keys(recentPost1).length, "recentPost1");
-  }, [recentPost1]);
-
   return (
     <S.Container bg={bg}>
       <S.Wrapper>

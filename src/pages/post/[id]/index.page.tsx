@@ -48,10 +48,6 @@ const PostScreen: React.FC = () => {
   //get y position of bottomNav
   const getBottomNavY = () => {
     if (bottomNavRef.current) {
-      console.log(
-        "bottomNavRef.current",
-        bottomNavRef.current.getBoundingClientRect().top
-      );
       setBottomNavY(bottomNavRef.current.getBoundingClientRect().top);
     }
     return 0;
@@ -113,7 +109,7 @@ const PostScreen: React.FC = () => {
       //읽은 모든 기록을 저장.
       setTotalReadHistory([...totalReadHistory, id]);
     }
-  });
+  }, [id]);
 
   useEffect(() => {
     getBottomNavY();

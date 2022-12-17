@@ -104,27 +104,14 @@ const MyApp: React.FC<MyAppProps> = ({ Component, pageProps }) => {
               {renderNavigation()}
               {renderMobileNavigation()}
               <S.Container>
-                <LazyMotion features={domAnimation}>
-                  <AnimatePresence exitBeforeEnter>
-                    <m.div
-                      key={router.route.concat(animation.name)}
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      exit={{ opacity: 0 }}
-                      transition={{ duration: 0.2 }}
-                      variants={animation.variants}
-                    >
-                      <NextNProgress
-                        color="#29D"
-                        startPosition={0.3}
-                        stopDelayMs={200}
-                        height={3}
-                        showOnShallow={true}
-                      />
-                      <Component {...pageProps} />
-                    </m.div>
-                  </AnimatePresence>
-                </LazyMotion>
+                <NextNProgress
+                  color="#29D"
+                  startPosition={0.3}
+                  stopDelayMs={200}
+                  height={3}
+                  showOnShallow={true}
+                />
+                <Component {...pageProps} />
               </S.Container>
               {renderProfileContainer()}
             </S.Body>

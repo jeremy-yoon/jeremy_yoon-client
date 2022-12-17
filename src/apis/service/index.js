@@ -7,10 +7,10 @@ const getCategoryListRequest = async (setCategoryList) => {
   const result = await getRequest("/category/");
   const all = { title: "All" };
   setCategoryList([all, ...result]);
-  console.log("getCategoryList", result);
+  // console.log("getCategoryList", result);
 };
 const getCategoryListException = async (e) => {
-  console.log("getCategoryList 에러", e);
+  // console.log("getCategoryList 에러", e);
 };
 export const getCategoryList = (setCategoryList) =>
   commonExceptionForm(
@@ -38,7 +38,7 @@ export const getPostList = (setPostList, setLoading) =>
 const getPostRequest = async (setPost, setLoading, id) => {
   const result = await getRequest(`/post/${id}/`);
   setPost(result);
-  console.log("getPost", result);
+  // console.log("getPost", result);
   setLoading(false);
 };
 const getPostException = async (setLoading, e) => {
